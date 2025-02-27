@@ -1,0 +1,31 @@
+<!--Page header-->
+<app-page-header [title]="'Gallery'"  [icon]="'layers'"  [title1]="'Pages'" [activeitem]="'Gallery'"></app-page-header>
+
+<!--End Page header-->
+
+
+
+<!-- Row -->
+
+<div class="demo-gallery card">
+    <div class="card-header">
+        <div class="card-title">Light Gallery</div>
+
+    </div>
+
+    <div >
+        <div class="card-body">
+            <ul id="lightgallery" class="list-unstyled row" >
+                <li *ngFor="let img of imagesRect" class="col-xs-6 col-sm-4 col-md-3" data-responsive="./assets/images/photos/1.jpg" data-src="./assets/images/photos/1.jpg" data-sub-html="<h4>Gallery Image 1</h4><p> Many desktop publishing packages and web page editors now use Lorem Ipsum</p>">
+                  <a href="javascript:void(0)">
+                    <img class="img-responsive h-100" [src]="img.modal.img" alt="Thumb-1" (click)="openImageModalRowDescription(2, img)">
+                  </a>
+                </li>
+              </ul>
+
+        </div>
+    </div>
+    <!-- <ks-modal-gallery [id]="1" [modalImages]="GalleryImage" [plainGalleryConfig]="customPlainGalleryRowDescConfig"
+        [currentImageConfig]="{downloadable : true}" [buttonsConfig]="buttonsConfigCustom">
+    </ks-modal-gallery> -->
+</div>

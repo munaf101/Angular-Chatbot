@@ -1,0 +1,27 @@
+::ng-deep {
+  .range {
+    margin-top: 0;
+  }
+  .custom-day {
+    justify-content: center;
+    display: inline-block;
+    height: 2rem;
+    width: 2rem;
+    align-items: center;
+    display: flex;
+  }
+  .dark-theme {
+    ngb-datepicker-navigation-select option {
+      background-color: var(--dark-body);
+    }
+
+    [ngbDatepickerDayView]:hover:not(.bg-primary),
+    [ngbDatepickerDayView].active:not(.bg-primary) {
+      background-color: var(--dark-theme);
+    }
+
+    .range {
+      background-color: var(--dark-body);
+    }
+  }
+}

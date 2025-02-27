@@ -1,0 +1,268 @@
+<!--Page header-->
+<app-page-header [title]="'Check Out'" [icon]="'shopping-cart'" [title1]="'ECommerce'"
+  [activeitem]="'Check Out'"></app-page-header>
+
+<!--End Page header-->
+
+<!-- Row-->
+<div class="row">
+  <div class="col-xl-12">
+    <div class="card custom-card">
+      <div class="card-header bg-transparent border-bottom-0">
+        <div>
+          <label class="main-content-label mb-2">Checkout</label> <span class="d-block tx-12 mb-0 text-muted">The
+            Project Budget is a tool used by project managers to estimate the total cost of a project</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-xl-8 mx-auto">
+            <div class="checkout-steps wrapper">
+              <div id="checkoutsteps" class="wizard clearfix">
+                <mat-stepper class="example-stepper" [orientation]="(stepperOrientation | async)!">
+                  <mat-step [stepControl]="firstFormGroup" label="Sign in">
+                    <form [formGroup]="firstFormGroup">
+                      <section>
+                        <div class="control-group form-group">
+                          <label class="form-label" for="name3">Name</label>
+                          <input type="text" class="form-control" id="name3" placeholder="Name" required>
+                        </div>
+                        <div class="control-group form-group">
+                          <label class="form-label" for="email3">Email</label>
+                          <input type="email" class="form-control" id="email3" placeholder="Email Address" required>
+                        </div>
+                        <div class="control-group form-group">
+                          <label class="form-label" for="phno3">Phone Number</label>
+                          <input type="number" class="form-control" id="phno3" placeholder="Number" required>
+                        </div>
+                        <div class="control-group form-group mb-0">
+                          <label class="form-label" for="address3">Address</label>
+                          <input type="text" class="form-control" id="address3" placeholder="Address" required>
+                        </div>
+                      </section>
+                      <div>
+                        <button class="btn ripple btn-primary mt-2" matStepperNext>Next</button>
+
+                      </div>
+                    </form>
+                  </mat-step>
+                  <mat-step [stepControl]="secondFormGroup" label="Billing ">
+                    <form [formGroup]="secondFormGroup">
+                      <section>
+                        <div class="table-responsive mt-3">
+                          <table class="table table-bordered">
+                            <tbody>
+                              <tr>
+                                <td>Cart Subtotal</td>
+                                <td class="text-end">$364.00</td>
+                              </tr>
+                              <tr>
+                                <td><span>Totals</span></td>
+                                <td class="text-end text-muted"><span>$364.00</span></td>
+                              </tr>
+                              <tr>
+                                <td><span>Order Total</span></td>
+                                <td>
+                                  <h2 class="price text-end mb-0">$792.00</h2>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </section>
+                      <div>
+                        <button class="btn btn-danger me-2 mb-1" matStepperPrevious>Back</button>
+                        <button class="btn btn-primary me-2 mb-1" matStepperNext>Next</button>
+                      </div>
+                    </form>
+                  </mat-step>
+                  <mat-step [stepControl]="thirdFormGroup" label=" Order">
+                    <form [formGroup]="thirdFormGroup">
+                      <section>
+                        <h5 class="text-start mb-2 font-weight-semibold">Your Order</h5>
+                        <p class="mb-4 text-muted tx-13 ms-0 text-start">Lorem Ipsum has been the industry's standard
+                          dummy text ever since</p>
+                        <div class="product">
+                          <div class="item flex-wrap">
+                            <div class="left mb-2"> <a href="javascript:void(0);" class="thumb me-3"> <img
+                                  src="./assets/images/ecommerce/09.jpg" alt="" class="rounded-3"> </a>
+                              <div class="">
+                                <h6> <a href="javascript:void(0);">Camera</a> </h6>
+                                <div class="d-flex flex-wrap  mt-2">
+                                  <div class="my-2 product-title tx-12">Quantity:</div>
+                                  <div class="handle-counter ms-2" id="handleCounter1">
+                                    <button class="counter-minus btn btn-light border"><i
+                                        class="fe fe-minus"></i></button>
+                                    <input type="text" value="2" class="qty">
+                                    <button class="counter-plus btn btn-light border"><i
+                                        class="fe fe-plus"></i></button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div> <span class="price tx-20">$290</span>
+                          </div>
+                          <div class="item flex-wrap">
+                            <div class="left mb-2"> <a href="javascript:void(0);" class="thumb me-3"> <img
+                                  src="./assets/images/ecommerce/03.jpg" alt="" class="rounded-3"> </a>
+                              <div class="">
+                                <h6> <a href="javascript:void(0);">Sports Shoes</a> </h6>
+                                <div class="d-flex flex-wrap mt-2">
+                                  <div class="my-2 product-title tx-12">Quantity:</div>
+                                  <div class="handle-counter ms-2" id="handleCounter2">
+                                    <button class="counter-minus btn btn-light border"><i
+                                        class="fe fe-minus"></i></button>
+                                    <input type="text" value="2" class="qty">
+                                    <button class="counter-plus btn btn-light border"><i
+                                        class="fe fe-plus"></i></button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div> <span class="price tx-20">$124</span>
+                          </div>
+                        </div>
+                        <div class="checkout">
+                          <div class="subtotal"> <span class="heading">Subtotal</span> <span
+                              class="total tx-20 font-weight-bold">$364</span> </div>
+                        </div>
+                      </section><!-- SECTION 4 -->
+                      <div>
+                        <button class="btn btn-danger me-2 mb-1" matStepperPrevious>Back</button>
+                        <button class="btn btn-primary me-2 mb-1" matStepperNext>Next</button>
+                      </div>
+                    </form>
+                  </mat-step>
+                  <mat-step [stepControl]="secondFormGroup" label="Payments">
+                    <form [formGroup]="secondFormGroup">
+                      <div class="card border-0 bg-transparent shadow-none">
+                        <section>
+                          <div class="">
+                            <h5 class="text-start mb-2 font-weight-semibold">Payments</h5>
+                            <p class="mb-4 text-muted tx-13 ms-0 text-start">Lorem Ipsum has been the industry's
+                              standard dummy text ever since</p>
+                          </div>
+                          <div class="card-body">
+                            <div class="card-pay">
+
+                              <ul class="tabs-menu nav" ngbNav #nav2="ngbNav" [(activeId)]="active">
+                                <li class="" [ngbNavItem]="1"><a ngbNavLink href="#tab20" class="payment-icon"
+                                    data-bs-toggle="tab"><i class="fa fa-credit-card"></i><span class="ms-1">Credit
+                                      Card</span></a>
+                                  <ng-template ngbNavContent>
+                                    <div class="tab-pane active show mt-5" id="tab20">
+                                      <div class="form-group">
+                                        <label class="form-label">CardHolder Name</label>
+                                        <input type="text" class="form-control" placeholder="First Name">
+                                      </div>
+                                      <div class="form-group">
+                                        <label class="form-label">Card number</label>
+                                        <div class="input-group">
+                                          <input type="text" class="form-control" placeholder="Search for...">
+                                          <span class="input-group-append"> <button class="btn btn-primary box-shadow-0"
+                                              type="button"><i class="fab fa-cc-visa"></i> &nbsp; <i
+                                                class="fab fa-cc-amex"></i> &nbsp; <i
+                                                class="fab fa-cc-mastercard"></i></button> </span>
+                                        </div>
+                                      </div>
+                                      <div class="row">
+                                        <div class="col-sm-8">
+                                          <div class="form-group">
+                                            <label class="form-label">Expiration</label>
+                                            <div class="input-group">
+                                              <input type="number" class="form-control" placeholder="MM" name="Month">
+                                              <input type="number" class="form-control" placeholder="YY" name="Year">
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                          <div class="form-group">
+                                            <label class="form-label">CVV <i class="fa fa-question-circle"></i></label>
+                                            <input type="number" class="form-control" required="">
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <a href="javascript:void(0)" class="btn  btn-lg btn-primary">Confirm</a>
+                                    </div>
+                                  </ng-template>
+                                </li>
+                                <li [ngbNavItem]="2"><a ngbNavLink href="#tab21" data-bs-toggle="tab"
+                                    class="payment-icon border-start border-end"><i class="fab fa-paypal"></i>
+                                    Paypal</a>
+                                  <ng-template ngbNavContent>
+                                    <div class="tab-pane mt-5" id="tab21">
+                                      <p>Paypal is easiest way to pay online</p>
+                                      <p><a href="javascript:void(0)" class="btn btn-primary"><i
+                                            class="fab fa-paypal"></i> Log in my Paypal</a></p>
+                                      <p class="mb-0"><strong>Note:</strong> Nemo enim ipsam voluptatem quia voluptas
+                                        sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui
+                                        ratione voluptatem sequi nesciunt. </p>
+                                    </div>
+                                  </ng-template>
+                                </li>
+                                <li [ngbNavItem]="3"><a ngbNavLink href="#tab22" data-bs-toggle="tab"
+                                    class="payment-icon"><i class="fa fa-university"></i> Bank Transfer</a>
+                                  <ng-template ngbNavContent>
+                                    <div class="tab-pane mt-5" id="tab22">
+                                      <p>Bank account details</p>
+                                      <dl class="card-text">
+                                        <dt>BANK: </dt>
+                                        <dd> THE UNION BANK 0456</dd>
+                                      </dl>
+                                      <dl class="card-text">
+                                        <dt>Account Number: </dt>
+                                        <dd> 67542897653214</dd>
+                                      </dl>
+                                      <dl class="card-text">
+                                        <dt>IBAN: </dt>
+                                        <dd>543218769</dd>
+                                      </dl>
+                                      <p class="mb-0"><strong>Note:</strong> Nemo enim ipsam voluptatem quia voluptas
+                                        sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui
+                                        ratione voluptatem sequi nesciunt. </p>
+                                    </div>
+                                  </ng-template>
+                                </li>
+                              </ul>
+                              <div [ngbNavOutlet]="nav2"></div>
+
+                            </div>
+
+                          </div>
+
+                        </section>
+                      </div>
+                      <div>
+                        <button class="btn btn-danger me-2 mb-1" matStepperPrevious>Back</button>
+                        <button class="btn btn-primary me-2 mb-1" matStepperNext>Next</button>
+                      </div>
+                    </form>
+                  </mat-step>
+                  <mat-step>
+                    <ng-template matStepLabel>Finished</ng-template>
+                    <section class="text-center">
+                      <div class="">
+                        <h5 class="text-center mb-4">Your order Confirmed!</h5>
+                      </div>
+                      <svg class="wd-100 ht-100 mx-auto justify-content-center mb-3 text-center" version="1.1"
+                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130.2 130.2">
+                        <circle class="path circle" fill="none" stroke="#22c03c" stroke-width="6" stroke-miterlimit="10"
+                          cx="65.1" cy="65.1" r="62.1" />
+                        <polyline class="path check" fill="none" stroke="#22c03c" stroke-width="6"
+                          stroke-linecap="round" stroke-miterlimit="10" points="100.2,40.2 51.5,88.8 29.8,67.5 " />
+                      </svg>
+                      <p class="success pl-5 pr-5">Order placed successfully. Your order will be dispacted soon.
+                        meanwhile you can track your order in my order section.</p>
+                    </section>
+                    <div>
+                      <button class="btn btn-primary" matStepperPrevious>Previous</button>
+                    </div>
+                  </mat-step>
+                </mat-stepper>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End Row-->

@@ -1,0 +1,148 @@
+<!--Page header-->
+<app-page-header [title]="'Advanced-Forms'"  [icon]="'file-text'"  [title1]="'Forms'" [activeitem]="'Advanced-Forms'"></app-page-header>
+
+<!--End Page header-->
+
+<!-- Row -->
+<div class="row">
+    <div class="col-lg-6 col-md-12">
+        <div class="card single-select-style">
+            <div class="card-header">
+                <div class="card-title">Single Select Style</div>
+            </div>
+            <div class="card-body">
+                <div class="mb-4">
+                    <p class="mg-b-10 fw-semibold">Single Select</p>
+                    <ng-select [items]="toppingList" [(ngModel)]="toppings">
+                    </ng-select>
+                </div>
+                <div class="mb-4">
+                    <p class="mg-b-10 fw-semibold">Disable Select</p>
+                    <ng-select [items]="toppingList" [(ngModel)]="toppings" disabled="true">
+                    </ng-select>
+                </div>
+                <div>
+                    <p class="mg-b-10 fw-semibold"> Type to Add Multiple items </p>
+                    <ng-select class="multi-select emptyFromStyle" [items]="[]" [addTag]="true" disabled="disabled">
+                    </ng-select>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6 col-md-12">
+        <div class="card multiple-select-styles">
+            <div class="card-header">
+                <div class="card-title">Multiple Select Styles</div>
+            </div>
+            <div class="card-body">
+                <div class="mb-4">
+                    <p class="mg-b-10 fw-semibold">Multiple Select</p>
+                    <ng-select [multiple]="true" [(ngModel)]="selectedCars">
+                        <ng-option *ngFor="let car of cars" [value]="car.id">{{ car.name }}</ng-option>
+                    </ng-select>
+                </div>
+                <div class="mb-4">
+                    <p class="mg-b-10 fw-semibold">Disable All Select</p>
+                    <ng-select [items]="toppingList" [(ngModel)]="toppings" disabled="true">
+                    </ng-select>
+                </div>
+                <div class="custom-select-item">
+                    <p class="mg-b-10">Custom selected item label using</p>
+                    <ng-select [items]="cities" [(ngModel)]="selectedCity" bindLabel="name" bindValue="name">
+                        <ng-template ng-label-tmp let-item="item">
+                            <img height="15" width="15" [src]="item.avatar" />
+                            {{ item.name }}
+                        </ng-template>
+                    </ng-select>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-12 col-md-12">
+        <div class="card multiple-select-styles">
+            <div class="card-header">
+                <div class="card-title">Multiple Select Styles</div>
+
+            </div>
+            <div class="card-body">
+                <div class="mb-4">
+                    <p class="mg-b-10">Items with already grouped children array</p>
+                    <ng-select [items]="projects" bindLabel="title" bindValue="id" groupBy="subprojects"
+                        [multiple]="true" [(ngModel)]="selectedProjects">
+                        <ng-template ng-optgroup-tmp let-item="item">
+                            {{ item.title }}
+                        </ng-template>
+                        <ng-template ng-option-tmp let-item="item">
+                            {{ item.title }}
+                        </ng-template>
+                    </ng-select>
+                </div>
+                <div class="selectable-groups-section">
+                    <p class="mg-b-10">Selectable groups</p>
+                    <ng-select [items]="accounts" bindLabel="name" groupBy="country" [multiple]="true"
+                        [compareWith]="compareAccounts" [selectableGroup]="true" [(ngModel)]="selectedAccount">
+                        <ng-template ng-optgroup-tmp let-item="item">
+                            {{ item.country || "Unnamed group" }}
+                        </ng-template>
+                    </ng-select>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-12 col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">Country selctor</div>
+            </div>
+            <div class="card-body">
+                <div class="input-group">
+                    <form #f="ngForm" [formGroup]="phoneForm" (ngSubmit)="onSubmit()">
+                        <mat-form-field appearance="outline">
+                            <ngx-mat-intl-tel-input formControlName="phone" [enablePlaceholder]="false"
+                                [enableSearch]="true" name="phone" #phone>
+                            </ngx-mat-intl-tel-input>
+                        </mat-form-field>
+                        <button class="btn btn-primary py-1 px-4 mb-1">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-12 col-md-12">
+        <form method="post" class="card">
+            <div class="card-header">
+                <h3 class="card-title">File Upload</h3>
+            </div>
+            <div class=" card-body">
+                <div class="row mb-5">
+                    <div class="col-lg-4 col-sm-12 mb-4 mb-lg-0">
+                      <dropzone (change)="onSelect($event)"> 
+                          
+                        </dropzone> 
+                    </div>
+
+                   
+                    <div class="col-lg-4 col-sm-12">
+                        <dropzone (change)="onSelect($event)" [disabled]="true">
+                         
+                        </dropzone>
+                    </div>
+                    <div class="col-lg-4 col-sm-12 mb-4 mb-lg-0">
+                        <dropzone (change)="onSelect($event)"> 
+                            
+                          </dropzone> 
+                      </div>
+                </div>
+                <div class="form-group mb-0">
+                    <dropzone (change)="onPreviewFileSelect($event)">
+                    </dropzone>
+                </div>
+            </div>
+        </form>
+
+       
+    </div>
+</div>
+<!-- End Row-->

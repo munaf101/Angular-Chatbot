@@ -1,0 +1,66 @@
+<!--Page header-->
+<app-page-header [title]="'Notifications'"  [icon]="'grid'"  [title1]="'Apps'" [activeitem]="'Notifications'"></app-page-header>
+
+<!--End Page header-->
+
+<!-- Row -->
+<div class="row">
+    <div class="col-md-12">
+        
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Side Alerts Notifications</h3>
+            </div>
+            <div class="card-body text-center">
+                <div class="btn-list">
+                    <button class="btn btn-primary me-2" (click)="OnDefault()">Default</button>
+                    <button class="btn btn-info me-2" (click)="OnInfo()">Info</button>
+                    <button class="btn btn-success me-2" (click)="OnSuccess()">Success</button>
+                    <button class="btn btn-warning me-2" (click)="OnWarning()">Warning</button>
+                    <button class="btn btn-danger me-2" (click)="OnError()">Error</button>
+                </div>
+            </div>
+            <notifier-container></notifier-container>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Alerts Popovers</h3>
+            </div>
+            <div class="card-body text-center">
+                <div class="btn-list">
+                <button type="button" class="btn btn-success me-2" container="body" 
+                    placement="bottom" popoverTitle="alert sucess"
+                    ngbPopover="Well done! You successfully read this important alert message..">
+                    Show success
+                </button>
+                <button type="button" class="btn btn-info me-2" container="body" 
+                    placement="top" popoverTitle="alert info"
+                    ngbPopover="Heads up! This alert needs your attention, but it's not super important...">
+                       Show info pop
+                </button>
+                <button type="button" class="btn btn-warning me-2" container="body" 
+                    placement="bottom" popoverTitle="alert warning"
+                    ngbPopover="Warning! Best check yo self, you're not looking too good..">
+                    Show warning
+                </button>
+                <button type="button" class="btn btn-secondary me-2" container="body" 
+                    placement="top" popoverTitle="alert secondary"
+                    ngbPopover="Error! Please Check u r emial id..">
+                    Show secondary
+                </button>
+                <button type="button" class="btn btn-danger me-2" container="body" 
+                    placement="bottom" popoverTitle="alert danger"
+                    ngbPopover="Oh snap! Change a few things up and try submitting again.">
+                    Show danger
+                </button>
+                <button type="button" class="btn btn-primary me-2" container="body" 
+                    placement="top" popoverTitle="alert primary"
+                    ngbPopover="Cool! This alert will close in 3 seconds. The data-delay attribute is in milliseconds.">
+                    Show primary
+                </button>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Row -->

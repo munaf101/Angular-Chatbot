@@ -1,0 +1,19 @@
+.dash1-card .ratio{
+    width: auto !important;
+}
+.card-body1
+{
+    height: 94px !important;
+}
+.card-body{
+    height: auto;
+}
+
+.chartsh {
+    >div{
+        z-index: 9 !important;
+    }
+    &:last-child {
+        z-index: 9 !important;
+    }
+}

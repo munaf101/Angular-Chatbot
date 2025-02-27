@@ -1,0 +1,149 @@
+<!--Page header-->
+<app-page-header [title]="'Email Read'"  [icon]="'layers'"  [title1]="'Pages'" [activeitem]="'Email Read'"></app-page-header>
+
+<!--End Page header-->
+	<!-- Row -->
+    <div class="row">
+        <div class="col-md-12 col-lg-4 col-xl-3">
+            <div class="card">
+                <div class="list-group list-group-transparent mb-0 mail-inbox">
+                    <div class="m-4 text-center">
+                        <a routerLink="/pages/email/compose" class="btn btn-primary btn-block">Compose</a>
+                    </div>
+                    <a href="javascript:void(0);" class="list-group-item active  d-flex align-items-center">
+                        <i class="fe fe-inbox fs-18 me-2"></i> Inbox <span class="ms-auto badge bg-success">14</span>
+                    </a>
+                    <a href="javascript:void(0);" class="list-group-item list-group-item-action d-flex align-items-center">
+                        <i class="fe fe-mail fs-18 me-2"></i> Sent Mail
+                    </a>
+                    <a href="javascript:void(0);" class="list-group-item list-group-item-action d-flex align-items-center">
+                        <i class="fe fe-alert-octagon fs-18 me-2"></i> Important <span class="ms-auto badge bg-danger">3</span>
+                    </a>
+                    <a href="javascript:void(0);" class="list-group-item list-group-item-action d-flex align-items-center">
+                        <i class="fe fe-star fs-18 me-2"></i> Starred
+                    </a>
+                    <a href="javascript:void(0);" class="list-group-item list-group-item-action d-flex align-items-center">
+                        <i class="fe fe-briefcase fs-18 me-2"></i> Drafts
+                    </a>
+                    <a href="javascript:void(0);" class="list-group-item list-group-item-action d-flex align-items-center">
+                        <i class="fe fe-tag fs-18 me-2"></i> Tags
+                    </a>
+                    <a href="javascript:void(0);" class="list-group-item list-group-item-action d-flex align-items-center">
+                        <i class="fe fe-trash-2 fs-18 me-2"></i> Trash
+                    </a>
+                </div>
+                <h6 class="px-4 pt-3">Labels</h6>
+                <div class="px-4 pb-4">
+                    <div class="list-group list-group-transparent mb-0 mail-inbox">
+                        <a href="javascript:void(0);" class="list-group-item list-group-item-action d-flex align-items-center px-0 py-2">
+                            <span class="wd-10 ht-10 brround bg-primary me-2"></span> Friends
+                        </a>
+                        <a href="javascript:void(0);" class="list-group-item list-group-item-action d-flex align-items-center px-0 py-2">
+                            <span class="wd-10 ht-10 brround bg-secondary me-2"></span> Family
+                        </a>
+                        <a href="javascript:void(0);" class="list-group-item list-group-item-action d-flex align-items-center px-0 py-2">
+                            <span class="wd-10 ht-10 brround bg-success me-2"></span> Social
+                        </a>
+                        <a href="javascript:void(0);" class="list-group-item list-group-item-action d-flex align-items-center px-0 py-2">
+                            <span class="wd-10 ht-10 brround bg-info me-2"></span> Office
+                        </a>
+                        <a href="javascript:void(0);" class="list-group-item list-group-item-action d-flex align-items-center px-0 py-2">
+                            <span class="wd-10 ht-10 brround bg-warning me-2"></span> Work
+                        </a>
+                        <a href="javascript:void(0);" class="list-group-item list-group-item-action d-flex align-items-center px-0 py-2">
+                            <span class="wd-10 ht-10 brround bg-danger me-2"></span> Settings
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12 col-lg-8 col-xl-9">
+            <div class="card">
+                <div class="card-body">
+                    <div class="email-media">
+                        <div class="mt-0 d-sm-flex align-items-center">
+                            <img class="me-2 rounded-circle avatar avatar-lg" src="./assets/images/users/2.jpg" alt="avatar">
+                            <div class="media-body pt-0">
+                                <div class="float-end d-none d-md-flex fs-15">
+                                    <small class="me-3 mt-3 text-muted">July 13 , 2020 12:45 pm</small>
+                                    <a class="me-3 email-icon" data-bs-toggle="tooltip" title="" ngbTooltip="Rated" placement="top"><i class="fe fe-star fs-16"></i></a>
+                                    <a class="me-3 email-icon" data-bs-toggle="tooltip" title="" ngbTooltip="Reply" placement="top"><i class="fa fa-reply"></i></a>
+                                    <div ngbDropdown container="body">
+                                        <a href="javascript:void(0)" class="email-icon" ngbDropdownToggle role="button"><i
+                                                class="fe fe-more-vertical fs-16"></i></a>
+                                        <div ngbDropdownMenu class="dropdown-menu-right">
+                                            <a ngbDropdownItem href="javascript:void(0)"><i class="fe fe-share me-2"></i>
+                                                Reply</a>
+                                            <a ngbDropdownItem href="javascript:void(0)"><i
+                                                    class="fe fe-alert-circle me-2"></i>Report Spam</a>
+                                            <a ngbDropdownItem href="javascript:void(0)"><i
+                                                    class="fe fe-trash me-2"></i>Delete</a>
+                                            <a ngbDropdownItem href="javascript:void(0)"><i
+                                                    class="fe fe-printer me-2"></i>Print</a>
+                                            <a ngbDropdownItem href="javascript:void(0)"><i
+                                                    class="fe fe-filter me-2"></i>Filter</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="media-title text-dark font-weight-semibold mt-1">Jessica <span class="text-muted font-weight-semibold">( alicnestle@gmail.com )</span></div>
+                                <small class="mb-0">to Adam Cotter ( adamcotter@gmail.com ) </small>
+                                <small class="me-2 d-md-none">Dec 13 , 2018 12:45 pm</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="eamil-body mt-5">
+                        <h6>Hi Sir/Madam</h6>
+                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. </p>
+                        <p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.</p>
+                        <p> Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it?</p>
+                        <p class="mb-3">Thanking you Sir/Madam</p>
+                        <div class="email-attch mt-4">
+                            <div class="float-end">
+                                <a href="javascript:void(0);" class="email-icon" data-bs-toggle="tooltip" title="" ngbTooltip="Download"><i class="fe fe-download fs-18"></i></a>
+                            </div>
+                            <p class="font-weight-semibold">3 Attachments <a href="javascript:void(0);" class="text-primary">View</a></p>
+                        </div>
+                        <div class="row">
+                            <div class="col-xl-2 col-md-4 col-sm-6 mt-4">
+                                <a class="" href="javascript:void(0);">
+                                    <div class="border p-0 text-center">
+                                    <a routerLink="/apps/file-manager/file-manager-list">	<img src="./assets/images/files/file2.png" alt="img" class="w-80 mx-auto"></a>
+                                    </div>
+                                    <div class="bg-light p-3">
+                                        <i class="fa fa-file-excel-o me-1"></i> xlsdocument.xls
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-xl-2 col-md-4 col-sm-6 mt-4">
+                                <a class="" href="javascript:void(0);">
+                                    <div class="border p-0 text-center">
+                                        <a routerLink="/apps/file-manager/file-manager-list">	<img src="./assets/images/files/doc.png" alt="img" class="w-80 mx-auto"></a>
+                                    </div>
+                                    <div class="bg-light p-3">
+                                        <i class="fa fa-file-word-o me-1"></i> worddocument
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-xl-2 col-md-4 col-sm-6 mt-4">
+                                <a class="" href="javascript:void(0);">
+                                    <div class="border p-0 text-center">
+                                        <a routerLink="/apps/file-manager/file-manager-list">	<img src="./assets/images/files/doc.png" alt="img" class="w-80 mx-auto"></a>
+                                    </div>
+                                    <div class="bg-light p-3">
+                                        <i class="fa fa-file-word-o me-1"></i> worddocument
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="bth-list text-end">
+                        <a class="btn btn-primary me-1" href="javascript:void(0);"><i class="fa fa-reply "></i> Reply</a>
+                        <a class="btn btn-secondary" href="javascript:void(0);"><i class="fa fa-share"></i> Forward</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- Row -->

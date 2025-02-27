@@ -1,0 +1,64 @@
+<!--Page header-->
+<app-page-header [title]="'Sweet Alert'"  [icon]="'grid'"  [title1]="'Apps'" [activeitem]="'Sweet Alert'"></app-page-header>
+
+<!--End Page header-->
+
+<!-- Row -->
+<div class="row">
+    <div class="col-sm-12">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Sample Sweet Alerts</h3>
+            </div>
+            <div class="card-body">
+            <div class="btn-list">
+                <input type='button' class="btn btn-success mt-2 me-1" value='success alert' (click)="Success()">
+                <input type='button' class="btn btn-warning mt-2 me-1" value='Warning alert' (click)="Warning()">
+                <input type='button' class="btn btn-danger mt-2 me-1" value='Danger alert' (click)="Danger()">
+                <input type='button' class="btn btn-info mt-2 me-1" value='Info alert' (click)="Info()">
+            </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Forms Sweet-alert</h3>
+            </div>
+            <div class="card-body">
+                <div class="form-group">
+                    <label>Title</label>
+                    <input type='text' [(ngModel)]="SimpleTitle" class="form-control text-dark" placeholder='Title text'>
+                </div>
+                <div class="form-group">
+                    <label>Message</label>
+                    <input type='text' [(ngModel)]="SimpleMessage" class="form-control text-dark" placeholder='Your message'>
+                </div>
+                <!-- [(ngModel)]="playerName" -->
+                <div class="btn-list">
+                <input type='button' class="btn btn-primary mt-2 me-1" value='Simple alert' (click)="simpleAlert()">
+                <input type='button' class="btn btn-secondary mt-2 me-1" value='Alert with title' (click)="titleAlert()">
+                <input type='button' class="btn btn-info mt-2 me-1" value='Alert with image' (click)="imageAlert()">
+                <input type='button' class="btn btn-warning mt-2 me-1" value='With timer' (click)="timerAlert()">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Row -->
+
+<!-- Row -->
+<div class="row">
+    <div class="col-sm-12 ">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Prompt and confirm box Demo</h3>
+            </div>
+            <div class="card-body">
+            <div class="btn-list">
+                <input type='button' class="btn btn-secondary me-1" value='Prompt' (click)="promptAlert()">
+                <input type='button' class="btn btn-primary me-1" value='Confirm' (click)="confirmAlert()">
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Row -->

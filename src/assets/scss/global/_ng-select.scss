@@ -1,0 +1,22 @@
+.dark-theme {
+    .ng-select.ng-select-opened>.ng-select-container,
+    .ng-dropdown-panel .ng-dropdown-panel-items .ng-option {
+        background: var(--dark-theme);
+        color: #fff;
+        border: 0;
+    }
+    .ng-dropdown-panel .ng-dropdown-panel-items .ng-option.ng-option-marked {
+        background: var(--primary-bg-color);
+        color: #fff;
+    }
+    .ng-select .ng-select-container .ng-value-container .ng-input>input{
+        color: #fff;
+    }
+    .ng-option.ng-option-disabled{
+        background-color: var(--dark-body);
+        color: #ccc !important;
+    }
+    .ng-select .ng-clear-wrapper {
+        color: rgb(255 255 255 / 54%);
+    }
+}

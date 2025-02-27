@@ -1,0 +1,300 @@
+<!--Page header-->
+<app-page-header [title]="'Pagination'"  [icon]="'server'"  [title1]="'Elements'" [activeitem]="'Pagination'"></app-page-header>
+
+<!--End Page header-->
+
+<!-- Row -->
+<div class="row">
+    <div class="col-md-12 col-xl-6">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Basic pagination</h3>
+            </div>
+            <div class="card-body">
+                <p class="fw-semibold">Default pagination:</p>
+                <ngb-pagination [collectionSize]="70" [(page)]="basicPage" aria-label="Default pagination"></ngb-pagination>
+
+                <p class="fw-semibold">No direction links:</p>
+                <ngb-pagination [collectionSize]="70" [(page)]="basicPage" [directionLinks]="false"></ngb-pagination>
+
+                <p class="fw-semibold">With boundary links:</p>
+                <ngb-pagination [collectionSize]="70" [(page)]="basicPage" [boundaryLinks]="true"></ngb-pagination>
+
+                <hr>
+
+                <pre>Current page: {{basicPage}}</pre>
+                <!---Prism Pre code-->
+                <figure class="highlight mb-0" id="element1">
+                    <ul ngbNav #nav1="ngbNav" class="nav nav-tabs">
+                        <li [ngbNavItem]="1">
+                            <a ngbNavLink class="html-code"><i class="las la-code mr-2"></i> HTML</a>
+                            <ng-template ngbNavContent>
+                                <pre><code [highlight]="html1"></code></pre>
+                            </ng-template>
+                        </li>
+                        <li [ngbNavItem]="2">
+                            <a ngbNavLink class="html-code">TS</a>
+                            <ng-template ngbNavContent>
+                                <pre><code [highlight]="ts1"></code></pre>
+                            </ng-template>
+                        </li>
+                        <div ngxClipboard class="clipboard-icon ms-auto my-auto"  placement="top"
+                        ngbTooltip="Copy To Clipboard"><i class="las la-paste"></i></div>
+                    </ul>
+                    <div [ngbNavOutlet]="nav1"></div>
+                    
+                    
+                </figure>
+                <!---Prism Pre code-->
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12 col-xl-6">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Advanced pagination</h3>
+            </div>
+            <div class="card-body ">
+                <p class="fw-semibold">Restricted size, no rotation:</p>
+                <ngb-pagination class="flex-wrap" [collectionSize]="120" [(page)]="advPage" [maxSize]="5" [boundaryLinks]="true">
+                </ngb-pagination>
+
+                <p class="fw-semibold">Restricted size with rotation:</p>
+                <ngb-pagination class="flex-wrap" [collectionSize]="120" [(page)]="advPage" [maxSize]="5" [rotate]="true"
+                    [boundaryLinks]="true"></ngb-pagination>
+
+                <p class="fw-semibold">Restricted size with rotation and no ellipses:</p>
+                <ngb-pagination class="flex-wrap" [collectionSize]="120" [(page)]="advPage" [maxSize]="5" [rotate]="true" [ellipses]="false"
+                    [boundaryLinks]="true"></ngb-pagination>
+
+                <hr>
+
+                <pre>Current page: {{advPage}}</pre>
+                <!-- pagination-wrapper -->
+                <!---Prism Pre code-->
+                <figure class="highlight mb-0" id="element1">
+                    <ul ngbNav #nav2="ngbNav" class="nav nav-tabs">
+                        <li [ngbNavItem]="1">
+                            <a ngbNavLink class="html-code"><i class="las la-code mr-2"></i> HTML</a>
+                            <ng-template ngbNavContent>
+                                <pre><code [highlight]="html2"></code></pre>
+                            </ng-template>
+                        </li>
+                        <li [ngbNavItem]="2">
+                            <a ngbNavLink class="html-code">TS</a>
+                            <ng-template ngbNavContent>
+                                <pre><code [highlight]="ts2"></code></pre>
+                            </ng-template>
+                        </li>
+                        <div ngxClipboard class="clipboard-icon ms-auto my-auto"  placement="top"
+                        ngbTooltip="Copy To Clipboard"><i class="las la-paste"></i></div>
+                    </ul>
+                    <div [ngbNavOutlet]="nav2"></div>
+                    
+                    
+                </figure>
+                <!---Prism Pre code-->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Row -->
+
+<!-- Row -->
+<div class="row">
+    <div class="col-md-12 col-xl-6">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Custom links</h3>
+            </div>
+            <div class="card-body ">
+                <p class="fw-semibold">A pagination with customized links:</p>
+                <ngb-pagination class="flex-wrap"  [collectionSize]="70" [(page)]="alphabetpage" aria-label="Custom pagination">
+                    <ng-template ngbPaginationPrevious>Prev</ng-template>
+                    <ng-template ngbPaginationNext>Next</ng-template>
+                    <ng-template ngbPaginationNumber let-p>{{ getPageSymbol(p) }}</ng-template>
+                </ngb-pagination>
+                <hr>
+
+                <!---Prism Pre code-->
+                <figure class="highlight mb-0" id="element1">
+                    <ul ngbNav #nav3="ngbNav" class="nav nav-tabs">
+                        <li [ngbNavItem]="1">
+                            <a ngbNavLink class="html-code"><i class="las la-code mr-2"></i> HTML</a>
+                            <ng-template ngbNavContent>
+                                <pre><code [highlight]="html3"></code></pre>
+                            </ng-template>
+                        </li>
+                        <li [ngbNavItem]="2">
+                            <a ngbNavLink class="html-code">TS</a>
+                            <ng-template ngbNavContent>
+                                <pre><code [highlight]="ts3"></code></pre>
+                            </ng-template>
+                        </li>
+                        <div ngxClipboard class="clipboard-icon ms-auto my-auto"  placement="top"
+                        ngbTooltip="Copy To Clipboard"><i class="las la-paste"></i></div>
+                    </ul>
+                    <div [ngbNavOutlet]="nav3"></div>
+                    
+                    
+                </figure>
+                <!---Prism Pre code-->
+            </div>
+            <!-- pagination-wrapper -->
+        </div>
+        <!-- section-wrapper -->
+    </div>
+    <div class="col-md-12 col-xl-6">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Pagination size</h3>
+            </div>
+            <div class="card-body">
+                <ngb-pagination  class="flex-wrap" [collectionSize]="50" [(page)]="currentPage" size="lg"></ngb-pagination>
+                <ngb-pagination class="flex-wrap"  [collectionSize]="50" [(page)]="currentPage"></ngb-pagination>
+                <ngb-pagination class="flex-wrap"  [collectionSize]="50" [(page)]="currentPage" size="sm"></ngb-pagination>
+                <!---Prism Pre code-->
+                <figure class="highlight mb-0" id="element1">
+                    <ul ngbNav #nav4="ngbNav" class="nav nav-tabs">
+                        <li [ngbNavItem]="1">
+                            <a ngbNavLink class="html-code"><i class="las la-code mr-2"></i> HTML</a>
+                            <ng-template ngbNavContent>
+                                <pre><code [highlight]="html4"></code></pre>
+                            </ng-template>
+                        </li>
+                        <li [ngbNavItem]="2">
+                            <a ngbNavLink class="html-code">TS</a>
+                            <ng-template ngbNavContent>
+                                <pre><code [highlight]="ts4"></code></pre>
+                            </ng-template>
+                        </li>
+                        <div ngxClipboard class="clipboard-icon ms-auto my-auto"  placement="top"
+                        ngbTooltip="Copy To Clipboard"><i class="las la-paste"></i></div>
+                    </ul>
+                    <div [ngbNavOutlet]="nav4"></div>
+                    
+                    
+                </figure>
+                <!---Prism Pre code-->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Row -->
+
+<!-- Row -->
+<div class="row">
+    <div class="col-md-12 col-xl-6">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Pagination alignment</h3>
+            </div>
+            <div class="card-body">
+                <p class="fw-semibold">Change the alignment of pagination components with flexbox utilities.</p>
+                <ngb-pagination class="d-flex justify-content-start" [collectionSize]="70" [(page)]="alignPage">
+                </ngb-pagination>
+                <ngb-pagination class="d-flex justify-content-center" [collectionSize]="70" [(page)]="alignPage">
+                </ngb-pagination>
+                <ngb-pagination class="d-flex justify-content-end" [collectionSize]="70" [(page)]="alignPage">
+                </ngb-pagination>
+                <!---Prism Pre code-->
+                <figure class="highlight mb-0" id="element1">
+                    <ul ngbNav #nav5="ngbNav" class="nav nav-tabs">
+                        <li [ngbNavItem]="1">
+                            <a ngbNavLink class="html-code"><i class="las la-code mr-2"></i> HTML</a>
+                            <ng-template ngbNavContent>
+                                <pre><code [highlight]="html5"></code></pre>
+                            </ng-template>
+                        </li>
+                        <li [ngbNavItem]="2">
+                            <a ngbNavLink class="html-code">TS</a>
+                            <ng-template ngbNavContent>
+                                <pre><code [highlight]="ts5"></code></pre>
+                            </ng-template>
+                        </li>
+                        <div ngxClipboard class="clipboard-icon ms-auto my-auto"  placement="top"
+                        ngbTooltip="Copy To Clipboard"><i class="las la-paste"></i></div>
+                    </ul>
+                    <div [ngbNavOutlet]="nav5"></div>
+                    
+                    
+                </figure>
+                <!---Prism Pre code-->
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12 col-xl-6">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Pagination left alignment</h3>
+            </div>
+            <div class="card-body">
+                <p class="fw-semibold">Pagination control can be disabled:</p>
+                <ngb-pagination [collectionSize]="70" [(page)]="page" [disabled]='isDisabled'></ngb-pagination>
+                <hr>
+                <button class="btn btn-sm btn-outline-primary" (click)="toggleDisabled()">
+                    Toggle disabled
+                </button>
+                <!---Prism Pre code-->
+                <figure class="highlight mb-0" id="element1">
+                    <ul ngbNav #nav6="ngbNav" class="nav nav-tabs">
+                        <li [ngbNavItem]="1">
+                            <a ngbNavLink class="html-code"><i class="las la-code mr-2"></i> HTML</a>
+                            <ng-template ngbNavContent>
+                                <pre><code [highlight]="html6"></code></pre>
+                            </ng-template>
+                        </li>
+                        <li [ngbNavItem]="2">
+                            <a ngbNavLink class="html-code">TS</a>
+                            <ng-template ngbNavContent>
+                                <pre><code [highlight]="ts6"></code></pre>
+                            </ng-template>
+                        </li>
+                        <div ngxClipboard class="clipboard-icon ms-auto my-auto"  placement="top"
+                        ngbTooltip="Copy To Clipboard"><i class="las la-paste"></i></div>
+                    </ul>
+                    <div [ngbNavOutlet]="nav6"></div>
+                    
+                    
+                </figure>
+                <!---Prism Pre code-->
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12 col-xl-6">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Global configuration</h3>
+            </div>
+            <div class="card-body">
+                <p class="fw-semibold">This pagination uses custom default values</p>
+                <ngb-pagination [collectionSize]="70" [(page)]="globlePage"></ngb-pagination>
+                <!---Prism Pre code-->
+                <figure class="highlight mb-0" id="element1">
+                    <ul ngbNav #nav7="ngbNav" class="nav nav-tabs">
+                        <li [ngbNavItem]="1">
+                            <a ngbNavLink class="html-code"><i class="las la-code mr-2"></i> HTML</a>
+                            <ng-template ngbNavContent>
+                                <pre><code [highlight]="html7"></code></pre>
+                            </ng-template>
+                        </li>
+                        <li [ngbNavItem]="2">
+                            <a ngbNavLink class="html-code">TS</a>
+                            <ng-template ngbNavContent>
+                                <pre><code [highlight]="ts7"></code></pre>
+                            </ng-template>
+                        </li>
+                        <div ngxClipboard class="clipboard-icon ms-auto my-auto"  placement="top"
+                        ngbTooltip="Copy To Clipboard"><i class="las la-paste"></i></div>
+                    </ul>
+                    <div [ngbNavOutlet]="nav7"></div>
+                    
+                    
+                </figure>
+                <!---Prism Pre code-->
+            </div>
+            </div>
+    </div>
+    
+</div>
+<!-- End  Row -->

@@ -1,0 +1,284 @@
+<!--Page header-->
+<app-page-header [title]="'Popover'"  [icon]="'server'"  [title1]="'Elements'" [activeitem]="'Popover'"></app-page-header>
+
+<!--End Page header-->
+
+<!-- Row -->
+<div class="row">
+    <div class="col-lg-12">
+        <!--div-->
+        <div class="card mb-4" id="popover">
+            <div class="card-header">
+                <div class="card-title">
+                    Default Popover
+                </div>
+            </div>
+            <div class="card-body">
+
+                <div class="form-label  mb-2">
+                    Static Example
+                </div>
+                <div class="popover-static-demo mb-4 border br-3 pb-6">
+                    <div class="row row-sm">
+                        <div class="col-md-6 mt-4">
+                            <div class="popover bs-popover-top">
+                                <div class="popover-arrow"></div>
+                                <h3 class="popover-header">Popover top</h3>
+                                <div class="popover-body">
+                                    <p>Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mt-4">
+                            <div class="popover bs-popover-bottom">
+                                <div class="popover-arrow"></div>
+                                <h3 class="popover-header">Popover Bottom</h3>
+                                <div class="popover-body">
+                                    <p>Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mt-4">
+                            <div class="popover bs-popover-start">
+                                <div class="popover-arrow"></div>
+                                <h3 class="popover-header">Popover Left</h3>
+                                <div class="popover-body">
+                                    <p>Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mt-4">
+                            <div class="popover bs-popover-end">
+                                <div class="popover-arrow"></div>
+                                <h3 class="popover-header">Popover Right</h3>
+                                <div class="popover-body">
+                                    <p>Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-label mb-2">
+                    Example
+                </div>
+                <div class="bg-light p-3 border br-3">
+                    <div class="row row-sm text-center">
+                        <div class="col-sm-6 col-xl-3  mt-2 mb-2">
+                            <button class="btn btn-primary"container="button" ngbPopover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." placement="top" popover-color="default" toggle="popover" popoverTitle="Popover top" >Click me</button>
+                        </div>
+                        <div class="col-sm-6 col-xl-3  mt-2 mb-2">
+                            <button class="btn btn-success" container="button" ngbPopover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." placement="left" popover-color="default" toggle="popover" popoverTitle="Popover Left" >Click me</button>
+                        </div>
+                        <div class="col-sm-6 col-xl-3  mt-2 mb-2">
+                            <button class="btn btn-danger" container="button" ngbPopover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." placement="right" popover-color="default" toggle="popover" popoverTitle="Popover Right" >Click me</button>
+                        </div>
+                        <div class="col-sm-6 col-xl-3  mt-2 mb-2">
+                            <button class="btn btn-warning" container="button" ngbPopover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." placement="bottom" popover-color="default" toggle="popover" popoverTitle="Popover Bottom" >Click me</button>
+                        </div>
+                    </div>
+                </div>
+                <!---Prism Pre code-->
+                <figure class="highlight mb-0" id="element1">
+                    <ul ngbNav #nav1="ngbNav" class="nav nav-tabs">
+                        <li [ngbNavItem]="1">
+                            <a ngbNavLink class="html-code"><i class="las la-code mr-2"></i> HTML</a>
+                            <ng-template ngbNavContent>
+                                <pre><code [highlight]="html1"></code></pre>
+                            </ng-template>
+                        </li>
+                        <li [ngbNavItem]="2">
+                            <a ngbNavLink class="html-code">TS</a>
+                            <ng-template ngbNavContent>
+                                <pre><code [highlight]="ts1"></code></pre>
+                            </ng-template>
+                        </li>
+                        <div ngxClipboard class="clipboard-icon ms-auto my-auto"  placement="top"
+                        ngbTooltip="Copy To Clipboard"><i class="las la-paste"></i></div>
+                    </ul>
+                    <div [ngbNavOutlet]="nav1"></div>
+
+
+                </figure>
+                <!---Prism Pre code-->
+            </div>
+
+        </div>
+        <!--/div-->
+        <!--div-->
+        <div class="card mb-4" id="popover1">
+            <div class="card-header">
+                <div class="card-title">
+                    Colored Head Popover
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="form-label mb-2">
+                    Static Example
+                </div>
+                <div class="popover-static-demo mb-4">
+                    <div class="row row-sm">
+                        <div class="col-md-6">
+                            <div class="popover popover-head-primary bs-popover-top">
+                                <div class="arrow"></div>
+                                <h3 class="popover-header">Popover top</h3>
+                                <div class="popover-body">
+                                    <p>Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare
+                                        sem lacinia quam venenatis vestibulum.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mt-5 mt-md-0">
+                            <div class="popover popover-head-secondary bs-popover-top">
+                                <div class="arrow"></div>
+                                <h3 class="popover-header">Popover Bottom</h3>
+                                <div class="popover-body">
+                                    <p>Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare
+                                        sem lacinia quam venenatis vestibulum.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-label mb-2">
+                    Example
+                </div>
+                <div class="px-4 bg-light border br-3 pt-4 pb-5">
+                    <div class="row row-sm text-center">
+                        <div class="col-sm-6 col-lg-3  mt-3 text-center">
+                            <button class="btn btn-secondary" container="body"
+                                ngbPopover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." placement="top"
+                                popoverClass="my-custom-class" popoverTitle="Popover top" type="button">Click
+                                me</button>
+                        </div>
+                        <div class="col-sm-6 col-lg-3 mt-3 text-center">
+                            <button class="btn btn-secondary" container="body"
+                                ngbPopover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus."
+                                popoverClass="my-custom-header" placement="bottom" popoverTitle="Popover bottom"
+                                type="button">Click me</button>
+                        </div>
+                    </div>
+                </div>
+                <!---Prism Pre code-->
+                <figure class="highlight mb-0" id="element1">
+                    <ul ngbNav #nav2="ngbNav" class="nav nav-tabs">
+                        <li [ngbNavItem]="1">
+                            <a ngbNavLink class="html-code"><i class="las la-code mr-2"></i> HTML</a>
+                            <ng-template ngbNavContent>
+                                <pre><code [highlight]="html2"></code></pre>
+                            </ng-template>
+                        </li>
+                        <li [ngbNavItem]="2">
+                            <a ngbNavLink class="html-code">TS</a>
+                            <ng-template ngbNavContent>
+                                <pre><code [highlight]="ts2"></code></pre>
+                            </ng-template>
+                        </li>
+                        <li [ngbNavItem]="3">
+                            <a ngbNavLink class="html-code">CSS</a>
+                            <ng-template ngbNavContent>
+                                <pre><code [highlight]="css2"></code></pre>
+                            </ng-template>
+                        </li>
+                        <div ngxClipboard class="clipboard-icon ms-auto my-auto"  placement="top"
+                        ngbTooltip="Copy To Clipboard"><i class="las la-paste"></i></div>
+                    </ul>
+                    <div [ngbNavOutlet]="nav2"></div>
+
+
+                </figure>
+                <!---Prism Pre code-->
+            </div>
+
+        </div>
+        <!--/div-->
+        <!--div-->
+        <div class="card" id="popover2">
+            <div class="card-header">
+                <div class="card-title">
+                    Full Colored Popover
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="form-label mb-2">
+                    Static Example
+                </div>
+                <div class="popover-static-demo mb-4 pb-6">
+                    <div class="row row-sm">
+                        <div class="col-md-6 mt-4">
+                            <div class="popover popover-primary bs-popover-top">
+                                <div class="arrow"></div>
+                                <h3 class="popover-header">Popover top</h3>
+                                <div class="popover-body">
+                                    <p>Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare
+                                        sem lacinia quam venenatis vestibulum.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mt-4">
+                            <div class="popover popover-secondary bs-popover-bottom">
+                                <div class="arrow"></div>
+                                <h3 class="popover-header">Popover Bottom</h3>
+                                <div class="popover-body">
+                                    <p>Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare
+                                        sem lacinia quam venenatis vestibulum.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-label mb-2">
+                    Example
+                </div>
+                <div class="px-4 bg-light border br-3 pb-5 pt-4">
+                    <div class="row row-sm text-center">
+                        <div class="col-sm-6 col-lg-3 mt-3">
+                            <button class="btn btn-secondary" container="body"
+                            ngbPopover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus."
+                                placement="top" popoverClass="my-custom-primary" popoverTitle="Popover top"
+                                type="button">Click me
+                            </button>
+                        </div>
+                        <div class="col-sm-6 col-lg-3 mt-3">
+                            <button class="btn btn-secondary" container="body"
+                            ngbPopover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus."
+                                placement="bottom" popoverClass="my-custom-secondary" popoverTitle="Popover bottom"
+                                type="button">Click me</button>
+                        </div>
+                    </div>
+                </div>
+                <!---Prism Pre code-->
+                <figure class="highlight mb-0" id="element1">
+                    <ul ngbNav #nav3="ngbNav" class="nav nav-tabs">
+                        <li [ngbNavItem]="1">
+                            <a ngbNavLink class="html-code"><i class="las la-code mr-2"></i> HTML</a>
+                            <ng-template ngbNavContent>
+                                <pre><code [highlight]="html3"></code></pre>
+                            </ng-template>
+                        </li>
+                        <li [ngbNavItem]="2">
+                            <a ngbNavLink class="html-code">TS</a>
+                            <ng-template ngbNavContent>
+                                <pre><code [highlight]="ts3"></code></pre>
+                            </ng-template>
+                        </li>
+                        <li [ngbNavItem]="3">
+                            <a ngbNavLink class="html-code">CSS</a>
+                            <ng-template ngbNavContent>
+                                <pre><code [highlight]="css3"></code></pre>
+                            </ng-template>
+                        </li>
+                        <div ngxClipboard class="clipboard-icon ms-auto my-auto"  placement="top"
+                        ngbTooltip="Copy To Clipboard"><i class="las la-paste"></i></div>
+                    </ul>
+                    <div [ngbNavOutlet]="nav3"></div>
+
+
+                </figure>
+                <!---Prism Pre code-->
+            </div>
+
+        </div>
+        <!--/div-->
+    </div>
+</div>
+<!-- End Row -->

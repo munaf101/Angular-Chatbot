@@ -1,0 +1,42 @@
+<!--Page header-->
+<app-page-header [title]="'Blog'"  [icon]="'layers'"  [title1]="'Advanced Ui'" [activeitem]="'Blog'"></app-page-header>
+
+<!--End Page header-->
+
+<!-- Row -->
+	<!-- Row -->
+    <div class="row">
+        <div class="col-xl-4 col-lg-6 col-md-12" *ngFor="let cardData of CardData">
+            <div class="card overflow-hidden">
+                <div class="item7-card-img">
+                    <a href="javascript:void(0);"></a>
+                    <img src="{{cardData.img}}" alt="img" class="cover-image w-100">
+                </div>
+                <div class="card-body">
+                    <div class="item7-card-desc d-flex mb-3">
+                        <a href="javascript:void(0);" class="d-flex"><i class="fe fe-calendar fs-16 me-1"></i> {{cardData.date}}</a>
+                        <div class="ms-auto">
+                            <a class="me-0 d-flex" href="javascript:void(0);"><i class="fe fe-message-square fs-16 me-1"></i> {{cardData.comment}}</a>
+                        </div>
+                    </div>
+                    <a href="javascript:void(0);" class="mt-4"><h5 class="font-weight-semibold">{{cardData.cardName}}</h5></a>
+                    <p>{{cardData.cardDescription}} </p>
+                </div>
+                <div class="card-body">
+                    <div class="d-flex align-items-center mt-auto">
+                        <div  ><img class="avatar avatar-md  cover-image me-2" src="{{cardData.avatarImg}}"></div>
+                        <div>
+                            <a routerLink="/pages/profile/profile-1" class="font-weight-semibold">Anna Ogden</a>
+                            <small class="d-block text-muted">2 days ago</small>
+                        </div>
+                        <div class="ms-auto text-muted mt-2">
+                            <a href="javascript:void(0)" class="icon d-none d-md-inline-block ms-3"><i class="fe fe-heart  fs-16 text-icon"></i></a>
+                            <a href="javascript:void(0)" class="icon d-none d-md-inline-block ms-3"><i class="fe fe-thumbs-up  fs-16 text-icon"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+     
+    </div>
+    <!--End Row-->

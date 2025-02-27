@@ -1,0 +1,20 @@
+.ms-menu .tab-menu-heading .tabs-menu1 ul li{
+    min-width: 0;
+    display: initial;
+}
+.chat-conatct-list .option-dots{
+    top: 0;
+}
+
+.chat-conatct-list{
+    max-height: 600px !important;
+}
+.custom-card{
+    height: calc(100vh - 160px);
+}
+.main-chat-body{
+    height:575px;
+}
+.dropdown-toggle::after{
+    display:none;
+}

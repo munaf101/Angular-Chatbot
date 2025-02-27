@@ -1,0 +1,1735 @@
+/* ############### FONTS IMPORT ############### */
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900");
+
+:root {
+    --pr-rgb: 112, 94, 200;
+    --primary-bg-color: #705ec8;
+    --primary-bg-hover: #705ec8fc;
+    --primary-bg-border: #705ec8;
+    --dark-theme: #272d47;
+    --dark-body: #1a1c33;
+    --primary-1: rgba(var(--pr-rgb), 0.1);
+    --primary-2: rgba(var(--pr-rgb), 0.2);
+    --primary-3: rgba(var(--pr-rgb), 0.3);
+    --primary-5: rgba(var(--pr-rgb), 0.5);
+    --primary-8: rgba(var(--pr-rgb), 0.8);
+    --blue: #0162e8;
+    --indigo: #0162e8;
+    --purple: $purple;
+    --pink: $pink;
+    --red: $danger;
+    --orange: $orange;
+    --yellow: $warning;
+    --green: $success;
+    --teal: $teal;
+    --cyan: $info;
+    --white: $white;
+    --gray: $gray-600;
+    --gray-dark: $gray-800;
+    --primary: #0162e8;
+    --secondary: #fb1c52;
+    --success: $success;
+    --info: $info;
+    --warning: $warning;
+    --danger: $danger;
+    --light: $gray-100;
+    --dark: $gray-800;
+    --float-left: left;
+    --float-right: right;
+    --breakpoint-xs: 0;
+    --breakpoint-sm: 576px;
+    --breakpoint-md: 992px;
+    --breakpoint-lg: 992px;
+    --breakpoint-xl: 1200px;
+    --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans",
+        sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+/*Color variables*/
+/*gray variables*/
+/*white variables*/
+/*black variables*/
+/*shadow variables*/
+[dir=rtl] {
+    --float-left: right;
+    --float-right: left;
+}
+
+/* ######## Plugins ######## */
+@keyframes dtb-spinner {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@-o-keyframes dtb-spinner {
+    100% {
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@-ms-keyframes dtb-spinner {
+    100% {
+        -ms-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes dtb-spinner {
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@-moz-keyframes dtb-spinner {
+    100% {
+        -moz-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+div.dt-button-info {
+    position: fixed;
+    top: 50%;
+    inset-inline-start: 50%;
+    width: 400px;
+    margin-block-start: -100px;
+    margin-inline-start: -200px;
+    background-color: white;
+    border: 2px solid #111;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3);
+    border-radius: 3px;
+    text-align: center;
+    z-index: 21;
+}
+
+div.dt-button-info h2 {
+    padding: 0.5em;
+    margin: 0;
+    font-weight: normal;
+    border-block-end: 1px solid #ddd;
+    background-color: #f3f3f3;
+}
+
+div.dt-button-info>div {
+    padding: 1em;
+}
+
+div.dt-button-collection-title {
+    text-align: center;
+    padding: 0.3em 0 0.5em;
+    font-size: 0.9em;
+}
+
+div.dt-button-collection-title:empty {
+    display: none;
+}
+
+div.dt-button-collection {
+    position: absolute;
+    z-index: 2001;
+}
+
+div.dt-button-collection div.dropdown-menu {
+    display: block;
+    z-index: 2002;
+    min-width: 100%;
+}
+
+div.dt-button-collection div.dt-button-collection-title {
+    background-color: white;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+div.dt-button-collection.fixed {
+    position: fixed;
+    top: 50%;
+    inset-inline-start: 50%;
+    margin-inline-start: -75px;
+    border-radius: 0;
+}
+
+div.dt-button-collection.fixed.two-column {
+    margin-inline-start: -200px;
+}
+
+div.dt-button-collection.fixed.three-column {
+    margin-inline-start: -225px;
+}
+
+div.dt-button-collection.fixed.four-column {
+    margin-inline-start: -300px;
+}
+
+div.dt-button-collection> :last-child {
+    display: block !important;
+    -webkit-column-gap: 8px;
+    -moz-column-gap: 8px;
+    -ms-column-gap: 8px;
+    -o-column-gap: 8px;
+    column-gap: 8px;
+}
+
+div.dt-button-collection> :last-child>* {
+    -webkit-column-break-inside: avoid;
+    break-inside: avoid;
+}
+
+div.dt-button-collection.two-column {
+    width: 400px;
+}
+
+div.dt-button-collection.two-column> :last-child {
+    padding-block-end: 1px;
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    -ms-column-count: 2;
+    -o-column-count: 2;
+    column-count: 2;
+}
+
+div.dt-button-collection.three-column {
+    width: 450px;
+}
+
+div.dt-button-collection.three-column> :last-child {
+    padding-block-end: 1px;
+    -webkit-column-count: 3;
+    -moz-column-count: 3;
+    -ms-column-count: 3;
+    -o-column-count: 3;
+    column-count: 3;
+}
+
+div.dt-button-collection.four-column {
+    width: 600px;
+}
+
+div.dt-button-collection.four-column> :last-child {
+    padding-block-end: 1px;
+    -webkit-column-count: 4;
+    -moz-column-count: 4;
+    -ms-column-count: 4;
+    -o-column-count: 4;
+    column-count: 4;
+}
+
+div.dt-button-collection .dt-button {
+    border-radius: 0;
+}
+
+div.dt-button-collection.fixed {
+    max-width: none;
+}
+
+div.dt-button-collection.fixed:before,
+div.dt-button-collection.fixed:after {
+    display: none;
+}
+
+div.dt-button-background {
+    position: fixed;
+    top: 0;
+    inset-inline-start: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+}
+
+div.dt-buttons button.btn.processing,
+div.dt-buttons div.btn.processing,
+div.dt-buttons a.btn.processing {
+    color: rgba(0, 0, 0, 0.2);
+}
+
+div.dt-buttons button.btn.processing:after,
+div.dt-buttons div.btn.processing:after,
+div.dt-buttons a.btn.processing:after {
+    position: absolute;
+    top: 50%;
+    inset-inline-start: 50%;
+    width: 16px;
+    height: 16px;
+    margin: -8px 0 0 -8px;
+    box-sizing: border-box;
+    display: block;
+    content: " ";
+    border: 2px solid #282828;
+    border-radius: 50%;
+    border-inline-start-color: transparent;
+    border-inline-end-color: transparent;
+    animation: dtb-spinner 1500ms infinite linear;
+    -o-animation: dtb-spinner 1500ms infinite linear;
+    -ms-animation: dtb-spinner 1500ms infinite linear;
+    -webkit-animation: dtb-spinner 1500ms infinite linear;
+    -moz-animation: dtb-spinner 1500ms infinite linear;
+}
+
+@media screen and (max-width: 767px) {
+    div.dt-buttons {
+        float: none;
+        width: 100%;
+        text-align: center;
+        margin-block-end: 0.5em;
+    }
+
+    div.dt-buttons a.btn {
+        float: none;
+    }
+}
+
+/* required styles */
+.leaflet-pane,
+.leaflet-tile,
+.leaflet-marker-icon,
+.leaflet-marker-shadow,
+.leaflet-tile-container {
+    position: absolute;
+    inset-inline-start: 0;
+    top: 0;
+}
+
+.leaflet-pane>svg,
+.leaflet-pane>canvas {
+    position: absolute;
+    inset-inline-start: 0;
+    top: 0;
+}
+
+.leaflet-zoom-box,
+.leaflet-image-layer,
+.leaflet-layer {
+    position: absolute;
+    inset-inline-start: 0;
+    top: 0;
+}
+
+.leaflet-container {
+    overflow: hidden;
+}
+
+.leaflet-tile,
+.leaflet-marker-icon,
+.leaflet-marker-shadow {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+/* Safari renders non-retina tile on retina better with this, but Chrome is worse */
+.leaflet-safari .leaflet-tile {
+    image-rendering: -webkit-optimize-contrast;
+}
+
+.leaflet-safari .leaflet-tile-container {
+    width: 1600px;
+    height: 1600px;
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+}
+
+/* hack that prevents hw layers "stretching" when loading new tiles */
+.leaflet-marker-icon,
+.leaflet-marker-shadow {
+    display: block;
+}
+
+/* .leaflet-container svg: reset svg max-width decleration shipped in Joomla! (joomla.org) 3.x */
+/* .leaflet-container img: map is broken in FF if you have max-width: 100% on tiles */
+.leaflet-container {
+    -webkit-tap-highlight-color: transparent;
+}
+
+.leaflet-container .leaflet-overlay-pane svg,
+.leaflet-container .leaflet-marker-pane img,
+.leaflet-container .leaflet-shadow-pane img,
+.leaflet-container .leaflet-tile-pane img,
+.leaflet-container img.leaflet-image-layer,
+.leaflet-container .leaflet-tile {
+    max-width: none !important;
+    max-height: none !important;
+}
+
+.leaflet-container.leaflet-touch-zoom {
+    -ms-touch-action: pan-x pan-y;
+    touch-action: pan-x pan-y;
+}
+
+.leaflet-container.leaflet-touch-drag {
+    -ms-touch-action: pinch-zoom;
+    /* Fallback for FF which doesn't support pinch-zoom */
+    touch-action: none;
+    touch-action: pinch-zoom;
+}
+
+.leaflet-container.leaflet-touch-drag.leaflet-touch-zoom {
+    -ms-touch-action: none;
+    touch-action: none;
+}
+
+.leaflet-container a {
+    -webkit-tap-highlight-color: rgba(51, 181, 229, 0.4);
+}
+
+.leaflet-tile {
+    filter: inherit;
+    visibility: hidden;
+}
+
+.leaflet-tile-loaded {
+    visibility: inherit;
+}
+
+.leaflet-zoom-box {
+    width: 0;
+    height: 0;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    z-index: 800;
+}
+
+/* workaround for https://bugzilla.mozilla.org/show_bug.cgi?id=888319 */
+.leaflet-overlay-pane svg {
+    -moz-user-select: none;
+    user-select: none;
+}
+
+.leaflet-pane {
+    z-index: 1;
+}
+
+.leaflet-tile-pane {
+    z-index: 200;
+}
+
+.leaflet-overlay-pane {
+    z-index: 400;
+}
+
+.leaflet-shadow-pane {
+    z-index: 500;
+}
+
+.leaflet-marker-pane {
+    z-index: 600;
+}
+
+.leaflet-tooltip-pane {
+    z-index: 650;
+}
+
+.leaflet-popup-pane {
+    z-index: 700;
+}
+
+.leaflet-map-pane canvas {
+    z-index: 100;
+}
+
+.leaflet-map-pane svg {
+    z-index: 200;
+}
+
+.leaflet-vml-shape {
+    width: 1px;
+    height: 1px;
+}
+
+.lvml {
+    behavior: url(#default#VML);
+    display: inline-block;
+    position: absolute;
+}
+
+/* control positioning */
+.leaflet-control {
+    position: relative;
+    z-index: 1;
+    pointer-events: visiblePainted;
+    /* IE 9-10 doesn't have auto */
+    pointer-events: auto;
+}
+
+.leaflet-top,
+.leaflet-bottom {
+    position: absolute;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.leaflet-top {
+    top: 0;
+}
+
+.leaflet-right {
+    inset-inline-end: 0;
+}
+
+.leaflet-bottom {
+    bottom: 0;
+}
+
+.leaflet-left {
+    inset-inline-start: 0;
+}
+
+.leaflet-control {
+    float: var(--float-left);
+    clear: both;
+}
+
+.leaflet-right .leaflet-control {
+    float: var(--float-right);
+}
+
+.leaflet-top .leaflet-control {
+    margin-block-start: 10px;
+}
+
+.leaflet-bottom .leaflet-control {
+    margin-block-end: 10px;
+}
+
+.leaflet-left .leaflet-control {
+    margin-inline-start: 10px;
+}
+
+.leaflet-right .leaflet-control {
+    margin-inline-end: 10px;
+}
+
+/* zoom and fade animations */
+.leaflet-fade-anim .leaflet-tile {
+    will-change: opacity;
+}
+
+.leaflet-fade-anim .leaflet-popup {
+    opacity: 0;
+    -webkit-transition: opacity 0.2s linear;
+    -moz-transition: opacity 0.2s linear;
+    transition: opacity 0.2s linear;
+}
+
+.leaflet-fade-anim .leaflet-map-pane .leaflet-popup {
+    opacity: 1;
+}
+
+.leaflet-zoom-animated {
+    -webkit-transform-origin: 0 0;
+    -ms-transform-origin: 0 0;
+    transform-origin: 0 0;
+}
+
+.leaflet-zoom-anim .leaflet-zoom-animated {
+    will-change: transform;
+    -webkit-transition: -webkit-transform 0.25s cubic-bezier(0, 0, 0.25, 1);
+    -moz-transition: -moz-transform 0.25s cubic-bezier(0, 0, 0.25, 1);
+    transition: transform 0.25s cubic-bezier(0, 0, 0.25, 1);
+}
+
+.leaflet-zoom-anim .leaflet-tile {
+    -webkit-transition: none;
+    -moz-transition: none;
+    transition: none;
+}
+
+.leaflet-pan-anim .leaflet-tile {
+    -webkit-transition: none;
+    -moz-transition: none;
+    transition: none;
+}
+
+.leaflet-zoom-anim .leaflet-zoom-hide {
+    visibility: hidden;
+}
+
+/* cursors */
+.leaflet-interactive {
+    cursor: pointer;
+}
+
+.leaflet-grab {
+    cursor: -webkit-grab;
+    cursor: -moz-grab;
+    cursor: grab;
+}
+
+.leaflet-crosshair {
+    cursor: crosshair;
+}
+
+.leaflet-crosshair .leaflet-interactive {
+    cursor: crosshair;
+}
+
+.leaflet-popup-pane,
+.leaflet-control {
+    cursor: auto;
+}
+
+.leaflet-dragging .leaflet-grab {
+    cursor: move;
+    cursor: -webkit-grabbing;
+    cursor: -moz-grabbing;
+    cursor: grabbing;
+}
+
+.leaflet-dragging .leaflet-grab .leaflet-interactive {
+    cursor: move;
+    cursor: -webkit-grabbing;
+    cursor: -moz-grabbing;
+    cursor: grabbing;
+}
+
+.leaflet-dragging .leaflet-marker-draggable {
+    cursor: move;
+    cursor: -webkit-grabbing;
+    cursor: -moz-grabbing;
+    cursor: grabbing;
+}
+
+/* marker & overlays interactivity */
+.leaflet-marker-icon,
+.leaflet-marker-shadow,
+.leaflet-image-layer,
+.leaflet-pane>svg path,
+.leaflet-tile-container {
+    pointer-events: none;
+}
+
+.leaflet-marker-icon.leaflet-interactive,
+.leaflet-image-layer.leaflet-interactive,
+.leaflet-pane>svg path.leaflet-interactive {
+    pointer-events: visiblePainted;
+    /* IE 9-10 doesn't have auto */
+    pointer-events: auto;
+}
+
+/* visual tweaks */
+.leaflet-container {
+    background: #ddd;
+    outline: 0;
+}
+
+.leaflet-container a {
+    color: #0078a8;
+}
+
+.leaflet-container a.leaflet-active {
+    outline: 2px solid orange;
+}
+
+.leaflet-zoom-box {
+    border: 2px dotted #38f;
+    background: rgba(255, 255, 255, 0.5);
+}
+
+/* general typography */
+.leaflet-container {
+    font: 12px/1.5 "Helvetica Neue", Arial, Helvetica, sans-serif;
+}
+
+/* general toolbar styles */
+.leaflet-bar {
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.65);
+    border-radius: 4px;
+}
+
+.leaflet-bar a {
+    background-color: #fff;
+    border-block-end: 1px solid #ccc;
+    width: 26px;
+    height: 26px;
+    line-height: 26px;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: #000 !important;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    display: block;
+}
+
+.leaflet-bar a:hover {
+    background-color: #fff;
+    border-block-end: 1px solid #ccc;
+    width: 26px;
+    height: 26px;
+    line-height: 26px;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+}
+
+.leaflet-control-layers-toggle {
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    display: block;
+}
+
+.leaflet-bar a:hover {
+    background-color: #f4f4f4;
+}
+
+.leaflet-bar a:first-child {
+    border-start-start-radius: 4px;
+    border-start-end-radius: 4px;
+}
+
+.leaflet-bar a:last-child {
+    border-end-start-radius: 4px;
+    border-end-end-radius: 4px;
+    border-block-end: none;
+}
+
+.leaflet-bar a.leaflet-disabled {
+    cursor: default;
+    background-color: #f4f4f4;
+    color: #bbb;
+}
+
+.leaflet-touch .leaflet-bar a {
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+}
+
+.leaflet-touch .leaflet-bar a:first-child {
+    border-start-start-radius: 2px;
+    border-start-end-radius: 2px;
+}
+
+.leaflet-touch .leaflet-bar a:last-child {
+    border-end-start-radius: 2px;
+    border-end-end-radius: 2px;
+}
+
+/* zoom control */
+.leaflet-control-zoom-in,
+.leaflet-control-zoom-out {
+    font: bold 18px "Lucida Console", Monaco, monospace;
+    text-indent: 1px;
+}
+
+.leaflet-touch .leaflet-control-zoom-in,
+.leaflet-touch .leaflet-control-zoom-out {
+    font-size: 22px;
+}
+
+/* layers control */
+.leaflet-control-layers {
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.4);
+    background: #fff;
+    border-radius: 5px;
+}
+
+.leaflet-control-layers-toggle {
+    background-image: url(../plugins/leaflet/images/layers.png);
+    width: 36px;
+    height: 36px;
+}
+
+.leaflet-retina .leaflet-control-layers-toggle {
+    background-image: url(../plugins/leaflet/images/layers-2x.png);
+    background-size: 26px 26px;
+}
+
+.leaflet-touch .leaflet-control-layers-toggle {
+    width: 44px;
+    height: 44px;
+}
+
+.leaflet-control-layers .leaflet-control-layers-list {
+    display: none;
+}
+
+.leaflet-control-layers-expanded {
+    padding: 6px 10px 6px 6px;
+    color: #333;
+    background: #fff;
+}
+
+.leaflet-control-layers-expanded .leaflet-control-layers-toggle {
+    display: none;
+}
+
+.leaflet-control-layers-expanded .leaflet-control-layers-list {
+    display: block;
+    position: relative;
+}
+
+.leaflet-control-layers-scrollbar {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding-inline-end: 5px;
+}
+
+.leaflet-control-layers-selector {
+    margin-block-start: 2px;
+    position: relative;
+    top: 1px;
+}
+
+.leaflet-control-layers label {
+    display: block;
+}
+
+.leaflet-control-layers-separator {
+    height: 0;
+    border-block-start: 1px solid #ddd;
+    margin: 5px -10px 5px -6px;
+}
+
+/* Default icon URLs */
+.leaflet-default-icon-path {
+    background-image: url(../plugins/leaflet/images/marker-icon.png);
+}
+
+/* attribution and scale controls */
+.leaflet-container .leaflet-control-attribution {
+    background: #fff;
+    background: rgba(255, 255, 255, 0.7);
+    margin: 0;
+}
+
+.leaflet-control-attribution,
+.leaflet-control-scale-line {
+    padding: 0 5px;
+    color: #333;
+}
+
+.leaflet-control-attribution a {
+    text-decoration: none;
+}
+
+.leaflet-control-attribution a:hover {
+    text-decoration: underline;
+}
+
+.leaflet-container .leaflet-control-attribution,
+.leaflet-container .leaflet-control-scale {
+    font-size: 11px;
+}
+
+.leaflet-left .leaflet-control-scale {
+    margin-inline-start: 5px;
+}
+
+.leaflet-bottom .leaflet-control-scale {
+    margin-block-end: 5px;
+}
+
+.leaflet-control-scale-line {
+    border: 2px solid #777;
+    border-block-start: none;
+    line-height: 1.1;
+    padding: 2px 5px 1px;
+    font-size: 11px;
+    white-space: nowrap;
+    overflow: hidden;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    background: #fff;
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.leaflet-control-scale-line:not(:first-child) {
+    border-block-start: 2px solid #777;
+    border-block-end: none;
+    margin-block-start: -2px;
+}
+
+.leaflet-control-scale-line:not(:first-child):not(:last-child) {
+    border-block-end: 2px solid #777;
+}
+
+.leaflet-touch .leaflet-control-attribution,
+.leaflet-touch .leaflet-control-layers,
+.leaflet-touch .leaflet-bar {
+    box-shadow: none;
+}
+
+.leaflet-touch .leaflet-control-layers,
+.leaflet-touch .leaflet-bar {
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    background-clip: padding-box;
+}
+
+/* popup */
+.leaflet-popup {
+    position: absolute;
+    text-align: center;
+    margin-block-end: 20px;
+}
+
+.leaflet-popup-content-wrapper {
+    padding: 1px;
+    text-align: start;
+    border-radius: 12px;
+}
+
+.leaflet-popup-content {
+    margin: 13px 19px;
+    line-height: 1.4;
+}
+
+.leaflet-popup-content p {
+    margin: 18px 0;
+}
+
+.leaflet-popup-tip-container {
+    width: 40px;
+    height: 20px;
+    position: absolute;
+    inset-inline-start: 50%;
+    margin-inline-start: -20px;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.leaflet-popup-tip {
+    width: 17px;
+    height: 17px;
+    padding: 1px;
+    margin: -10px auto 0;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.leaflet-popup-content-wrapper,
+.leaflet-popup-tip {
+    background: white;
+    color: #333;
+    box-shadow: 0 3px 14px rgba(0, 0, 0, 0.4);
+}
+
+.leaflet-container a.leaflet-popup-close-button {
+    position: absolute;
+    top: 0;
+    inset-inline-end: 0;
+    padding: 4px 4px 0 0;
+    border: none;
+    text-align: center;
+    width: 18px;
+    height: 14px;
+    font: 16px/14px Tahoma, Verdana, sans-serif;
+    color: #c3c3c3;
+    text-decoration: none;
+    font-weight: bold;
+    background: transparent;
+}
+
+.leaflet-container a.leaflet-popup-close-button:hover {
+    color: #999;
+}
+
+.leaflet-popup-scrolled {
+    overflow: auto;
+    border-block-end: 1px solid #ddd;
+    border-block-start: 1px solid #ddd;
+}
+
+.leaflet-oldie .leaflet-popup-content-wrapper {
+    zoom: 1;
+}
+
+.leaflet-oldie .leaflet-popup-tip {
+    width: 24px;
+    margin: 0 auto;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Matrix(M11=0.70710678, M12=0.70710678, M21=-0.70710678, M22=0.70710678)";
+    filter: progid:DXImageTransform.Microsoft.Matrix(M11=0.70710678, M12=0.70710678, M21=-0.70710678, M22=0.70710678);
+}
+
+.leaflet-oldie .leaflet-popup-tip-container {
+    margin-block-start: -1px;
+}
+
+.leaflet-oldie .leaflet-control-zoom,
+.leaflet-oldie .leaflet-control-layers,
+.leaflet-oldie .leaflet-popup-content-wrapper,
+.leaflet-oldie .leaflet-popup-tip {
+    border: 1px solid #999;
+}
+
+/* div icon */
+.leaflet-div-icon {
+    background: #fff;
+    border: 1px solid #666;
+}
+
+/* Tooltip */
+/* Base styles for the element that has a tooltip */
+.leaflet-tooltip {
+    position: absolute;
+    padding: 6px;
+    background-color: #fff;
+    border: 1px solid #fff;
+    border-radius: 3px;
+    color: #222;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    pointer-events: none;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+.leaflet-tooltip.leaflet-clickable {
+    cursor: pointer;
+    pointer-events: auto;
+}
+
+.leaflet-tooltip-top:before,
+.leaflet-tooltip-bottom:before,
+.leaflet-tooltip-inset-inline-start:before,
+.leaflet-tooltip-inset-inline-end:before {
+    position: absolute;
+    pointer-events: none;
+    border: 6px solid transparent;
+    background: transparent;
+    content: "";
+}
+
+/* Directions */
+.leaflet-tooltip-bottom {
+    margin-block-start: 6px;
+}
+
+.leaflet-tooltip-top {
+    margin-block-start: -6px;
+}
+
+.leaflet-tooltip-bottom:before {
+    inset-inline-start: 50%;
+    margin-inline-start: -6px;
+}
+
+.leaflet-tooltip-top:before {
+    inset-inline-start: 50%;
+    margin-inline-start: -6px;
+    bottom: 0;
+    margin-block-end: -12px;
+    border-block-start-color: #fff;
+}
+
+.leaflet-tooltip-bottom:before {
+    top: 0;
+    margin-block-start: -12px;
+    margin-inline-start: -6px;
+    border-block-end-color: #fff;
+}
+
+.leaflet-tooltip-left {
+    margin-inline-start: -6px;
+}
+
+.leaflet-tooltip-right {
+    margin-inline-start: 6px;
+}
+
+.leaflet-tooltip-inset-inline-start:before,
+.leaflet-tooltip-inset-inline-end:before {
+    top: 50%;
+    margin-block-start: -6px;
+}
+
+.leaflet-tooltip-inset-inline-start:before {
+    inset-inline-end: 0;
+    margin-inline-end: -12px;
+    border-inline-start-color: #fff;
+}
+
+.leaflet-tooltip-inset-inline-end:before {
+    inset-inline-start: 0;
+    margin-inline-start: -12px;
+    border-inline-end-color: #fff;
+}
+
+/**
+ * Owl Carousel v2.3.4
+ * Copyright 2013-2018 David Deutsch
+ * Licensed under: SEE LICENSE IN https://github.com/OwlCarousel2/OwlCarousel2/blob/master/LICENSE
+ */
+.owl-carousel {
+    display: none;
+    width: 100%;
+    -webkit-tap-highlight-color: transparent;
+    position: relative;
+    z-index: 1;
+}
+
+.owl-carousel .owl-stage {
+    position: relative;
+    -ms-touch-action: pan-Y;
+    touch-action: manipulation;
+    -moz-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.owl-carousel .owl-stage:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+
+.owl-carousel .owl-stage-outer {
+    position: relative;
+    overflow: hidden;
+    -webkit-transform: translate3d(0px, 0px, 0px);
+    transform: translate3d(0px, 0px, 0px);
+}
+
+.owl-carousel .owl-wrapper {
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+}
+
+.owl-carousel .owl-item {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    position: relative;
+    min-height: 1px;
+    float: var(--float-left);
+    -webkit-backface-visibility: hidden;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+}
+
+.owl-carousel .owl-item img {
+    display: block;
+}
+
+.owl-carousel .owl-nav.disabled,
+.owl-carousel .owl-dots.disabled {
+    display: none;
+}
+
+.owl-carousel .owl-nav .owl-prev,
+.owl-carousel .owl-nav .owl-next {
+    cursor: pointer;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.owl-carousel .owl-dot {
+    cursor: pointer;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.owl-carousel .owl-nav button.owl-prev,
+.owl-carousel .owl-nav button.owl-next {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0 !important;
+    font: inherit;
+}
+
+.owl-carousel button.owl-dot {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0 !important;
+    font: inherit;
+}
+
+.owl-carousel.owl-loaded {
+    display: block;
+}
+
+.owl-carousel.owl-loading {
+    opacity: 0;
+    display: block;
+}
+
+.owl-carousel.owl-hidden {
+    opacity: 0;
+}
+
+.owl-carousel.owl-refresh .owl-item {
+    visibility: hidden;
+}
+
+.owl-carousel.owl-drag .owl-item {
+    -ms-touch-action: pan-y;
+    touch-action: pan-y;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.owl-carousel.owl-grab {
+    cursor: move;
+    cursor: grab;
+}
+
+.owl-carousel.owl-rtl {
+    direction: rtl;
+}
+
+.owl-carousel.owl-rtl .owl-item {
+    float: var(--float-right);
+}
+
+.no-js .owl-carousel {
+    display: block;
+}
+
+.owl-carousel .animated {
+    animation-duration: 1000ms;
+    animation-fill-mode: both;
+}
+
+.owl-carousel .owl-animated-in {
+    z-index: 0;
+}
+
+.owl-carousel .owl-animated-out {
+    z-index: 1;
+}
+
+.owl-carousel .fadeOut {
+    animation-name: fadeOut;
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.owl-height {
+    transition: height 500ms ease-in-out;
+}
+
+.owl-carousel .owl-item .owl-lazy {
+    opacity: 0;
+    transition: opacity 400ms ease;
+}
+
+.owl-carousel .owl-item .owl-lazy[src^=""],
+.owl-carousel .owl-item .owl-lazy:not([src]) {
+    max-height: 0;
+}
+
+.owl-carousel .owl-item img.owl-lazy {
+    transform-style: preserve-3d;
+}
+
+.owl-carousel .owl-video-wrapper {
+    position: relative;
+    height: 100%;
+    background: #000;
+}
+
+.owl-carousel .owl-video-play-icon {
+    position: absolute;
+    height: 80px;
+    width: 80px;
+    inset-inline-start: 50%;
+    top: 50%;
+    margin-inline-start: -40px;
+    margin-block-start: -40px;
+    cursor: pointer;
+    z-index: 1;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    transition: transform 100ms ease;
+}
+
+.owl-carousel .owl-video-play-icon:hover {
+    -ms-transform: scale(1.3, 1.3);
+    transform: scale(1.3, 1.3);
+}
+
+.owl-carousel .owl-video-playing .owl-video-tn,
+.owl-carousel .owl-video-playing .owl-video-play-icon {
+    display: none;
+}
+
+.owl-carousel .owl-video-tn {
+    opacity: 0;
+    height: 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    transition: opacity 400ms ease;
+}
+
+.owl-carousel .owl-video-frame {
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    width: 100%;
+}
+
+.owl-carousel .owl-nav button.owl-prev,
+.owl-carousel .owl-nav button.owl-next,
+.owl-carousel button.owl-dot {
+    background-color: #fff;
+    opacity: 7;
+    color: inherit;
+    border: none;
+    padding: 0p !important;
+    font: inherit;
+}
+
+.owl-nav .owl-next {
+    position: absolute;
+    top: 50%;
+    inset-inline-end: -25px;
+    margin-block-start: -1.65em;
+}
+
+.owl-nav .owl-prev {
+    position: absolute;
+    top: 50%;
+    inset-inline-start: -25px;
+    margin-block-start: -1.65em;
+}
+
+.owl-nav button {
+    display: block;
+    font-size: 1.3rem !important;
+    line-height: 2em;
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+    text-align: center;
+    background: #fff !important;
+    opacity: 0.5 !important;
+    border: 1px solid #e8ebf3 !important;
+    z-index: 99;
+    box-shadow: 0 4px 15px rgba(67, 67, 67, 0.15);
+}
+
+table.dataTable.dtr-inline.collapsed>tbody>tr>td.child,
+table.dataTable.dtr-inline.collapsed>tbody>tr>th.child {
+    cursor: default !important;
+}
+
+table.dataTable.dtr-inline.collapsed>tbody>tr>td.dataTables_empty {
+    cursor: default !important;
+}
+
+table.dataTable.dtr-inline.collapsed>tbody>tr>td.child:before {
+    display: none !important;
+}
+
+table.dataTable.dtr-inline.collapsed>tbody>tr>th.child:before {
+    display: none !important;
+}
+
+table.dataTable.dtr-inline.collapsed>tbody>tr>td.dataTables_empty:before {
+    display: none !important;
+}
+
+table.dataTable.dtr-inline.collapsed>tbody>tr>td.dtr-control {
+    position: relative;
+    padding-inline-start: 30px;
+    cursor: pointer;
+}
+
+table.dataTable.dtr-inline.collapsed>tbody>tr>th.dtr-control {
+    position: relative;
+    padding-inline-start: 30px;
+    cursor: pointer;
+}
+
+table.dataTable.dtr-inline.collapsed>tbody>tr>td.dtr-control:before,
+table.dataTable.dtr-inline.collapsed>tbody>tr>th.dtr-control:before {
+    top: 50%;
+    inset-inline-start: 5px;
+    height: 1em;
+    width: 1em;
+    margin-block-start: -9px;
+    display: block;
+    position: absolute;
+    color: white;
+    border: 0.15em solid white;
+    border-radius: 1em;
+    box-shadow: 0 0 0.2em #777086;
+    box-sizing: content-box;
+    text-align: center;
+    text-indent: 0 !important;
+    font-family: "Courier New", Courier, monospace;
+    line-height: 1em;
+    content: "+";
+    background-color: #6c5ffc;
+}
+
+table.dataTable.dtr-inline.collapsed>tbody>tr.parent>td.dtr-control:before,
+table.dataTable.dtr-inline.collapsed>tbody>tr.parent>th.dtr-control:before {
+    content: "-";
+    background-color: #f82649;
+}
+
+table.dataTable.dtr-inline.collapsed.compact>tbody>tr>td.dtr-control,
+table.dataTable.dtr-inline.collapsed.compact>tbody>tr>th.dtr-control {
+    padding-inline-start: 27px;
+}
+
+table.dataTable.dtr-inline.collapsed.compact>tbody>tr>td.dtr-control:before,
+table.dataTable.dtr-inline.collapsed.compact>tbody>tr>th.dtr-control:before {
+    inset-inline-start: 4px;
+    height: 14px;
+    width: 14px;
+    border-radius: 14px;
+    line-height: 14px;
+    text-indent: 3px;
+}
+
+table.dataTable.dtr-column>tbody>tr>td.dtr-control,
+table.dataTable.dtr-column>tbody>tr>th.dtr-control,
+table.dataTable.dtr-column>tbody>tr>td.control,
+table.dataTable.dtr-column>tbody>tr>th.control {
+    position: relative;
+    cursor: pointer;
+}
+
+table.dataTable.dtr-column>tbody>tr>td.dtr-control:before,
+table.dataTable.dtr-column>tbody>tr>th.dtr-control:before,
+table.dataTable.dtr-column>tbody>tr>td.control:before,
+table.dataTable.dtr-column>tbody>tr>th.control:before {
+    top: 50%;
+    inset-inline-start: 50%;
+    height: 0.8em;
+    width: 0.8em;
+    margin-block-start: -0.5em;
+    margin-inline-start: -0.5em;
+    display: block;
+    position: absolute;
+    color: white;
+    border: 0.15em solid white;
+    border-radius: 1em;
+    box-shadow: 0 0 0.2em #444;
+    box-sizing: content-box;
+    text-align: center;
+    text-indent: 0 !important;
+    font-family: "Courier New", Courier, monospace;
+    line-height: 1em;
+    content: "+";
+    background-color: #0d6efd;
+}
+
+table.dataTable.dtr-column>tbody>tr.parent td.dtr-control:before,
+table.dataTable.dtr-column>tbody>tr.parent th.dtr-control:before,
+table.dataTable.dtr-column>tbody>tr.parent td.control:before,
+table.dataTable.dtr-column>tbody>tr.parent th.control:before {
+    content: "-";
+    background-color: #d33333;
+}
+
+table.dataTable>tbody>tr.child {
+    padding: 0.5em 1em;
+}
+
+table.dataTable>tbody>tr.child:hover {
+    background: transparent !important;
+}
+
+table.dataTable>tbody>tr.child ul.dtr-details {
+    display: inline-block;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+table.dataTable>tbody>tr.child ul.dtr-details>li {
+    border-block-end: 1px solid #efefef;
+    padding: 0.5em 0;
+}
+
+table.dataTable>tbody>tr.child ul.dtr-details>li:first-child {
+    padding-block-start: 0;
+}
+
+table.dataTable>tbody>tr.child ul.dtr-details>li:last-child {
+    border-block-end: none;
+}
+
+table.dataTable>tbody>tr.child span.dtr-title {
+    display: inline-block;
+    min-width: 75px;
+    font-weight: bold;
+}
+
+div.dtr-modal {
+    position: fixed;
+    box-sizing: border-box;
+    top: 0;
+    inset-inline-start: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 100;
+    padding: 10em 1em;
+}
+
+div.dtr-modal div.dtr-modal-display {
+    position: absolute;
+    top: 0;
+    inset-inline-start: 0;
+    bottom: 0;
+    inset-inline-end: 0;
+    width: 50%;
+    height: 50%;
+    overflow: auto;
+    margin: auto;
+    z-index: 102;
+    overflow: auto;
+    background-color: #f5f5f7;
+    border: 1px solid black;
+    border-radius: 0.5em;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+}
+
+div.dtr-modal div.dtr-modal-content {
+    position: relative;
+    padding: 1em;
+}
+
+div.dtr-modal div.dtr-modal-close {
+    position: absolute;
+    top: 6px;
+    inset-inline-end: 6px;
+    width: 22px;
+    height: 22px;
+    border: 1px solid #eaeaea;
+    background-color: #f9f9f9;
+    text-align: center;
+    border-radius: 3px;
+    cursor: pointer;
+    z-index: 12;
+}
+
+div.dtr-modal div.dtr-modal-close:hover {
+    background-color: #eaeaea;
+}
+
+div.dtr-modal div.dtr-modal-background {
+    position: fixed;
+    top: 0;
+    inset-inline-start: 0;
+    inset-inline-end: 0;
+    bottom: 0;
+    z-index: 101;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+div.dtr-bs-modal table.table tr:first-child td {
+    border-block-start: none;
+}
+
+@media screen and (max-width: 767px) {
+    div.dtr-modal div.dtr-modal-display {
+        width: 95%;
+    }
+}
+
+/* All the default sidebar styles */
+/* toggle button settings */
+/* Note: this disables the navbar-toggle class's hide function. set visibility with the boostrap visible/hidden classes */
+/* Note: this also disables the navbar-header class positioning settings in small screens. */
+.navbar.navbar-static .navbar-header {
+    float: var(--float-left);
+}
+
+.navbar .navbar-toggle.toggle-left {
+    float: var(--float-left);
+    margin-inline-start: 15px;
+}
+
+.navbar .navbar-toggle.toggle-right {
+    float: var(--float-right);
+    margin-inline-end: 15px;
+}
+
+.navbar .navbar-toggle.toggle-sidebar {
+    display: block;
+}
+
+[data-toggle=sidebar] {
+    display: block;
+}
+
+/* sidebar settings */
+.sidebar {
+    position: fixed;
+    display: block;
+    top: 0px;
+    width: 300px;
+    bottom: 0;
+    z-index: 1040;
+}
+
+.sidebar-left {
+    inset-inline-start: 0;
+}
+
+.sidebar-right {
+    inset-inline-end: 0;
+}
+
+/* css to override hiding the sidebar according to different screen sizes */
+.row .sidebar.sidebar-left.sidebar-xs-show {
+    inset-inline-start: 0;
+    -webkit-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    -o-transform: translate(0, 0);
+    -moz-transform: translate(0, 0);
+    transform: translate(0, 0);
+}
+
+.row .sidebar.sidebar-right.sidebar-xs-show {
+    inset-inline-end: 0;
+    -webkit-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    -o-transform: translate(0, 0);
+    -moz-transform: translate(0, 0);
+    transform: translate(0, 0);
+}
+
+/*right sidebar is untested */
+@media (min-width: 768px) {
+    .row .sidebar.sidebar-left.sidebar-sm-show {
+        inset-inline-start: 0;
+        -webkit-transform: translate(0, 0);
+        -ms-transform: translate(0, 0);
+        -o-transform: translate(0, 0);
+        -moz-transform: translate(0, 0);
+        transform: translate(0, 0);
+    }
+
+    .row .sidebar.sidebar-right.sidebar-sm-show {
+        inset-inline-end: 0;
+        -webkit-transform: translate(0, 0);
+        -ms-transform: translate(0, 0);
+        -o-transform: translate(0, 0);
+        -moz-transform: translate(0, 0);
+        transform: translate(0, 0);
+    }
+
+    /*right sidebar is untested */
+}
+
+@media (min-width: 992px) {
+    .row .sidebar.sidebar-left.sidebar-md-show {
+        inset-inline-start: 0;
+        -webkit-transform: translate(0, 0);
+        -ms-transform: translate(0, 0);
+        -o-transform: translate(0, 0);
+        -moz-transform: translate(0, 0);
+        transform: translate(0, 0);
+    }
+
+    .row .sidebar.sidebar-right.sidebar-md-show {
+        inset-inline-end: 0;
+        -webkit-transform: translate(0, 0);
+        -ms-transform: translate(0, 0);
+        -o-transform: translate(0, 0);
+        -moz-transform: translate(0, 0);
+        transform: translate(0, 0);
+    }
+}
+
+@media (min-width: 1170px) {
+    .row .sidebar.sidebar-left.sidebar-lg-show {
+        inset-inline-start: 0;
+        -webkit-transform: translate(0, 0);
+        -moz-transform: translate(0, 0);
+        -ms-transform: translate(0, 0);
+        -o-transform: translate(0, 0);
+        transform: translate(0, 0);
+    }
+
+    .row .sidebar.sidebar-right.sidebar-lg-show {
+        inset-inline-end: 0;
+        -webkit-transform: translate(0, 0);
+        -moz-transform: translate(0, 0);
+        -ms-transform: translate(0, 0);
+        -o-transform: translate(0, 0);
+        transform: translate(0, 0);
+    }
+}
+
+/* animation class - optional: without it the sidebar would just pop in and out*/
+.sidebar-animate {
+    -webkit-transition: -webkit-transform 300ms ease;
+    -moz-transition: -moz-transform 300ms ease;
+    -o-transition: transform 300ms ease;
+    transition: transform 300ms ease;
+}
+
+/* Left panel positioning classes */
+.sidebar.sidebar-left {
+    -webkit-transform: translate(-100%, 0);
+    -moz-transform: translate(-100%, 0);
+    -ms-transform: translate(-100%, 0);
+    -o-transform: translate(-100%, 0);
+    transform: translate(-100%, 0);
+}
+
+.sidebar.sidebar-left.sidebar-open {
+    -webkit-transform: translate(0, 0);
+    -moz-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    -o-transform: translate(0, 0);
+    transform: translate(0, 0);
+}
+
+.sidebar.sidebar-right {
+    -webkit-transform: translate(100%, 0);
+    -moz-transform: translate(100%, 0);
+    -ms-transform: translate(100%, 0);
+    -o-transform: translate(100%, 0);
+    transform: translate(100%, 0);
+}
+
+.sidebar.sidebar-right.sidebar-open {
+    -webkit-transform: translate(0, 0);
+    -moz-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    -o-transform: translate(0, 0);
+    transform: translate(0, 0);
+    box-shadow: none;
+}
+
+.sidebar {
+    border-inline-start: 1px solid #eae8f1;
+}
+/*# sourceMappingURL=plugins.css.map */

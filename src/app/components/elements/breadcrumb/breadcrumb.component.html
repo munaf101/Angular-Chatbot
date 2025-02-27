@@ -1,0 +1,321 @@
+<!--Page header-->
+<app-page-header [title]="'BreadCrumbs'"  [icon]="'server'"  [title1]="'Elements'" [activeitem]="'BreadCrumbs'"></app-page-header>
+
+<!--End Page header-->
+
+
+<!-- ROW-1 OPEN -->
+<div class="row">
+    <div class="col-md-12 col-xl-6">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Simple Breadcrumbs</h3>
+            </div>
+  
+            <div class="card-body">
+                <div>
+                    <ol class="breadcrumb1">
+                        <li class="breadcrumb-item1 active">Home</li>
+                        <li class="breadcrumb-item1 active">About</li>
+                    </ol>
+                    <ol class="breadcrumb1">
+                        <li class="breadcrumb-item1"><a href="javascript:void(0)">Home</a></li>
+                        <li class="breadcrumb-item1 active">Library</li>
+                    </ol>
+                    <ol class="breadcrumb1">
+                        <li class="breadcrumb-item1"><a href="javascript:void(0)">Home</a></li>
+                        <li class="breadcrumb-item1"><a href="javascript:void(0)">Library</a></li>
+                        <li class="breadcrumb-item1 active">Data</li>
+                    </ol>
+                </div>
+                <figure class="highlight mb-0" id="element1">
+                  <ul ngbNav #nav1="ngbNav" class="nav nav-tabs">
+                      <li [ngbNavItem]="1">
+                          <a ngbNavLink class="html-code"><i class="las la-code me-2"></i> HTML</a>
+                          <ng-template ngbNavContent>
+                              <pre><code [highlight]="html1"></code></pre>
+                            
+                          </ng-template>
+                      </li>
+                      <li [ngbNavItem]="2">
+                          <a ngbNavLink class="html-code">TS</a>
+                          <ng-template ngbNavContent>
+                              <pre><code [highlight]="ts1"></code></pre>
+                             
+                          </ng-template>
+                      </li>
+                      <div ngxClipboard class="clipboard-icon ms-auto my-auto" placement="top"
+                      ngbTooltip="Copy To Clipboard"><i class="las la-paste"></i></div>
+                  </ul>
+                  <div [ngbNavOutlet]="nav1"></div>
+            
+                     
+                    </figure>
+            </div>
+        </div>
+    </div>
+    <!-- COL-END -->
+    <div class="col-md-12 col-xl-6">
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title">Breadcrumbs Example2</h3>
+        </div>
+  
+            <div class="card-body">
+                <div class="breadcrumb-style2">
+                    <ol class="breadcrumb1">
+                        <li class="breadcrumb-item1 active">Home</li>
+                        <li class="breadcrumb-item1 active">About</li>
+                    </ol>
+                    <ol class="breadcrumb1">
+                        <li class="breadcrumb-item1"><a href="javascript:void(0)">Home</a></li>
+                        <li class="breadcrumb-item1 active">Library</li>
+                    </ol>
+                    <ol class="breadcrumb1">
+                        <li class="breadcrumb-item1"><a href="javascript:void(0)">Home</a></li>
+                        <li class="breadcrumb-item1"><a href="javascript:void(0)">Library</a></li>
+                        <li class="breadcrumb-item1 active">Data</li>
+                    </ol>
+                </div>
+                
+                <figure class="highlight mb-0" id="element1">
+                  <ul ngbNav #nav2="ngbNav" class="nav nav-tabs">
+                      <li [ngbNavItem]="1">
+                          <a ngbNavLink class="html-code"><i class="las la-code me-2"></i> HTML</a>
+                          <ng-template ngbNavContent>
+                              <pre><code [highlight]="html2"></code></pre>
+                            
+                          </ng-template>
+                      </li>
+                      <li [ngbNavItem]="2">
+                          <a ngbNavLink class="html-code">TS</a>
+                          <ng-template ngbNavContent>
+                              <pre><code [highlight]="ts2"></code></pre>
+                             
+                          </ng-template>
+                      </li>
+                      <div ngxClipboard class="clipboard-icon ms-auto my-auto" placement="top"
+                      ngbTooltip="Copy To Clipboard"><i class="las la-paste"></i></div>
+                  </ul>
+                  <div [ngbNavOutlet]="nav2"></div>
+            
+                     
+                    </figure>
+            </div>
+        </div>
+    </div>
+    <!-- COL-END -->
+    <div class="col-md-12 col-xl-6">
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title">Breadcrumbs Example3</h3>
+        </div>
+  
+            <div class="card-body">
+                <div class="breadcrumb-style3">
+                    <ol class="breadcrumb1">
+                        <li class="breadcrumb-item1 active">Home</li>
+                        <li class="breadcrumb-item1 active">About</li>
+                    </ol>
+                    <ol class="breadcrumb1">
+                        <li class="breadcrumb-item1"><a href="javascript:void(0)">Home</a></li>
+                        <li class="breadcrumb-item1 active">Library</li>
+                    </ol>
+                    <ol class="breadcrumb1">
+                        <li class="breadcrumb-item1"><a href="javascript:void(0)">Home</a></li>
+                        <li class="breadcrumb-item1"><a href="javascript:void(0)">Library</a></li>
+                        <li class="breadcrumb-item1 active">Data</li>
+                    </ol>
+                </div>
+                <figure class="highlight mb-0" id="element1">
+                  <ul ngbNav #nav3="ngbNav" class="nav nav-tabs">
+                      <li [ngbNavItem]="1">
+                          <a ngbNavLink class="html-code"><i class="las la-code me-2"></i> HTML</a>
+                          <ng-template ngbNavContent>
+                              <pre><code [highlight]="html3"></code></pre>
+                            
+                          </ng-template>
+                      </li>
+                      <li [ngbNavItem]="2">
+                          <a ngbNavLink class="html-code">TS</a>
+                          <ng-template ngbNavContent>
+                              <pre><code [highlight]="ts3"></code></pre>
+                             
+                          </ng-template>
+                      </li>
+                      <div ngxClipboard class="clipboard-icon ms-auto my-auto" placement="top"
+                      ngbTooltip="Copy To Clipboard"><i class="las la-paste"></i></div>
+                  </ul>
+                  <div [ngbNavOutlet]="nav3"></div>
+            
+                     
+                    </figure>
+            </div>
+  
+        </div>
+    </div>
+    <!-- COL-END -->
+    <div class="col-xl-6 col-md-12">
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title">Breadcrumbs-Center align</h3>
+        </div>
+  
+            <div class="card-body">
+                <div>
+                    <div class="breadcrumb-3">
+                        <ol class="breadcrumb1">
+                            <li class="breadcrumb-item1"><a href="javascript:void(0)">Home</a></li>
+                            <li class="breadcrumb-item1 active">about</li>
+                        </ol>
+                    </div>
+                    <div class="breadcrumb-4">
+                        <ol class="breadcrumb1">
+                            <li class="breadcrumb-item1"><a href="javascript:void(0)">Home</a></li>
+                            <li class="breadcrumb-item1 active">Library</li>
+                        </ol>
+                    </div>
+                    <div class="breadcrumb-5">
+                        <ol class="breadcrumb1 mb-0">
+                            <li class="breadcrumb-item1"><a href="javascript:void(0)">Home</a></li>
+                            <li class="breadcrumb-item1"><a href="javascript:void(0)">Library</a></li>
+                            <li class="breadcrumb-item1 active">Data</li>
+                        </ol>
+                    </div>
+                </div>
+                <figure class="highlight mb-0" id="element1">
+                  <ul ngbNav #nav4="ngbNav" class="nav nav-tabs">
+                      <li [ngbNavItem]="1">
+                          <a ngbNavLink class="html-code"><i class="las la-code me-2"></i> HTML</a>
+                          <ng-template ngbNavContent>
+                              <pre><code [highlight]="html4"></code></pre>
+                            
+                          </ng-template>
+                      </li>
+                      <li [ngbNavItem]="2">
+                          <a ngbNavLink class="html-code">TS</a>
+                          <ng-template ngbNavContent>
+                              <pre><code [highlight]="ts4"></code></pre>
+                             
+                          </ng-template>
+                      </li>
+                      <div ngxClipboard class="clipboard-icon ms-auto my-auto" placement="top"
+                      ngbTooltip="Copy To Clipboard"><i class="las la-paste"></i></div>
+                  </ul>
+                  <div [ngbNavOutlet]="nav4"></div>
+            
+                     
+                    </figure>
+                
+            </div>
+        </div>
+    </div>
+    <!-- COL-END -->
+    <div class="col-xl-6 col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Breadcrumbs-Right align</h3>
+            </div>
+  
+            <div class="card-body">
+                <div>
+                    <div class="breadcrumb-1">
+                        <ol class="breadcrumb1">
+                            <li class="breadcrumb-item1"><a href="javascript:void(0)">Home</a></li>
+                            <li class="breadcrumb-item1 active">about</li>
+                        </ol>
+                    </div>
+                    <div class="breadcrumb-2">
+                        <ol class="breadcrumb1">
+                            <li class="breadcrumb-item1"><a href="javascript:void(0)">Home</a></li>
+                            <li class="breadcrumb-item1"><a href="javascript:void(0)">Library</a></li>
+                        </ol>
+                    </div>
+                    <div class="breadcrumb-6">
+                        <ol class="breadcrumb1 mb-0">
+                            <li class="breadcrumb-item1"><a href="javascript:void(0)">Home</a></li>
+                            <li class="breadcrumb-item1"><a href="javascript:void(0)">Library</a></li>
+                            <li class="breadcrumb-item1 active">Data</li>
+                        </ol>
+                    </div>
+                </div>
+                <figure class="highlight mb-0" id="element1">
+                  <ul ngbNav #nav5="ngbNav" class="nav nav-tabs">
+                      <li [ngbNavItem]="1">
+                          <a ngbNavLink class="html-code"><i class="las la-code mr-2"></i> HTML</a>
+                          <ng-template ngbNavContent>
+                              <pre><code [highlight]="html5"></code></pre>
+                            
+                          </ng-template>
+                      </li>
+                      <li [ngbNavItem]="2">
+                          <a ngbNavLink class="html-code">TS</a>
+                          <ng-template ngbNavContent>
+                              <pre><code [highlight]="ts5"></code></pre>
+                             
+                          </ng-template>
+                      </li>
+                      <div ngxClipboard class="clipboard-icon ms-auto my-auto"  placement="top"
+                      ngbTooltip="Copy To Clipboard"><i class="las la-paste"></i></div>
+                  </ul>
+                  <div [ngbNavOutlet]="nav5"></div>
+            
+                     
+                    </figure>
+                  
+            </div>
+        </div>
+    </div>
+    <!-- COL-END -->
+    <div class="col-xl-6 col-md-12">
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title">Color Breadcrumbs</h3>
+        </div>
+  
+            <div class="card-body">
+                <div>
+                    <ol class="breadcrumb1 bg-info">
+                        <li class="breadcrumb-item active text-white"><i class="fa fa-star-o me-2 text-transparant" aria-hidden="true"></i>Home</li>
+                    </ol>
+                    <ol class="breadcrumb1 bg-success">
+                        <li class="breadcrumb-item1"><i class="fa fa-star-o me-2 text-white" aria-hidden="true"></i><a class="text-white" href="javascript:void(0)">Home</a></li>
+                        <li class="breadcrumb-item active text-white"><i class="fa fa-star-o mx-2 text-transparant" aria-hidden="true"></i>Library</li>
+                    </ol>
+                    <ol class="breadcrumb1 bg-secondary">
+                        <li class="breadcrumb-item"><i class="fa fa-star-o me-2 text-white" aria-hidden="true"></i><a class="text-white" href="javascript:void(0)">Home</a></li>
+                        <li class="breadcrumb-item"><i class="fa fa-star-o mx-2 text-white" aria-hidden="true"></i><a class="text-white" href="javascript:void(0)">Library</a></li>
+                        <li class="breadcrumb-item active text-white"><i class="fa fa-star-o mx-2 text-transparant" aria-hidden="true"></i>Data</li>
+                    </ol>
+                </div>
+                <figure class="highlight mb-0" id="element1">
+                  <ul ngbNav #nav6="ngbNav" class="nav nav-tabs">
+                      <li [ngbNavItem]="1">
+                          <a ngbNavLink class="html-code"><i class="las la-code mr-2"></i> HTML</a>
+                          <ng-template ngbNavContent>
+                              <pre><code [highlight]="html6"></code></pre>
+                            
+                          </ng-template>
+                      </li>
+                      <li [ngbNavItem]="2">
+                          <a ngbNavLink class="html-code">TS</a>
+                          <ng-template ngbNavContent>
+                              <pre><code [highlight]="ts6"></code></pre>
+                             
+                          </ng-template>
+                      </li>
+                      <div ngxClipboard class="clipboard-icon ms-auto my-auto"  placement="top"
+                      ngbTooltip="Copy To Clipboard"><i class="las la-paste"></i></div>
+                  </ul>
+                  <div [ngbNavOutlet]="nav6"></div>
+            
+                     
+                    </figure>
+                  
+            </div>
+        </div>
+    </div>
+    <!-- COL-END -->
+  </div>
+  <!-- ROW-1 CLOSED -->
+  

@@ -1,0 +1,226 @@
+/*------------------------------------------------------------------
+[Master Stylesheet]
+Project        :   Admitro - Angular  Admin Dashboard Template
+Version        :   V.5.0
+Create Date    :   09/05/20
+Update Date    :   11/10/23
+Copyright      :   Spruko Technologies Private Limited 
+Author         :   SprukoSoft
+Author URL     :   https://themeforest.net/user/sprukosoft
+Support	       :   support@spruko.com
+License        :   Licensed under ThemeForest License
+
+-------------------------------------------------------------------*/
+
+/*
+accordion
+alerts
+avatars
+badges
+breadcrumb
+buttons
+carousel
+dropdown
+list
+modal
+navigation
+panel
+progress
+tags
+thumbnail
+tooltip&popover
+typhography
+chat
+chat2
+contact
+rangeslider
+rating
+custom-styles
+email
+ecommerce
+icon-list
+loader
+tables
+vectormap
+widgets
+style
+custom-control
+radio
+date-picker
+form-elements
+form-wizard
+input-group
+select-group
+selectize
+select2
+alignments
+backgrounds
+cards
+layouts
+double-menu-styles
+header-styles
+header
+horizontal-menu
+menu-styles
+maincontent
+rtl
+sidemenu
+style-dark
+switcher-styles
+gallery
+pricing
+profile
+background
+border
+height
+margin
+opacity
+padding
+position
+typography
+width
+*/
+
+@import "custom/fonts/fonts";
+
+
+/* ###### bootstrap ####### */
+@import "variables";
+@import "bootstrap/accordion";
+@import "bootstrap/alerts";
+@import "bootstrap/avatars";
+@import "bootstrap/badges";
+@import "bootstrap/breadcrumb";
+@import "bootstrap/buttons";
+@import "bootstrap/carousel";
+@import "bootstrap/dropdown";
+@import "bootstrap/list";
+@import "bootstrap/modal";
+@import "bootstrap/navigation";
+@import "bootstrap/panel";
+@import "bootstrap/progress";
+@import "bootstrap/tags";
+@import "bootstrap/thumbnail";
+@import "bootstrap/tooltip&popover";
+@import "bootstrap/typhography";
+
+/* ###### components ####### */
+
+// @import "components/calendar";
+@import "components/chat";
+@import "components/chat2";
+@import "components/contact";
+@import "components/rangeslider";
+@import "components/rating";
+
+
+/* ###### custom ####### */
+
+@import "custom/custom-styles";
+@import "custom/email";
+@import "custom/ecommerce";
+@import "custom/icon-list";
+@import "custom/loader";
+@import "custom/tables";
+@import "custom/vectormap";
+@import "custom/widgets";
+@import "custom/style";
+
+
+/* ###### forms ####### */
+
+@import "forms/custom-control";
+@import "forms/radio";
+@import "forms/date-picker";
+@import "forms/form-elements";
+@import "forms/form-wizard";
+@import "forms/input-group";
+@import "forms/select-group";
+@import "forms/selectize";
+@import "forms/select2";
+
+
+/* ###### global ####### */
+@import "global/custom";
+@import "global/dark-styles";
+@import "global/rtl";
+@import "global/ng-select";
+@import "global/plugin";
+
+
+/* ###### layouts ####### */
+
+@import "layouts/alignments";
+@import "layouts/cards";
+@import "layouts/layouts";
+@import "layouts/dark-style";
+@import "layouts/double-menu-styles";
+@import "layouts/header-styles";
+@import "layouts/header";
+@import "layouts/horizontal-menu";
+@import "layouts/menu-styles";
+@import "layouts/maincontent";
+@import "layouts/rtl";
+@import "layouts/sidemenu";
+@import "layouts/switcher-styles";
+
+
+
+/* ######  pages ###### */
+
+@import "pages/gallery";
+@import "pages/pricing";
+@import "pages/profile";
+
+/* ######  Util ###### */
+
+@import "util/background";
+@import "util/border";
+@import "util/height";
+@import "util/margin";
+@import "util/opacity";
+@import "util/padding";
+@import "util/position";
+@import "util/typography";
+@import "util/width";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

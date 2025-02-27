@@ -1,0 +1,107 @@
+<!--Page header-->
+<app-page-header [title]="'Shopping Cart'"  [icon]="'shopping-cart'"  [title1]="'ECommerce'" [activeitem]="'Shopping Cart'"></app-page-header>
+
+<!--End Page header-->
+
+<!-- Row-->
+<div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12 bootstrap snippets">
+        <!-- Cart -->
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Shopping Cart</h3>
+            </div>
+            <div class="card-body ">
+                <div class="product-details table-responsive text-nowrap">
+                    <table class="table table-bordered mb-0 text-nowrap">
+                        <thead>
+                            <tr>
+                                <th class="text-start">Products</th>
+                                <th class="w-150">Quantity</th>
+                                <th>SUBTOTAL</th>
+                                <th>DISCOUNT</th>
+                                <th><a class="" href="javascript:void(0);">Clear Cart</a>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody class="custom-cls-no-br">
+                            <tr  *ngFor="let obj of objectArray">
+                                
+                              <td>
+                                <div class="media mt-0">
+                                    <div class="card-aside-img">
+                                        <img src={{obj.image}} alt="img"
+                                            class="h-60 w-60">
+                                    </div>
+                                    <div class="media-body p-0">
+                                        <div class="card-item-desc mt-0">
+                                            <h6 class="fw-semibold mb-0 text-uppercase">{{obj.name}}
+                                            </h6>
+                                            <span class="card-item-desc-1 d-flex mb-0">
+                                                <span class="fw-semibold">Size: </span>
+                                                <span class="text-muted ms-1">XXL</span>
+                                            </span>
+                                            <span class="card-item-desc-1 d-flex">
+                                                <span class="fw-semibold">Color: </span>
+                                                <span  class="text-muted ms-1">{{obj.color}}</span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="handle-counter ms-2" id="handleCounter1">
+                                    <button id="minus" type="button"
+                                            class="counter-minus btn btn-outline-light border">
+                                            <i class="fa fa-minus fs-10"></i>
+                                    </button>
+                                    <input type="text"  class="qty"
+                                        value="{{obj.quantity}}">
+                                        <button id="plus" type="button"
+                                        class="counter-plus btn btn-outline-light border">
+                                        <i class="fa fa-plus fs-10"></i>
+                                    </button>
+                                </div>
+                            </td>
+                                <td class="text-center">{{obj.price}}</td>
+                              
+                                <td class="text-center"><span>{{obj.total}}</span></td>
+                                <td class="text-center">
+                                    <a class="remove-from-cart" href="javascript:void(0);" (click)="RemoveElementFromObjectArray(obj.id)"
+                                    data-bs-toggle="tooltip" ngbTooltip="Remove item" placement="top"
+                                    data-bs-original-title="Remove item"><i
+                                        class="fa fa-trash"></i></a>
+                                   
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+    
+                
+                </div>
+                <div class="shopping-cart-footer  border-top-0">
+                    <div class="column">
+                        <form class="coupon-form" method="post">
+                            <input class="form-control" type="text" placeholder="Coupon code"
+                                required="">
+                            <button class="btn btn-sm btn-outline-primary" type="submit">Apply Coupon</button>
+                        </form>
+                    </div>
+                    <div class="column text-lg">Subtotal: <span class="tx-20 fw-bold ms-2 d-inline-block">$112</span>
+                    </div>
+                </div>
+         
+            <div class="shopping-cart-footer px-3">
+                <div class="column"><a class="btn btn-secondary" routerLink="/e-commerce/product">Back to Shopping</a></div>
+                <div class="column"><a class="btn btn-primary" href="javascript:void(0);" data-bs-toast=""
+                        data-bs-toast-type="success" data-bs-toast-position="topRight"
+                        data-bs-toast-icon="icon-circle-check" data-bs-toast-title="Your cart"
+                        data-bs-toast-message="is updated successfully!">Update Cart</a><a
+                        class="btn btn-success" href="/e-commerce/checkout">Checkout</a></div>
+            </div>
+            </div>
+        </div>
+        <!-- End Cart -->
+    </div>
+</div>
+<!-- End Row-->

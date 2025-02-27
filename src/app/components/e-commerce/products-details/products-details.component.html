@@ -1,0 +1,339 @@
+ <!--Page header-->
+ <app-page-header [title]="'Product Details'"  [icon]="'shopping-cart'"  [title1]="'ECommerce'" [activeitem]="'Product Details'"></app-page-header>
+
+<!--End Page header-->
+
+					<!-- Row -->
+                    <div class="row">
+                        <div class="col-md-12 wrapper wrapper-content mb-0">
+                            <div class="ibox card product_details">
+                                <div class="card-body">
+                                    <div class="ibox-content">
+                                        <div class="row row-sm mb-3">
+                                            <div class="col-xl-12">
+                                                <div class="">
+                                                    <div class="h-100">
+                                                        <div class="row row-sm ">
+                                                            <div class=" col-xl-6 col-lg-12 col-md-12">
+                                                                <div class="row">
+                                                                    <div class="col-lg-9 col-12 ">
+                                                                        <div class="product-carousel border br-7">
+                                                                            <div [ngbNavOutlet]="nav"></div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-lg-3 col-12 ">
+                                                                        <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="panel-tabs"
+                                                                            orientation="horizontal">
+                                                                            <li [ngbNavItem]="1">
+                                                                                <a ngbNavLink><img src="./assets/images/ecommerce/shirt-5.png"
+                                                                                        alt="img" class="img-fluid br-7 border product-image"></a>
+                                                                                <ng-template ngbNavContent>
+                                                                                    <img src="./assets/images/ecommerce/shirt-5.png" alt="img"
+                                                                                        class="img-fluid br-7">
+                                                                                </ng-template>
+                                                                            </li>
+                                                                            <li [ngbNavItem]="2">
+                                                                                <a ngbNavLink><img src="./assets/images/ecommerce/shirt-4.png"
+                                                                                        alt="img" class="img-fluid br-7 border product-image"></a>
+                                                                                <ng-template ngbNavContent>
+                                                                                    <img src="./assets/images/ecommerce/shirt-4.png" alt="img"
+                                                                                        class="img-fluid br-7">
+                                                                                </ng-template>
+                                                                            </li>
+                                                                            <li [ngbNavItem]="3">
+                                                                                <a ngbNavLink><img src="./assets/images/ecommerce/shirt-1.png"
+                                                                                        alt="img" class="img-fluid br-7 border product-image"></a>
+                                                                                <ng-template ngbNavContent>
+                                                                                    <img src="./assets/images/ecommerce/shirt-1.png" alt="img"
+                                                                                        class="img-fluid br-7">
+                                                                                </ng-template>
+                                                                            </li>
+                                                                            <li [ngbNavItem]="4">
+                                                                                <a ngbNavLink><img src="./assets/images/ecommerce/shirt-2.png"
+                                                                                        alt="img" class="img-fluid br-7 border product-image"></a>
+                                                                                <ng-template ngbNavContent>
+                                                                                    <img src="./assets/images/ecommerce/shirt-2.png" alt="img"
+                                                                                        class="img-fluid br-7">
+                                                                                </ng-template>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>
+                            
+                                                                </div>
+                                                          
+                                                            </div>
+                                                            <div class="details col-xl-6 col-lg-12 col-md-12 mt-4 mt-xl-0">
+                                                                <h4 class="product-title mb-1">Mens T-Shirts</h4>
+                                                                <p class="text-muted tx-13 mb-1">Men red & Grey Checked Casual Shirt</p>
+                                                                <div class="rating mb-1">
+                                                                    <div class="stars">
+                                                                        <span class="fa fa-star text-warning"></span>
+                                                                        <span class="fa fa-star text-warning"></span>
+                                                                        <span class="fa fa-star text-warning"></span>
+                                                                        <span class="fa fa-star text-muted"></span>
+                                                                        <span class="fa fa-star text-muted"></span>
+                                                                    </div>
+                                                                    <span class="review-no">41 reviews</span>
+                                                                </div>
+                                                                <h6 class="price">current price: <span class="h3 ms-2 d-inline-block">$180</span></h6>
+                                                                <p class="product-description">Suspendisse quos? Tempus cras iure temporibus? Eu
+                                                                    laudantium cubilia sem sem! Repudiandae et! Massa senectus enim minim
+                                                                    sociosqu delectus posuere.</p>
+                                                                <p class="vote"><strong>91%</strong> of buyers enjoyed this product! <strong>(87
+                                                                        votes)</strong></p>
+                                                                <div class="sizes d-sm-flex">sizes:
+                                                                    <span class="size d-sm-flex" data-bs-toggle="tooltip" title="small"><label
+                                                                            class="rdiobox mb-0 me-1"><input checked="" name="rdio" type="radio">
+                                                                            <span class="fw-bold ms-2">s</span></label></span>
+                                                                    <span class="size d-sm-flex" data-bs-toggle="tooltip" title="medium"><label
+                                                                            class="rdiobox mb-0 me-1"><input name="rdio" type="radio">
+                                                                            <span class="ms-2">m</span></label></span>
+                                                                    <span class="size d-sm-flex" data-bs-toggle="tooltip" title="large"><label
+                                                                            class="rdiobox mb-0 me-1"><input name="rdio" type="radio">
+                                                                            <span class="ms-2">l</span></label></span>
+                                                                    <span class="size d-sm-flex" data-bs-toggle="tooltip"
+                                                                        title="extra-large"><label class="rdiobox mb-0"><input name="rdio"
+                                                                                type="radio"> <span class="ms-2">xl</span></label></span>
+                                                                </div>
+                                                                <div class="d-flex  mt-2">
+                                                                    <div class="mt-2 product-title">Quantity:</div>
+                                                                    <div class="d-flex ms-2">
+                                                                        <ul class=" mb-0 qunatity-list">
+                                                                            <li>
+                                                                                <div class="form-group">
+                                                                                    <ng-select name="quantity" id="select-countries17"
+                                                                                        class="form-control nice-select p-0">
+                                                                                        <ng-option value="1" selected="">1</ng-option>
+                                                                                        <ng-option value="2">2</ng-option>
+                                                                                        <ng-option value="3">3</ng-option>
+                                                                                        <ng-option value="4">4</ng-option>
+                                                                                    </ng-select>
+                                                                                </div>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="colors d-flex mt-2">
+                                                                    <span class="mt-2">colors:</span>
+                                                                    <div class="row gutters-xs ms-4">
+                                                                        <div class="me-2 w-auto ps-0 pe-0">
+                                                                            <label class="colorinput">
+                                                                                <input name="color" type="radio" value="azure"
+                                                                                    class="colorinput-input" checked="">
+                                                                                <span class="colorinput-color bg-danger"></span>
+                                                                            </label>
+                                                                        </div>
+                                                                        <div class="me-2 w-auto ps-0 pe-0">
+                                                                            <label class="colorinput">
+                                                                                <input name="color" type="radio" value="indigo"
+                                                                                    class="colorinput-input">
+                                                                                <span class="colorinput-color bg-secondary"></span>
+                                                                            </label>
+                                                                        </div>
+                                                                        <div class="me-2 w-auto ps-0 pe-0">
+                                                                            <label class="colorinput">
+                                                                                <input name="color" type="radio" value="purple"
+                                                                                    class="colorinput-input">
+                                                                                <span class="colorinput-color bg-dark"></span>
+                                                                            </label>
+                                                                        </div>
+                                                                        <div class="me-2 w-auto ps-0 pe-0">
+                                                                            <label class="colorinput">
+                                                                                <input name="color" type="radio" value="pink"
+                                                                                    class="colorinput-input">
+                                                                                <span class="colorinput-color bg-pink"></span>
+                                                                            </label>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="action">
+                                                                    <a routerLink="/e-commerce/whishlist"  class="add-to-cart btn btn-danger my-1 me-1">ADD TO
+                                                                    WISHLIST</a>
+                                                                    <a routerLink="/e-commerce/shopping-cart"  class="add-to-cart btn btn-success">ADD TO
+                                                                    CART</a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="ibox-content card-footer text-end">
+                                    <a routerLink="/e-commerce/shopping-cart" class="btn btn-success me-1">Buy Now</a>
+                                    <a routerLink="/e-commerce/shopping-cart" class="btn btn-primary"><i class="fe fe-shopping-cart me-1"></i> Add to cart</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Row -->
+
+                <!-- row -->
+                <div class="row wrapper wrapper-content mt-0 px-0">
+                    <div class="col-xl-3 col-md-6">
+                        <div class="card item-card">
+                            <div class="card-body pb-0 h-100">
+                                <div class="text-center">
+                                    <img src="./assets/images/ecommerce/01.jpg" alt="img" class="img-fluid w-100 rounded-7">
+                                </div>
+                                <div class="py-3 relative product-des">
+                                    <div class="d-flex align-items-center">
+                                        <div class="cardtitle">
+                                            <span>Items</span>
+                                            <a>Wodden Flower Vase</a>
+                                        </div>
+                                        <div class="cardprice">
+                                            <span class="type--strikethrough">$999</span>
+                                            <span>$799</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-center border-top py-3 px-2 ">
+                                <a routerLink="/e-commerce/product" class="btn btn-primary me-1"> View More</a>
+                                <a routerLink="/e-commerce/shopping-cart" class="btn btn-success"><i class="fa fa-shopping-cart"></i> Add to cart</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6">
+                        <div class="card item-card">
+                            <div class="card-body pb-0 h-100">
+                                <div class="text-center">
+                                    <img src="./assets/images/ecommerce/04.jpg" alt="img" class="img-fluid w-100 rounded-7">
+                                </div>
+                                <div class="py-3 relative product-des">
+                                    <div class="d-flex align-items-center">
+                                        <div class="cardtitle">
+                                            <span>Items</span>
+                                            <a>Head phones</a>
+                                        </div>
+                                        <div class="cardprice">
+                                            <span class="type--strikethrough">$789</span>
+                                            <span>$199</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-center border-top py-3 px-2 ">
+                                <a routerLink="/e-commerce/product" class="btn btn-primary me-1"> View More</a>
+                                <a routerLink="/e-commerce/shopping-cart" class="btn btn-success"><i class="fa fa-shopping-cart"></i> Add to cart</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6">
+                        <div class="card item-card">
+                            <div class="card-body pb-0 h-100">
+                                <div class="text-center">
+                                    <img src="./assets/images/ecommerce/07.jpg" alt="img" class="img-fluid w-100 rounded-7">
+                                </div>
+                                <div class="py-3 relative product-des">
+                                    <div class="d-flex align-items-center">
+                                        <div class="cardtitle">
+                                            <span>Accessories</span>
+                                            <a>Lapotop</a>
+                                        </div>
+                                        <div class="cardprice">
+                                            <span class="type--strikethrough">$569</span>
+                                            <span>$239</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-center border-top py-3 px-2 ">
+                                <a routerLink="/e-commerce/product" class="btn btn-primary me-1"> View More</a>
+                                <a routerLink="/e-commerce/shopping-cart" class="btn btn-success"><i class="fa fa-shopping-cart"></i> Add to cart</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6">
+                        <div class="card item-card">
+                            <div class="card-body pb-0 h-100">
+                                <div class="text-center">
+                                    <img src="./assets/images/ecommerce/08.jpg" alt="img" class="img-fluid w-100 rounded-7">
+                                </div>
+                                <div class="py-3 relative product-des">
+                                    <div class="d-flex align-items-center">
+                                        <div class="cardtitle">
+                                            <span>Accessories</span>
+                                            <a>Metal Watch</a>
+                                        </div>
+                                        <div class="cardprice">
+                                            <span class="type--strikethrough">$569</span>
+                                            <span>$239</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-center border-top py-3 px-2 ">
+                                <a routerLink="/e-commerce/product" class="btn btn-primary me-1"> View More</a>
+                                <a routerLink="/e-commerce/shopping-cart" class="btn btn-success"><i class="fa fa-shopping-cart"></i> Add to cart</a>
+                            </div>
+                        </div>
+                    </div>
+                   <div class="col-xl-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title">Reviews</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="media mb-5 mt-0">
+                                <div class=" me-3">
+                                    <a href="javascript:void(0);"> <img class="media-object rounded-circle thumb-sm" alt="64x64" src="./assets/images/users/5.jpg"> </a>
+                                </div>
+                                <div class="media-body">
+                                    <h5 class="mt-0 mb-0">Gavin Murray</h5>
+                                    <div class="text-warning mb-0">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star-o"></i>
+                                    </div>
+                                    <p class="font-13 text-muted mb-0">Good Looking.........</p>
+                                    <a href=""><span class="badge btn-light rounded-pill">Reply</span></a>
+                                </div>
+                            </div>
+                            <div class="media mb-5">
+                                <div class=" me-3">
+                                    <a href="javascript:void(0);"> <img class="media-object rounded-circle thumb-sm" alt="64x64" src="./assets/images/users/15.jpg"> </a>
+                                </div>
+                                <div class="media-body">
+                                    <h5 class="mt-0 mb-0">Paul Smith</h5>
+                                    <div class="text-warning mb-0">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star-o"></i>
+                                        <i class="fa fa-star-o"></i>
+                                    </div>
+                                    <p class="font-13 text-muted mb-0">Very nice ! On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the </p>
+                                    <a href=""><span class="badge btn-light rounded-pill">Reply</span></a>
+                                </div>
+                            </div>
+                            <h5 class="mb-3">Add Review</h5>
+                            <form class="form-horizontal  m-t-20" action="index.html">
+                                <div class="form-group">
+                                    <div class="col-xs-12">
+                                        <input class="form-control" type="text" required="" placeholder="Username*">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-xs-12">
+                                        <input class="form-control" type="email" required="" placeholder="Email*">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-xs-12">
+                                        <textarea class="form-control" rows="5">Your Review*</textarea>
+                                    </div>
+                                </div>
+                                <div class="">
+                                    <a href="javascript:void(0);" class="btn btn-primary btn-rounded  waves-effect waves-light">Submit</a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                   </div>
+                </div>
+                <!-- /row -->

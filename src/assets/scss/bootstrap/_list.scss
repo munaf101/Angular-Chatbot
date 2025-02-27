@@ -1,0 +1,331 @@
+/*-----Lists-----*/
+
+.list-group {
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	padding-inline-start: 0;
+	margin-bottom: 0;
+  }
+  
+  .list-group-item-action {
+	width: 100%;
+	color:$default-color;
+	text-align: inherit;
+  
+	&:hover, &:focus {
+	  color:$default-color;
+	  text-decoration: none;
+	  background-color: #f0f0f2;
+	  z-index: 0;
+	}
+  
+	&:active {
+	  color:$default-color;
+	  background-color: #f0f0f2;
+	  z-index: 0;
+	}
+  }
+  
+  .list-group-item {
+	position: relative;
+	display: block;
+	padding: 0.75rem 1.25rem;
+	margin-bottom: -1px;
+	background-color: $white;
+	border: 1px solid $border !important;
+  }
+  
+  .listorder {
+	position: relative;
+	padding: 0.75rem 1.25rem;
+	margin-bottom: -1px;
+	background-color: $white;
+	border: 1px solid $border;
+	list-style-type: decimal;
+	list-style-position: inside;
+  }
+  
+  .listorder1 {
+	position: relative;
+	padding: 0.75rem 1.25rem;
+	margin-bottom: -1px;
+	background-color: $white;
+	border: 1px solid $border;
+	list-style-type: upper-alpha;
+	list-style-position: inside;
+  }
+  
+  .listunorder {
+	position: relative;
+	padding: 0.75rem 1.25rem;
+	margin-bottom: -1px;
+	background-color: $white;
+	border: 1px solid $border;
+	list-style-type: circle;
+	list-style-position: inside;
+  }
+  
+  .listunorder1 {
+	position: relative;
+	padding: 0.75rem 1.25rem;
+	margin-bottom: -1px;
+	background-color: $white;
+	border: 1px solid $border;
+	list-style-type: square;
+	list-style-position: inside;
+  }
+  
+  .list-group-item {
+	&:first-child {
+	  border-start-start-radius: 8px;
+	  border-start-end-radius: 8px;
+	}
+  
+	&:last-child {
+	  margin-bottom: 0;
+	  border-end-end-radius: 8px;
+	  border-end-start-radius: 8px;
+	}
+  
+	&:hover, &:focus {
+	  z-index: 1;
+	  text-decoration: none;
+	}
+  
+	&.disabled, &:disabled {
+	  color: #7c90b1;
+	  background-color: $white;
+	}
+  
+	&.active {
+	  z-index: 0;
+	  background-color: #f0f0f2;
+	  border: 1px solid rgba(238, 238, 238, 0.5);
+	  color:$default-color;
+	}
+  }
+  
+  .list-group-flush {
+	.list-group-item {
+	  border-inline-end: 0;
+	  border-inline-start: 0;
+	  border-radius: 0;
+	}
+  
+	&:first-child .list-group-item:first-child {
+	  border-block-start: 0;
+	}
+  
+	&:last-child .list-group-item:last-child {
+	  border-block-end: 0;
+	}
+  }
+  
+  .list-group-item-success {
+	color: #316100 !important;
+	background-color: #d2ecb8 !important;
+  
+	&.list-group-item-action {
+	  &:hover, &:focus {
+		color: #316100 !important;
+		background-color: #c5e7a4 !important;
+	  }
+  
+	  &.active {
+		color: $white;
+		background-color: #316100 !important;
+		border-color: #316100 !important;
+	  }
+	}
+  }
+  
+  .list-group-item-info {
+	color: #24587e !important;
+	background-color: #cbe7fb !important;
+  
+	&.list-group-item-action {
+	  &:hover, &:focus {
+		color: #24587e !important;
+		background-color: #b3dcf9 !important;
+	  }
+  
+	  &.active {
+		color: $white;
+		background-color: #24587e !important;
+		border-color: #24587e !important;
+	  }
+	}
+  }
+  
+  .list-group-item-warning {
+	color: #7d6608 !important;
+	background-color: #fbeebc !important;
+  
+	&.list-group-item-action {
+	  &:hover, &:focus {
+		color: #7d6608 !important;
+		background-color: #fae8a4 !important;
+	  }
+  
+	  &.active {
+		color: $white !important;
+		background-color: #7d6608 !important;
+		border-color: #7d6608 !important;
+	  }
+	}
+  }
+  
+  .list-group-item-danger {
+	color: #6b1110 !important;
+	background-color: #f1c1c0 !important;
+  
+	&.list-group-item-action {
+	  &:hover, &:focus {
+		color: #6b1110 !important;
+		background-color: #ecacab !important;
+	  }
+  
+	  &.active {
+		color: $white;
+		background-color: #6b1110 !important;
+		border-color: #6b1110 !important;
+	  }
+	}
+  }
+  
+  .list-group-item-light {
+	color: #818182;
+	background-color: #fdfdfe;
+  
+	&.list-group-item-action {
+	  &:hover, &:focus {
+		color: #818182;
+		background-color: #ececf6;
+	  }
+  
+	  &.active {
+		color: $white;
+		background-color: #818182;
+		border-color: #818182;
+	  }
+	}
+  }
+  
+  .list-group-item-dark {
+	color: #1b1e21;
+	background-color: #c6c8ca;
+  
+	&.list-group-item-action {
+	  &:hover, &:focus {
+		color: #1b1e21;
+		background-color: #b9bbbe;
+	  }
+  
+	  &.active {
+		color: $white;
+		background-color: #1b1e21;
+		border-color: #1b1e21;
+	  }
+	}
+  }
+  
+  .close {
+	float: $float-right;
+	font-size: 1.40625rem;
+	font-weight: 700;
+	line-height: 1;
+	color: #495057;
+	opacity: .5;
+  
+	&:hover, &:focus {
+	  color: $black;
+	  text-decoration: none;
+	  opacity: .75;
+	  box-shadow: none;
+	  outline: 0;
+	}
+  
+	&:not(:disabled):not(.disabled) {
+	  cursor: pointer;
+	}
+  }
+  
+  button.close {
+	padding: 0;
+	background-color: transparent;
+	border: 0;
+	-webkit-appearance: none;
+  }
+  
+  .list-inline-dots .list-inline-item + .list-inline-item:before {
+	content: 'Â· ';
+	margin-inline-start: -2px;
+	margin-inline-end: 3px;
+  }
+  
+  .list-separated-item {
+	padding: 1rem 0;
+  
+	&:first-child {
+	  padding-block-start: 0;
+	}
+  }
+  
+  .list-group-item {
+	&.active .icon {
+	  color: inherit !important;
+	}
+  
+	.icon {
+	  color: #6b6f80 !important;
+	}
+  }
+  
+  .list-group-transparent .list-group-item {
+	background: none;
+	border: 0;
+	padding: .75rem 1rem;
+	border-radius: 3px;
+  
+	&.active {
+	  background: $gray-100;
+	  font-size: 15px;
+	  color: #1a1630 !important;
+	}
+  }
+  
+  .visitor-list {
+	p {
+	  font-size: 12px;
+	}
+  
+	i {
+	  font-size: 20px;
+	}
+  }
+  
+  .sales-relative {
+	position: relative;
+  }
+  
+  .icon-absolute {
+	position: absolute;
+	display: block;
+	bottom: 10px;
+	inset-inline-end: 10px;
+	padding: 20px 0;
+	text-align: center;
+	border-radius: 50%;
+	width: 70px;
+	height: 70px;
+  }
+  
+  @media (min-width: 991px) and (max-width: 1024px) {
+	.icon-absolute {
+	  display: none;
+	}
+  }
+  
+  /*------ List -------*/

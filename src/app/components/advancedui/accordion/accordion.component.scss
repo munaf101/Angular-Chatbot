@@ -1,0 +1,150 @@
+::ng-deep {
+    .accordion .card-header {
+        box-shadow: none;
+        display: block;
+        padding: 0px;
+        background-color: #f0f0f2;
+        min-height: 0;
+        border-radius: 0;
+        border:0
+    }
+    .accordion .card {
+        box-shadow: none;
+        border-radius: 0;
+        margin-bottom: 0;
+    }
+    .accordion .card-header::before {
+        display: none;
+    }
+    .accordion .btn {
+        padding: 15px;
+        text-decoration: none;
+        width: 100%;
+        text-align: left;
+        color: #1a1630;
+        font-weight: 500;
+        font-size: 17px;
+        border:0;
+        line-height: initial;
+    }
+}
+::ng-deep {
+    app-accordion {
+        .btn-link.collapsed .fa-minus-circle:before {
+            content: "\f055" !important;
+        }
+
+        button.btn-link {
+            color: #5e2dd8;
+            font-size: 1rem;
+        }
+
+        .acc-card .card-header {
+            padding: 15px;
+            background-color: #f0f0f2;
+            border: 1px solid #e6ebf1;
+            border-radius: 4px;
+
+            button {
+                color: inherit;
+                font-size: 1rem;
+                // padding: 0;
+            }
+        }
+
+        .panel-heading {
+            padding: 0;
+            border-radius: 4px;
+
+            .card-header {
+                padding: 15px;
+                background-color: #f0f0f2;
+            }
+
+            button {
+                color: inherit;
+                font-size: 1rem;
+                // padding: 0;
+            }
+        }
+
+        .btn-link {
+            text-decoration: none;
+            width: 100%;
+            text-align: left;
+
+            &:hover,
+            &:focus {
+                text-decoration: none;
+            }
+        }
+
+        [activeIds="custom-panel-1"] .accordion-item {
+            padding: 1rem 1.25rem;
+        }
+    }
+
+    .dark-theme {
+        app-accordion {
+            button.btn-link {
+                color: #ccd4e0;
+            }
+        }
+       .acc-header a {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+        .accordion-item {
+            background-color: var(--dark-body);
+            color: var(--dark);
+        }
+
+        .accordion-button:not(.collapsed) {
+            color: #fff;
+            background-color:  var(--dark-body);
+        }
+    }
+
+    .accordion-button:not(.collapsed) {
+        color: var(--primary-bg-color);
+        background-color:#f0f0f2
+        
+    }
+    .accordionjs .acc_section.acc_active>.acc_head {
+        background: var(--primary-bg-color) !important;
+    }
+    .rtl {
+        app-accordion {
+            .btn-link {
+                text-align: right;
+            }
+
+            .panel-heading1 a.collapsed:before {
+                left: 10px !important;
+                right: inherit !important;
+            }
+        }
+    }
+}
+
+.card.disabled {
+    opacity: 0.5;
+}
+
+.acc-header  {
+    display: block;
+    padding: 15px;
+    background-color: #f0f0f2;
+    border: 1px solid #e8e9ea;
+    border-radius: 4px;
+}
+.dark-theme{
+    .accordion-item {
+        border-color: var(--dark-body) !important;
+        overflow: hidden;
+      }
+      .accordion-button {
+        background-color: var(--dark-theme) !important;
+        color:var(--dark)!important;
+      }
+}

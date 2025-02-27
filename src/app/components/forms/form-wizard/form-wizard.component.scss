@@ -1,0 +1,11 @@
+::ng-deep{
+    .rtl {
+        app-form-wizard{
+            .custom-datepicker{
+                ngb-datepicker{
+                    inset: 0px auto auto auto !important;
+                }
+            }
+        }
+    }
+}

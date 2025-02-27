@@ -1,0 +1,174 @@
+<!-- Page SideBar Start -->
+<div class="app-sidebar__overlay" data-bs-toggle="sidebar" (click)="sidebarClose()" ></div>
+<div class="sticky" [ngClass]="{'sticky-pin':scrolled}">
+    <aside class="app-sidebar sidebar-scroll">
+            	<div class="main-sidebar-header active">
+                    <a class="desktop-logo logo-light active" routerLink="/dashboard"><img src="./assets/images/brand/logo.png" class="main-logo" alt="logo"></a>
+                    <a class="desktop-logo logo-dark active" routerLink="/dashboard"><img src="./assets/images/brand/logo-white.png" class="main-logo" alt="logo"></a>
+                    <a class="logo-icon mobile-logo icon-light active" routerLink="/dashboard"><img src="./assets/images/brand/favicon.png" alt="logo"></a>
+                    <a class="logo-icon mobile-logo icon-dark active" routerLink="/dashboard"><img src="./assets/images/brand/favicon-white.png" alt="logo"></a>
+                </div>
+           <ng-scrollbar>
+            <div class="main-sidemenu">
+            <!-- <div class="app-sidebar__user clearfix">
+                <div class="dropdown user-pro-body">
+                    <div class="user-pic">
+                        <img src="./assets/images/users/2.jpg" alt="user-img" class="avatar-xl rounded-circle mb-1">
+                    </div>
+                    <div class="user-info">
+                        <h5 class="fs-16 mb-1 text-muted">Jessica <i class="ion-checkmark-circled  text-success fs-12"></i></h5>
+                        <span class="text-muted app-sidebar__user-name text-sm">Web Designer</span>
+                    </div>
+                </div>
+                <div class="sidebar-navs">
+                    <ul class="nav nav-pills-circle">
+                        <li class="nav-item" placement="top" data-toggle="tooltip" ngbTooltip="Support">
+                            <a class="icon" href="javascript:void(0);" >
+                                <i class="las la-life-ring header-icons"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item" placement="top" data-toggle="tooltip" ngbTooltip="Documentation">
+                            <a class="icon" href="javascript:void(0);">
+                                <i class="las  la-file-alt header-icons"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item" placement="top" data-toggle="tooltip" ngbTooltip="Projects">
+                            <a href="javascript:void(0);" class="icon">
+                                <i class="las la-project-diagram header-icons"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item" placement="top" data-toggle="tooltip" ngbTooltip="Settings">
+                            <a class="icon" href="javascript:void(0);">
+                                <i class="las la-cog header-icons"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div> -->
+            <div class="slide-left disabled" id="slide-left"><svg xmlns="http://www.w3.org/2000/svg" fill="#7b8191" width="24" height="24" viewBox="0 0 24 24"><path d="M13.293 6.293 7.586 12l5.707 5.707 1.414-1.414L10.414 12l4.293-4.293z"/></svg></div>
+
+            <ul class="side-menu">
+                <!-- 1st Level Menu -->
+                <li *ngFor="let menuItem of menuItems" [ngClass]="{'side-item side-item-category':menuItem.headTitle,'slide':menuItem.title, 'active': menuItem.active, 'is-expanded': menuItem.active}">
+                  <!-- {{menuItem.headTitle}} -->
+          
+                  <!-- has-Link -->
+                  <a class="side-menu__item has__link" [routerLink]="!menuItem.type ? null : [menuItem.path]"
+                  *ngIf="menuItem.type === 'link' " routerLinkActive="active" (click)="toggleNavActive(menuItem)">
+                  <span class="shape1"></span>
+                  <span class="shape2"></span>
+                  <ng-container *ngIf="menuItem.icon">
+                    <span [innerHTML]="getSanitizedSVG(menuItem.icon)"></span>
+                  </ng-container>
+                  <span class="side-menu__label">{{menuItem.title}}</span>
+                  <span class="{{menuItem.badgeClass}}"*ngIf="menuItem.badgeClass && menuItem.badgeValue">{{menuItem.badgeValue}}</span>
+
+                </a>
+                  <!-- empty path -->
+                  <a class="side-menu__item has__link" href="javascript:;" *ngIf="menuItem.type === 'empty'"
+                    (click)="toggleNavActive(menuItem)">
+                    <span class="shape1"></span>
+                    <span class="shape2"></span>
+                    <ng-container *ngIf="menuItem.icon">
+                        <span [innerHTML]="getSanitizedSVG(menuItem.icon)"></span>
+                      </ng-container>
+                    <span class="side-menu__label">{{menuItem.title}}</span>
+
+                  </a>
+                  <!-- external -->
+                  <a class="side-menu__item has__link" routerLinkActive="active" target="_blank"
+                    [routerLink]="!menuItem.type ? null : [menuItem.path] " *ngIf="menuItem.type === 'external' "
+                    (click)="toggleNavActive(menuItem)">
+                    <span class="side-menu__icon">
+                      <i class="fe fe-{{menuItem.icon}} "></i>
+                    </span>
+                    <span class="side-menu__label">{{menuItem.title}}</span>
+                    <span class="{{menuItem.badgeClass}}"*ngIf="menuItem.badgeClass && menuItem.badgeValue">{{menuItem.badgeValue}}</span>
+                  </a>
+                  <!-- has-Sub -->
+                  <a class="side-menu__item" [routerLink]="menuItem.type ? null: [menuItem.path]"
+                    *ngIf="menuItem.type === 'sub'" (click)="toggleNavActive(menuItem)" [ngClass]="{'active': menuItem.active}">
+                    <span class="shape1"></span>
+                    <span class="shape2"></span>
+                    <ng-container *ngIf="menuItem.icon">
+                        <span [innerHTML]="getSanitizedSVG(menuItem.icon)"></span>
+                      </ng-container>
+                      <!-- menu item link -->
+                    <span class="side-menu__label">{{menuItem.title}}</span>
+                    <span class="{{menuItem.badgeClass}}" *ngIf="menuItem.badgeClass && menuItem.badgeValue">
+                      {{menuItem.badgeValue}}
+                    </span>
+                    <i class="angle fe fe-chevron-down" [ngClass]="{ 'd-none': menuItem.badgeClass}"></i>
+          
+                  </a>
+                  <!-- 2nd Level menu -->
+                  <ul class="slide-menu "  *ngIf="menuItem.children && menuItem.type === 'sub'"  [ngClass]="{ open: menuItem.active }" >
+                    <li *ngFor="let childrenItem of menuItem.children"
+                      [ngClass]="{'is-expanded active': childrenItem.active, 'sub-slide': childrenItem.Menusub}">
+          
+                      <!-- link -->
+                      <a class="slide-item" routerLinkActive="active"
+                      [routerLink]="!childrenItem.type ? null : [childrenItem.path] " *ngIf="childrenItem.type === 'link' "
+                      (click)="toggleNavActive(childrenItem)">
+                      {{childrenItem.title}}
+                    </a>
+                      <!-- empty -->
+                      <a class="slide-item" routerLinkActive="active" href="javascript:;" *ngIf="childrenItem.type === 'empty' "
+                        (click)="toggleNavActive(childrenItem)">
+                        {{childrenItem.title}}
+                      </a>
+                      <!-- sub -->
+                      <a href="javascript:;" class="slide-item"
+                        [routerLink]="childrenItem.type ? null : [childrenItem.path]" *ngIf="childrenItem.type === 'sub' "[ngClass]="{'is-expanded': childrenItem.active,'active':childrenItem.active}"
+                        (click)="toggleNavActive(childrenItem)">
+                        <span class="sub-side-menu__label"> {{childrenItem.title}}</span>
+                        <i class="sub-angle fe fe-chevron-down"></i>
+                      </a>
+                      <!-- 3rd Level menu -->
+                      <ul class="sub-slide-menu" *ngIf="childrenItem.children" [ngClass]="{'open': childrenItem.active}"
+                        [ngClass]="{'open': childrenItem.active}">
+                        <li class="sub-slide2" *ngFor="let childrenSubItem of childrenItem.children" [ngClass]="{'is-expanded': childrenSubItem.active,'sub-slide': childrenSubItem.Menusub}">
+                          <!-- link -->
+                          <a class="sub-side-menu__item" routerLinkActive="active"
+                            [routerLink]="!childrenSubItem.type ? null : [childrenSubItem.path]"
+                            *ngIf="childrenSubItem.type === 'link'" (click)="toggleNavActive(childrenSubItem);">
+                            {{childrenSubItem.title}}
+                          </a>
+                          <!-- empty -->
+                          <a class="sub-slide-item" href="javascript:;" *ngIf="childrenSubItem.type === 'empty'"
+                            (click)="toggleNavActive(childrenSubItem)">
+                            {{childrenSubItem.title}}
+                          </a>
+                          <!-- sub -->
+                          <a class="sub-side-menu__item" href="javascript:;"
+                            [routerLink]="childrenSubItem.type ? null : [childrenSubItem.path]"
+                            *ngIf="childrenSubItem.type === 'sub' " (click)="toggleNavActive(childrenSubItem)">
+                            <span class="sub-side-menu__label2"> {{childrenSubItem.title}} </span>
+                            <i class="sub-angle fe fe-chevron-down"></i>
+                          </a>
+          
+                          <!--4th level -->
+                          <ul class="sub-slide-menu1" *ngIf="childrenSubItem.children"[ngStyle]="{'display': childrenSubItem.active ? 'block' : 'none' }"
+                            [ngClass]="{'open': childrenSubItem.active}">
+                            <li class="" *ngFor="let childrenSubItem1 of childrenSubItem.children"
+                              [ngClass]="{'is-expanded': childrenSubItem1.active,'sub-slide': childrenSubItem1.Menusub}">
+                              <a class="sub-slide-item2" routerLinkActive="active" (click)="toggleNavActive(childrenSubItem1)"
+                                [routerLink]="!childrenSubItem1.type ? null : [childrenSubItem1.path]"
+                                *ngIf="childrenSubItem1.type === 'link'">
+                                {{childrenSubItem1.title}}</a>
+                            </li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+              <div class="slide-right" id="slide-right"><svg xmlns="http://www.w3.org/2000/svg" fill="#7b8191" width="24" height="24" viewBox="0 0 24 24"><path d="M10.707 17.707 16.414 12l-5.707-5.707-1.414 1.414L13.586 12l-4.293 4.293z"/></svg></div>
+
+        </div>
+      </ng-scrollbar>
+    </aside>
+        </div>
+
+

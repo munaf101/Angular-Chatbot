@@ -1,0 +1,477 @@
+/*------ Accordion -------*/
+
+.accordion .card {
+	&:not(:first-of-type) {
+	  &:not(:last-of-type) {
+		border-block-end: 0;
+		border-radius: 0;
+	  }
+  
+	  .card-header:first-child {
+		border-radius: 0;
+	  }
+	}
+  
+	&:first-of-type {
+	  border-block-end: 0;
+	  border-end-end-radius: 0;
+	  border-end-start-radius: 0;
+	}
+  
+	&:last-of-type {
+	  border-start-start-radius: 0;
+	  border-start-end-radius: 0;
+	}
+  }
+  
+  ul li ul:hover {
+	visibility: visible;
+	opacity: 1;
+	display: block;
+  }
+  
+  .example .pagination {
+	margin-bottom: 0;
+  }
+  
+  .pagination {
+	display: -ms-flexbox;
+	display: flex;
+	padding-inline-start: 0;
+	list-style: none;
+	border-radius: 3px;
+  }
+  
+  .page-link {
+	position: relative;
+	display: block;
+	padding: 0.5rem 0.75rem;
+	margin-inline-start: -1px;
+	line-height: 1.25;
+	background-color: $white;
+	border: 1px solid $border;
+	color:$default-color;
+  
+	&:hover {
+	  z-index: 2;
+	  text-decoration: none;
+	  background-color: transparent;
+	  box-shadow: none;
+	}
+  
+	&:focus {
+	  z-index: 2;
+	  outline: 0;
+	  box-shadow: none;
+	}
+  
+	&:not(:disabled):not(.disabled) {
+	  cursor: pointer;
+	}
+  }
+  
+  .page-item {
+	&:first-child .page-link {
+	  margin-inline-start: 0;
+	  border-start-start-radius: 3px;
+	  border-end-start-radius: 3px;
+	}
+  
+	&:last-child .page-link {
+	  border-start-end-radius: 3px;
+	  border-end-end-radius: 3px;
+	}
+  
+	&.active .page-link {
+	  z-index: 0;
+	  color: $white;
+  
+	  &:hover {
+		color: $white !important;
+	  }
+	}
+  
+	&.disabled .page-link {
+	  color: #ced4da;
+	  pointer-events: none;
+	  cursor: auto;
+	  background-color: $white;
+	  border-color: #dee2e6;
+	}
+  }
+  
+  .pagination-lg {
+	.page-link {
+	  padding: 0.75rem 1.5rem;
+	  font-size: 1.125rem;
+	  line-height: 1.5;
+	}
+  
+	.page-item {
+	  &:first-child .page-link {
+		border-start-start-radius: 3px;
+		border-end-start-radius: 3px;
+	  }
+  
+	  &:last-child .page-link {
+		border-start-end-radius: 3px;
+		border-end-end-radius: 3px;
+	  }
+	}
+  }
+  
+  .pagination-sm {
+	.page-link {
+	  padding: 0.25rem 0.5rem;
+	  font-size: 0.875rem;
+	  line-height: 1.5;
+	}
+  
+	.page-item {
+	  &:first-child .page-link {
+		border-start-start-radius: 3px;
+		border-end-start-radius: 3px;
+	  }
+  
+	  &:last-child .page-link {
+		border-start-end-radius: 3px;
+		border-end-end-radius: 3px;
+	  }
+	}
+  }
+  
+  /*-------Accordion-----------*/
+  
+  .accordion-panel .panel-heading {
+	border: 1px solid $border;
+  }
+  
+  .panel-group .panel {
+	border-radius: 4px;
+	box-shadow: none;
+  }
+  
+  .panel-default > .panel-heading {
+	padding: 0;
+	border-radius: 0;
+	background-color: $gray-100;
+	// border: 1px solid $border;
+  }
+  
+  .panel-title {
+	font-size: 14px;
+	margin-bottom: 0;
+  
+	> a {
+	  display: block;
+	  padding: 15px;
+	  text-decoration: none;
+	}
+  }
+  
+  .more-less {
+	float: right;
+	color: #212121;
+  }
+  
+  .panel-default > .panel-heading + .panel-collapse > .panel-body {
+	border: 1px solid $border;
+	line-height: 25px;
+	font-size: 14px;
+  }
+  
+  .panel > .list-group {
+	margin-bottom: 0;
+  
+	.list-group-item:first-child {
+	  border-start-end-radius: 0;
+	  border-start-start-radius: 0;
+	}
+  }
+  
+  .panel-heading + .list-group .list-group-item:first-child {
+	border-block-start-width: 0;
+  }
+  
+  .panel-default .list-group-item.active {
+	color: $black;
+	background-color:  $gray-100;
+	border-color:  $gray-100;
+  }
+  
+  .panel-primary .list-group-item.active:hover {
+	color: #FFF !important;
+	background-color: #255be6;
+	border-color: #255be6;
+  }
+  
+  .panel-success .list-group-item.active {
+	color: $white !important;
+	background-color: #2dce89 !important;
+	border-color: #2dce89 !important;
+  
+	&:hover {
+	  color: $white !important;
+	  background-color: #15ca7c;
+	  border-color: #15ca7c;
+	}
+  }
+  
+  .panel-info .list-group-item.active {
+	color: $white !important;
+	background-color: #45aaf2 !important;
+	border-color: #45aaf2 !important;
+  
+	&:hover {
+	  color: $white !important;
+	  background-color: #2d9eef !important;
+	  border-color: #2d9eef !important;
+	}
+  }
+  
+  .panel-warning .list-group-item.active {
+	color: $white !important;
+	background-color: #ecb403 !important;
+	border-color: #ecb403 !important;
+  
+	&:hover {
+	  color: $white !important;
+	  background-color: #cea70c;
+	  border-color: #cea70c;
+	}
+  }
+  
+  .panel-danger .list-group-item.active {
+	color: $white !important;
+	background-color: #dc0441 !important;
+	border-color: #dc0441 !important;
+  
+	&:hover {
+	  color: $white !important;
+	  background-color: #a15226;
+	  border-color: #a15226;
+	}
+  }
+  
+  .panel-default .list-group-item.active {
+	&:hover, &:focus {
+	  color: $black;
+	  background-color:  $gray-100 !important;
+	  border-color:  $gray-100 !important;
+	}
+  }
+  
+  .wrap {
+	box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+	border-radius: 4px;
+  }
+  
+  a {
+	&:focus, &:hover, &:active {
+	  outline: 0;
+	  text-decoration: none;
+	}
+  }
+  
+  .panel1 {
+	border-width: 0 0 1px 0;
+	border-style: solid;
+	border-color: $white;
+	background: none;
+	box-shadow: none;
+  
+	&:last-child {
+	  border-block-end: none;
+	}
+  }
+  
+  .panel-group1 {
+	> .panel1:first-child .panel-heading1 {
+	  border-radius: 4px 4px 0 0;
+	}
+  
+	.panel1 {
+	  border-radius: 0;
+	}
+  }
+  
+  .panel-title1 {
+	font-size: 14px;
+	margin-bottom: 0;
+  }
+  
+  .panel-group1 .panel1 + .panel1 {
+	margin-block-start: 0;
+  }
+  
+  .panel-heading1 {
+	color: $white;
+	padding: 0;
+  }
+  
+  .panel-group1 .panel-body {
+	border: 1px solid $border;
+  }
+  
+  .panel-title1 a {
+	display: block;
+	color: $white;
+	padding: 12px 20px;
+	position: relative;
+	font-size: 16px;
+	font-weight: 400;
+  }
+  
+  #accordion1 .panel-title1 a:hover {
+	color: $white !important;
+  }
+  
+  .panel-body1 {
+	background: $white;
+	padding: 10px;
+  }
+  
+  .panel1:last-child {
+	.panel-body1 {
+	  border-radius: 0 0 4px 4px;
+	}
+  
+	.panel-heading1 {
+	  border-radius: 0 0 4px 4px;
+	  transition: border-radius 0.3s linear 0.2s;
+  
+	  &.active {
+		border-radius: 0;
+		transition: border-radius linear 0s;
+	  }
+	}
+  }
+  
+  /* #bs-collapse icon scale option */
+  
+  .panel-title a.accordion-toggle {
+	&:before {
+	  content: "\f068";
+	  padding: 0 10px 0 0;
+	  color: $white;
+	  font-family: FontAwesome;
+	  float: right;
+	}
+  
+	&.collapsed:before {
+	  content: "\f067";
+	  padding: 0 10px 0 0;
+	  color: $white;
+	  font-family: FontAwesome;
+	  float: right;
+	}
+  }
+  
+  .panel-heading1 {
+	a {
+	  &.collapsed:before {
+		content: "\e9af";
+		position: absolute;
+		font-family: 'feather' !important;
+		inset-inline-end: 10px;
+		top: 9px;
+		font-size: 20px;
+		transition: all 0.5s;
+		transform: scale(1);
+	  }
+  
+	  &:before {
+		content: "\e994";
+		position: absolute;
+		font-family: 'feather' !important;
+		inset-inline-end: 10px;
+		top: 9px;
+		font-size: 20px;
+		transition: all 0.5s;
+		transform: scale(1);
+	  }
+	}
+  
+	&.active a:before {
+	  content: ' ';
+	  transition: all 0.5s;
+	  transform: scale(0);
+	}
+  }
+  
+  .demo-accordion p:last-child, .panel-group1 p:last-child {
+	margin-bottom: 0;
+  }
+  
+  #bs-collapse .panel-heading1 {
+	a:after {
+	  content: "\f01a";
+	  font-size: 24px;
+	  position: absolute;
+	  font-family: 'FontAwesome';
+	  inset-inline-end: 5px;
+	  top: 10px;
+	  transform: scale(0);
+	  transition: all 0.5s;
+	}
+  
+	&.active a:after {
+	  content: "\f01a";
+	  transform: scale(1);
+	  transition: all 0.5s;
+	}
+  }
+  
+  /* #accordion rotate icon option */
+  
+  #accordion .panel-heading1 {
+	a:before {
+	  content: "\f01a";
+	  font-size: 24px;
+	  position: absolute;
+	  font-family: 'FontAwesome';
+	  inset-inline-end: 5px;
+	  top: 10px;
+	  transform: rotate(180deg);
+	  transition: all 0.5s;
+	}
+  
+	&.active a:before {
+	  transform: rotate(0deg);
+	  transition: all 0.5s;
+	}
+  }
+  .accordion-toggle.collapsed,.panel-default>.panel-heading{
+	border-radius: 5px ;
+  }
+  .accordion-toggle{
+	border-radius: 5px 5px 0px 0px;
+  }
+  .panel-collapse.collapse.show .panel-body{
+	border-radius: 0px 0px 5px 5px;
+  }
+  
+  .acc-header a {
+	display: block;
+	padding: 15px;
+	background-color:  $gray-100;
+	border: 1px solid $border;
+	border-bottom: 0px;
+  }
+  .acc-card:last-child  .acc-header a{
+	border-bottom: 1px;
+  }
+  .acc-body {
+	padding: 15px;
+	border: 1px solid $border;
+  }
+  .collapse.show .acc-body{
+	border-bottom: 0px;
+  }
+  .accordionjs .acc_section.acc_active>.acc_head {
+    background: $primary !important;
+	color: $white !important;
+}
+.bg-gradient-primary {
+    background: linear-gradient(to left, #be5fca 0%, $primary 100%);
+}

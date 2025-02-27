@@ -1,0 +1,37 @@
+<div class="horizontalMenucontainer">
+    
+    <app-switcher></app-switcher>
+    <!--/ switcher -->
+    <div class="page">
+        <div class="page-main">
+            <div>
+    <!--app header-->
+    <app-header></app-header>
+    <!--/app header-->
+    <div class="jumps-prevent" style="padding-top: 63px;"></div>
+            <!--aside open-->
+            <app-sidebar appHoverEffectSidebar></app-sidebar>
+            <!--aside closed-->
+        </div>
+            <!-- App-Content -->
+            <div class="app-content main-content"  >
+
+                
+                    <div class="main-container container-fluid" id="custom-main-container"  (click)="toggleSwitcherBody()">
+
+                        <!-- // contetnt  -->
+                        <router-outlet> <app-loader></app-loader></router-outlet>
+                  
+
+                </div>
+            </div>
+            <!-- End app-content-->
+        </div>
+
+        <!--Footer-->
+        <app-footer></app-footer>
+        <!-- End Footer-->
+
+    </div>
+
+</div>

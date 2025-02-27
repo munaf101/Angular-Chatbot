@@ -1,0 +1,92 @@
+<!--Page header-->
+<app-page-header [title]="'Invoice List'"  [icon]="'layers'"  [title1]="'Pages'" [activeitem]="'Invoice List'"></app-page-header>
+
+<!--End Page header-->
+
+						<!-- Row -->
+						<div class="row">
+							<div class="col-lg-12">
+								<div class="card">
+									<div class="card-body">
+										<div class="row">
+											<div class="col-md-6 mb-4">
+												<a href="javascript:void(0);" class="btn btn-primary"><i class="fe fe-plus"></i> Add New Invoice</a>
+											</div>
+											<div class="col-md-6 col-auto">
+												<div class="form-group">
+													<div class="input-icon">
+														<span class="input-icon-addon">
+															<i class="fe fe-search"></i>
+														</span>
+														<input type="text" class="form-control ps-3" placeholder="Search Invoice">
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="e-table">
+											<div class="table-responsive table-lg">
+												<table class="table card-table table-vcenter text-nowrap border mb-0" id="example1">
+													<thead>
+														<tr>
+															<th></th>
+															<th>Invoice</th>
+															<th>Amount</th>
+															<th>Generate Date</th>
+															<th>Due Date</th>
+															<th>Bill to</th>
+															<th>Options</th>
+														</tr>
+													</thead>
+													<tbody>
+                                                        <tr *ngFor="let invoice of invoiceList">
+															<td class="align-middle w-5">
+																<label class="custom-control form-checkbox">
+																	<input type="checkbox" class="custom-control-input" name="example-checkbox2" value="option2">
+																	<span class="custom-control-label"></span>
+																</label>
+															</td>
+															<td class="align-middle">
+																<div class="d-flex flex-wrap">
+																	<img  src="{{invoice.img}}" alt="img" class="wd-50 ht-50 me-2">
+																	<div class="mt-1 flex-fill">
+																		<a class="btn-link text-wrap" href="javascript:void(0);"> #{{invoice.invoiceId}}</a>
+																	</div>
+																</div>
+															</td>
+															<td class="text-nowrap align-middle"><span class="font-weight-bold">${{invoice.amount}}</span></td>
+															<td class="text-nowrap align-middle"><span>{{invoice.Gendate}}</span></td>
+															<td class="text-nowrap align-middle">
+																{{invoice.Billdate}}
+															</td>
+															<td class="text-nowrap align-middle">
+																{{invoice.Billto}}
+															</td>
+															<td>
+                                                                <div class="btn-group invoice-dropdown" ngbDropdown container="body">
+                                                                    <a href="javascript:void(0)" class="btn btn-light btn-sm"
+                                                                        ngbDropdownToggle>Options
+                                                                        <i class="fa fa-angle-down"></i>
+                                                                    </a>
+                                                                    <div ngbDropdownMenu>
+                                                                        <a ngbDropdownItem href="javascript:void(0)"><i
+                                                                                class="fe fe-eye me-2"></i> View</a>
+                                                                        <a ngbDropdownItem href="javascript:void(0)"><i
+                                                                                class="fe fe-share me-2"></i> Send</a>
+                                                                        <a ngbDropdownItem href="javascript:void(0)"><i
+                                                                                class="fe fe-edit me-2"></i> Edit</a>
+                                                                        <a ngbDropdownItem href="javascript:void(0)"><i
+                                                                                class="fe fe-trash me-2"></i> Delete</a>
+                                                                    </div>
+                                                                </div>
+															</td>
+														</tr>
+														
+													</tbody>
+												</table>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- End Row -->

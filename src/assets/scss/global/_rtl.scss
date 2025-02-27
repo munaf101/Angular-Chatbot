@@ -1,0 +1,46 @@
+.rtl {
+    /* dropdown */
+    // .dropdown-menu {
+    //     &.show {
+    //         right: inherit !important;
+    //         left: 0 !important;
+    //     }
+    // }
+    /* dropdown */
+    /* apex charts */
+    .apexcharts-yaxis {
+        .apexcharts-yaxis-texts-g {
+            transform: translate(-20px, 0px);
+        }
+    }
+    /* apex charts */
+    .fa-angle-right:before {
+        content: "\f104" !important;
+    }
+    /* datepicker */
+    .ngb-dp-navigation-chevron {
+        transform: rotate(44deg);
+    }
+    .ngb-dp-arrow-next .ngb-dp-navigation-chevron {
+        transform: rotate(225deg);
+    }
+    /* datepicker */
+
+    .ngx-colors-overlay {
+        direction: ltr;
+    }
+    .invoice1-table .table {
+        margin-inline-end: 1px;
+    }
+    .ng-scrollbar-wrapper[deactivated=false][dir=ltr]>scrollbar-y.scrollbar-control {
+        left: 0;
+        right: unset;
+    }
+    &.dark-theme .cal-week-view .cal-day-column {
+        border-left-color: rgba(255, 255, 255, 0.1);
+        border-right-color: rgba(255, 255, 255, 0.1);
+    }
+    &.dark-theme [dir=rtl] .cal-week-view .cal-day-headers .cal-header:not(:last-child){
+        border-left: 1px solid rgba(255, 255, 255, 0.1) !important;
+    }
+}

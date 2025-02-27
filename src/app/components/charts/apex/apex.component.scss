@@ -1,0 +1,9 @@
+::ng-deep{
+
+    @media (max-width:479.9px) {
+        svg:nth-last-child(3){
+            overflow: visible !important;
+            transform: translateX(20%) !important;
+        }
+    }
+}
