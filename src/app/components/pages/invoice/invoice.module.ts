@@ -7,6 +7,7 @@ import { Invoice1Component } from './invoice1/invoice1.component';
 import { InvoiceRoutingModule } from './invoice-routing.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -16,6 +17,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
     CommonModule,
     InvoiceRoutingModule,
     NgbModule,
+    FormsModule,    
     SharedModule
   ]
 })

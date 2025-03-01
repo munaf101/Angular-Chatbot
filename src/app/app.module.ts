@@ -22,6 +22,7 @@ import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { RegisterComponent } from './authentication/register/register.component';
 import { GalleryModule } from '@ks89/angular-modal-gallery';
 import { HttpClientModule } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,6 +31,7 @@ import { HttpClientModule } from '@angular/common/http';
   ],
   imports: [
     BrowserModule,
+    CommonModule,   
     BrowserAnimationsModule,
     AppRoutingModule,
     SharedModule,

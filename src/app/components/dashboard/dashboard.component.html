@@ -176,8 +176,8 @@
             <div class="card overflow-hidden">
                 <div class="card-body pb-0">
                     <div class="text-left mb-4">
-                        <p class=" mb-1 ">  
-                            <i class="fa fa-line-chart me-1"></i>
+                        <p class=" mb-1 lname">  
+                            <i class="fa fa-line-chart me-1 "></i>
                             <!-- Total Sales -->
                             {{userdata.name}}  {{userdata.lname}} 
                         </p>
@@ -202,7 +202,7 @@
 
 
         <div class="col-xl-4 col-lg-12">
-            <div class="card recent_activity " style="height: 390px;" >
+            <div class="card recent_activity " style="max-height: 180px; overflow-y: auto;" >
                 <div class="card-header">
                     <h3 class="card-title">Transfer Agent to me</h3>
                     <!-- <div class="card-options" ngbDropdown>
@@ -218,9 +218,9 @@
                         </div>
                     </div> -->
                 </div>
-                <div class="card-body"  >
+                <div class="card-body card-body2" style="max-height: 180px; overflow-y: auto;"  >
                     <div  class="latest-timeline scrollbar3" id="scrollbar3" >
-                        <ng-scrollbar style="height: 280px;">
+                        <ng-scrollbar style="max-height: 110px; overflow-y: auto;">
                             <ul class="timeline mb-0" >
                                 <!-- <li class="mt-0" *ngFor="let recentActivity of recentActivities">
                                     <div class="d-flex"><span class="time-data">{{recentActivity.title}}</span><span

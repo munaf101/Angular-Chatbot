@@ -1,31 +1,40 @@
 <!--Page header-->
-<app-page-header [title]="'Add Invoice'"  [icon]="'layers'"  [title1]="'Pages'" [activeitem]="'Add Invoice'"></app-page-header>
+<!-- <app-page-header [title]="'Add Invoice'"  [icon]="'layers'"  [title1]="'Pages'" [activeitem]="'Add Invoice'"></app-page-header> -->
 
 <!--End Page header-->
 
 <!-- Row-->
-<div class="row">
+<div class="row my-1">
     <div class="col-md-12">
         <div class="card">
             <div class="card-header">
-                <div class="card-title">Add Invoice</div>
+                <div class="card-title">Add Questions</div>
             </div>
             <div class="card-body">
                 <div class="row">
                     <div class="col-12">
                         <div class="form-group row">
                             <div class="col-md-12">
-                                <label class="form-label">Invoice Title</label>
-                                <input type="text" class="form-control" placeholder="Invoice title" value="">
+                                <label class="form-label">Add Question</label>
+                                <!-- <input type="" class="form-control" placeholder="Invoice title" value=""> -->
+                                 <!-- <select name="" class="form-control" id="">
+                                    <option value="">FAQ</option>
+                                    <option value="">kodev Fusion</option>
+                                 </select> -->
+                                 <select class="form-control" >
+                                    <option value="1"></option>
+                                    <option value="1">FAQ</option>
+                                    <option value="2">kodev Fusion</option>
+                                </select> 
                             </div>
                         </div>
                         <div class="form-group row">
                             <div class="col-md-12">
-                                <label class="form-label">Subject</label>
-                                <textarea rows="5" class="form-control" placeholder="Subject of Invoice"></textarea>
+                                <label class="form-label">Intro Message  </label>
+                                <textarea rows="2" class="form-control" placeholder="Intro Message"></textarea>
                             </div>
                         </div>
-                        <div class="form-group row">
+                        <!-- <div class="form-group row">
                             <div class="col-md-12">
                                 <label class="form-label">Payment Number</label>
                                 <input class="form-control" type="number" placeholder="Payment Number" value="">
@@ -42,33 +51,59 @@
                                 <label class="form-label">Bill To</label>
                                 <textarea class="form-control" rows="4" placeholder="Bill To"></textarea>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
                 <div class="table-responsive">
                     <table class="table nowrap text-nowrap border mt-3">
                         <thead>
                             <tr>
-                                <th>PRODUCT</th>
-                                <th class="w-40">DESCRIPTION</th>
-                                <th>QNTY</th>
-                                <th>UNIT PRICE</th>
-                                <th>AMOUNT</th>
+                                <th style="width: 0px;">S NO</th>
+                                <th>Title</th>
+                                <th class="w-40">Conv_id</th>
+                                <th>Questions</th>
+                                <th>Input</th>
+                                <th>Image</th>
+                                <th>PDF</th>
+                                <th>Status</th>
+                                <th>ACTION</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td><input class="form-control" placeholder="" type="text" value=""></td>
-                                <td><textarea rows="1" class="form-control"></textarea></td>
-                                <td><input class="form-control" placeholder="" type="text" value=""></td>
-                                <td><input class="form-control" placeholder="" type="text" value=""></td>
-                                <td><input class="form-control" placeholder="" type="text" value=""></td>
+                            <tr *ngFor="let row of rows; let i = index">
+                                <td class="w-1">
+                                    <input class="form-control" placeholder="" type="text" value="{{ i + 1 }}" [readonly]="true">
+                                  </td>
+                                
+                                <td><input class="form-control" placeholder="" type="text" value="" [(ngModel)]="row.title"></td>
+                                <td><input class="form-control" placeholder="" type="text" value="" [(ngModel)]="row.convId"></td>
+                                <td><textarea rows="1" class="form-control" [(ngModel)]="row.question"></textarea></td>
+                                <td>
+                                    <input class="form-control" placeholder="" type="text" value="" [(ngModel)]="row.input">
+                                </td>
+                                <td>
+                                    <input  #fileInput type="file" (change)="onFileSelected($event)" type="file" style="display: none;" value="" [(ngModel)]="row.image">
+                                     <i class="fe fe-camera mt-1 ml-4" style="font-size: 16px;" (click)="fileInput.click()"></i>
+                                </td>
+                                <td>
+                                    <input  #fileInput1 type="file" (change)="onFileSelected1($event)" [(ngModel)]="row.pdf" type="file" style="display: none;" value="">
+                                     <i class="fe fe-file-plus mt-1 ml-2" style="font-size: 16px;" (click)="fileInput1.click()"></i>
+                                </td>
+                                <!-- <td><input class="form-control" placeholder="" type="text" value=""></td> -->
+                                <td><input class="form-control" placeholder="" type="text" value="" [(ngModel)]="row.status"></td>
+                                <td>
+                                    <!-- <input class="form-control" placeholder="" type="text" value=""> -->
+                                     <!-- <button class="btn btn-square btn-secondary"></button> -->
+                                     <button type="button" class="btn btn-square btn-secondary" (click)="removeRow(i)"><i class="fe fe-minus"></i></button>
+
+                                </td>
+
                             </tr>
                         </tbody>
                         <tfoot>
                             <tr>
-                                <td><a class="btn btn-light" href="javascript:void(0)"><i class="fe fe-plus"></i> Add
-                                        Product</a></td>
+                                <td><a class="btn btn-light" href="javascript:void(0)" (click)="addRow()"><i class="fe fe-plus"></i> Add
+                                        </a></td>
                                 <td></td>
                                 <td></td>
                                 <td></td>
@@ -77,18 +112,18 @@
                         </tfoot>
                     </table>
                 </div>
-                <div class="form-group row">
+                <!-- <div class="form-group row">
                     <div class="col-md-12">
                         <label class="form-label">Vat Rate</label>
                         <input class="form-control" placeholder="Vat Rate" type="text" value="">
                     </div>
-                </div>
+                </div> -->
             </div>
             <div class="card-footer">
                 <div class="row">
                     <div class="col">
-                        <a class="btn btn-success me-1" href="javascript:void(0)"><i class="fe fe-plus"></i> Add New
-                            Invoice</a>
+                        <a class="btn btn-primary btn-square me-1" href="javascript:void(0)"><i class="fe fe-plus"></i> Add New
+                            Question</a>
                         <a class="btn btn-light" href="javascript:void(0)">Cancel</a>
                     </div>
                 </div>

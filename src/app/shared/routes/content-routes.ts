@@ -53,10 +53,10 @@ export const content: Routes = [
         path: 'forms',
         loadChildren: () => import('../../components/forms/forms.module').then(m => m.FormElementsModule)
     },
-    {
-        path: 'charts',
-        loadChildren: () => import('../../components/charts/charts.module').then(m => m.ChartModule)
-    },
+    // {
+    //     path: 'charts',
+    //     loadChildren: () => import('../../components/charts/charts.module').then(m => m.ChartModule)
+    // },
     {
         path: 'tables',
         loadChildren: () => import('../../components/tables/tables.module').then(m => m.TablesModule)
@@ -67,7 +67,23 @@ export const content: Routes = [
 
     },
     {
+        path: 'add_questions',
+        loadChildren: () => import('../../components/pages/invoice/invoice.module').then(m => m.InvoiceModule)
+    },
+    {
         path: 'list_key',
+        loadChildren: () => import('../../components/tables/tables.module').then(m => m.TablesModule)
+
+    },
+    {
+        path: 'add_key',
+        // loadChildren: () => import('../../components/tables/tables.module').then(m => m.TablesModule)
+        loadChildren: () => import('../../components/pages/invoice/invoice.module').then(m => m.InvoiceModule)
+
+
+    },
+    {
+        path: 'view',
         loadChildren: () => import('../../components/tables/tables.module').then(m => m.TablesModule)
 
     },
@@ -79,10 +95,7 @@ export const content: Routes = [
         path: 'pages/email',
         loadChildren: () => import('../../components/pages/email/email.module').then(m => m.EmailModule)
     },
-    {
-        path: 'pages/invoice',
-        loadChildren: () => import('../../components/pages/invoice/invoice.module').then(m => m.InvoiceModule)
-    },
+  
     {
         path: 'pages/pricing',
         loadChildren: () => import('../../components/pages/pricing/pricing.module').then(m => m.PricingModule)

@@ -10,6 +10,7 @@ import { full } from './shared/routes/full-content-routes';
 import { RegisterComponent } from './authentication/register/register.component';
 import { authguardGuard } from './authguard/authguard.guard';
 import { FilterSortPaginationComponent } from './components/tables/data-table/filter-sort-pagination/filter-sort-pagination.component';
+import { BasicDataTableComponent } from './components/tables/data-table/basic-data-table/basic-data-table.component';
 
 const routes: Routes = [
   { path: '', redirectTo:'auth/login', pathMatch: 'full',},
@@ -25,6 +26,7 @@ const routes: Routes = [
     // , canActivate: [authguardGuard]
   },
   { path: '**', redirectTo: '' },
+
 
   ///
   // { path: 'view_questions', component: FilterSortPaginationComponent },

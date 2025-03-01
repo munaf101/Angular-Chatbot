@@ -11,8 +11,8 @@ const routes : Routes = [
         path:'',
         children: [
             { path: 'invoice-list', component: InvoiceListComponent},
-            { path: 'invoice-1', component: Invoice1Component},
-            { path: 'invoice-add', component: AddInvoiceComponent},
+            { path: 'search', component: Invoice1Component},
+            { path: '', component: AddInvoiceComponent},
             { path: 'invoice-edit', component: EditInvoiceComponent},
         ]
     }

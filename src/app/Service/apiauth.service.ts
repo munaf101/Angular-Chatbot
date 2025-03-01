@@ -11,7 +11,8 @@ export class ApiauthService {
   private loginUrl = 'http://localhost:80/chatbot/chats/Kodevfusion/dashboard/login_process.php';  
   private dashboardUrl = 'http://localhost:80/chatbot/chats/Kodevfusion/Angular_dashboard_API/index.php'; 
   private veiwquestionsUrl =  'http://localhost:80/chatbot/chats/Kodevfusion/Angular_dashboard_API/view_questions.php'; 
-  private squestionswordUrl =  'http://localhost:80/chatbot/chats/Kodevfusion/Angular_dashboard_API/list_key_search.php'; 
+  private squestionswordUrl =  'http://localhost:80/chatbot/chats/Kodevfusion/Angular_dashboard_API/list_key_search.php';
+  private sviewreportUrl =  'http://localhost:80/chatbot/chats/Kodevfusion/Angular_dashboard_API/view_report.php'; 
 
   constructor(private http: HttpClient) {}
 
@@ -27,6 +28,10 @@ export class ApiauthService {
   }
   getSquestionwordData(): Observable<any> {
     return this.http.get(this.squestionswordUrl, {headers: { 'Content-Type': 'application/json' }, withCredentials: true });
+  }
+
+  getviewreportData(): Observable<any> {
+    return this.http.get(this.sviewreportUrl, {headers: { 'Content-Type': 'application/json' }, withCredentials: true });
   }
 
   logout() {

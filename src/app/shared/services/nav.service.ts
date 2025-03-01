@@ -80,7 +80,7 @@ export class NavService implements OnDestroy {
             children: [
                 // { path: '/icons/font-awesome', title: 'Font Awesome Icons', type: 'link' },
                 { path: '/view_questions', title: 'Question List', type: 'link' },
-                { path: '/icons/simple-line', title: 'Add Questions', type: 'link' },
+                { path: '/add_questions', title: 'Add Questions', type: 'link' },
             ]
         },
         {
@@ -88,14 +88,14 @@ export class NavService implements OnDestroy {
             title: 'Question Search Word', icon: '<svg class="side-menu__icon" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zM7 10h2v7H7zm4-3h2v10h-2zm4 6h2v4h-2z"/></svg>', type: 'sub', badgeType: 'info', badgeValue: '5', active: false,
             children: [
                 { path: '/list_key/search', title: 'Question Search Word List', type: 'link' },
-                { path: '/charts/chartjs', title: 'Add Question Search Word', type: 'link' },
+                { path: '/add_key/search', title: 'Add Question Search Word', type: 'link' },
             ]
-        },
+        },  
         {
             title: 'Reports', icon: '<svg class="side-menu__icon" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M11.99 18.54l-7.37-5.73L3 14.07l9 7 9-7-1.63-1.27zM12 16l7.36-5.73L21 9l-9-7-9 7 1.63 1.27L12 16zm0-11.47L17.74 9 12 13.47 6.26 9 12 4.53z"/></svg>', type: 'sub', active: false,
             children: [
                
-                { path: '/elements/alerts', title: 'Messages', type: 'link' },
+                { path: '/view/report', title: 'Messages', type: 'link' },
                 // { path: '/elements/badges', title: 'Badges', type: 'link' },
 
             ]
