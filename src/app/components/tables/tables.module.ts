@@ -14,13 +14,15 @@ import { NgSelectModule } from '@ng-select/ng-select';
 import { MaterialModuleModule } from 'src/app/materialModule/material-module/material-module.module';
 import { DataTablesModule } from 'angular-datatables';
 import { HttpClientModule } from '@angular/common/http';
+import { AgentTableComponent } from './data-table/agent-table/agent-table.component';
+import { BotTableComponent } from './data-table/bot-table/bot-table.component';
 
 @NgModule({
   declarations: [ DatatableComponent,BasicDataTableComponent,
     ExpandableRowsComponent,
     FilterSortPaginationComponent,
     RetiveingHttpComponent,
-    TableSelectComponent,DefaultTableComponent],
+    TableSelectComponent,DefaultTableComponent, AgentTableComponent, BotTableComponent],
   imports: [
     CommonModule,
     TablesRoutingModule,

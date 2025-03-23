@@ -3,6 +3,7 @@ import {Component, OnInit, ViewChild} from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
+import { ActivatedRoute } from '@angular/router';
 import { ApiauthService } from 'src/app/Service/apiauth.service';
 
 export interface UserData {
@@ -63,6 +64,8 @@ const NAMES: string[] = [
 })
 export class TableSelectComponent implements OnInit {
   viewreportData: UserData[] = [];
+  sender: number | null = null; // ✅ Property define kar di
+  
 
   // viewquestionData: any;
   // displayedColumns: string[] = ['id', 'name', 'progress', 'fruit'];
@@ -75,7 +78,7 @@ export class TableSelectComponent implements OnInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
-  constructor(private authService: ApiauthService) {
+  constructor(private authService: ApiauthService,private route: ActivatedRoute) {
     // Create 100 users
     // const users = Array.from({length: 100}, (_, k) => createNewUser(k + 1));
 
@@ -136,7 +139,17 @@ truncateText(text: string, wordLimit: number): string {
       });
     });
 
+    
 
+    this.route.paramMap.subscribe(params => {
+      const idParam = params.get('id'); // ✅ Get parameter
+      if (idParam !== null) {
+        this.sender = Number(idParam); // ✅ Convert string to number
+        console.log('Received Question ID:', this.sender);
+      } else {
+        console.error('ID not found in URL');
+      }
+    });
   }
 
   

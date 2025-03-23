@@ -18,14 +18,22 @@ const routes: Routes = [
   { path: 'auth/register', component: RegisterComponent },
   { path: '', component: ContentComponent, children: content 
     // , canActivate: [authguardGuard] 
+    ,canActivate: [authguardGuard],
+    // data: { roles: ['admin', 'user'] } 
   },
   { path: '', component: FullContentComponent, children: full 
     // , canActivate: [authguardGuard]
+    
+    ,canActivate: [authguardGuard],
+    // data: { roles: ['admin', 'user'] } 
   },
   { path: '', component: ContentStyleComponent, children: custom_style 
     // , canActivate: [authguardGuard]
+    
+    ,canActivate: [authguardGuard],
+    // data: { roles: ['admin', 'user'] } 
   },
-  { path: '**', redirectTo: '' },
+  { path: '**', redirectTo: 'auth/login' },
 
 
   ///

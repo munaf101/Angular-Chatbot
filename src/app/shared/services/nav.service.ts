@@ -80,7 +80,7 @@ export class NavService implements OnDestroy {
             children: [
                 // { path: '/icons/font-awesome', title: 'Font Awesome Icons', type: 'link' },
                 { path: '/view_questions', title: 'Question List', type: 'link' },
-                { path: '/add_questions', title: 'Add Questions', type: 'link' },
+                { path: '/questions/add', title: 'Add Questions', type: 'link' },
             ]
         },
         {
@@ -88,7 +88,7 @@ export class NavService implements OnDestroy {
             title: 'Question Search Word', icon: '<svg class="side-menu__icon" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zM7 10h2v7H7zm4-3h2v10h-2zm4 6h2v4h-2z"/></svg>', type: 'sub', badgeType: 'info', badgeValue: '5', active: false,
             children: [
                 { path: '/list_key/search', title: 'Question Search Word List', type: 'link' },
-                { path: '/add_key/search', title: 'Add Question Search Word', type: 'link' },
+                { path: '/key/search_add', title: 'Add Question Search Word', type: 'link' },
             ]
         },  
         {
@@ -101,7 +101,7 @@ export class NavService implements OnDestroy {
             ]
         },
         {
-            title: 'Operator Panel',path: '/widgets/widgets', icon: '<svg class="side-menu__icon" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M16.66 4.52l2.83 2.83-2.83 2.83-2.83-2.83 2.83-2.83M9 5v4H5V5h4m10 10v4h-4v-4h4M9 15v4H5v-4h4m7.66-13.31L11 7.34 16.66 13l5.66-5.66-5.66-5.65zM11 3H3v8h8V3zm10 10h-8v8h8v-8zm-10 0H3v8h8v-8z"/></svg>', badgeClass: 'badge bg-warning text-dark bg-side-text',
+            title: 'Operator Panel',path: 'operator', icon: '<svg class="side-menu__icon" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M16.66 4.52l2.83 2.83-2.83 2.83-2.83-2.83 2.83-2.83M9 5v4H5V5h4m10 10v4h-4v-4h4M9 15v4H5v-4h4m7.66-13.31L11 7.34 16.66 13l5.66-5.66-5.66-5.65zM11 3H3v8h8V3zm10 10h-8v8h8v-8zm-10 0H3v8h8v-8z"/></svg>', badgeClass: 'badge bg-warning text-dark bg-side-text',
             //  badgeValue: 'Hot',
             type: 'link', active: false,
            

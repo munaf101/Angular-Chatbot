@@ -1,92 +1,99 @@
 <!--Page header-->
-<app-page-header [title]="'Invoice List'"  [icon]="'layers'"  [title1]="'Pages'" [activeitem]="'Invoice List'"></app-page-header>
+<!-- <app-page-header [title]="'Add Invoice'"  [icon]="'layers'"  [title1]="'Pages'" [activeitem]="'Add Invoice'"></app-page-header> -->
 
 <!--End Page header-->
 
-						<!-- Row -->
-						<div class="row">
-							<div class="col-lg-12">
-								<div class="card">
-									<div class="card-body">
-										<div class="row">
-											<div class="col-md-6 mb-4">
-												<a href="javascript:void(0);" class="btn btn-primary"><i class="fe fe-plus"></i> Add New Invoice</a>
-											</div>
-											<div class="col-md-6 col-auto">
-												<div class="form-group">
-													<div class="input-icon">
-														<span class="input-icon-addon">
-															<i class="fe fe-search"></i>
-														</span>
-														<input type="text" class="form-control ps-3" placeholder="Search Invoice">
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="e-table">
-											<div class="table-responsive table-lg">
-												<table class="table card-table table-vcenter text-nowrap border mb-0" id="example1">
-													<thead>
-														<tr>
-															<th></th>
-															<th>Invoice</th>
-															<th>Amount</th>
-															<th>Generate Date</th>
-															<th>Due Date</th>
-															<th>Bill to</th>
-															<th>Options</th>
-														</tr>
-													</thead>
-													<tbody>
-                                                        <tr *ngFor="let invoice of invoiceList">
-															<td class="align-middle w-5">
-																<label class="custom-control form-checkbox">
-																	<input type="checkbox" class="custom-control-input" name="example-checkbox2" value="option2">
-																	<span class="custom-control-label"></span>
-																</label>
-															</td>
-															<td class="align-middle">
-																<div class="d-flex flex-wrap">
-																	<img  src="{{invoice.img}}" alt="img" class="wd-50 ht-50 me-2">
-																	<div class="mt-1 flex-fill">
-																		<a class="btn-link text-wrap" href="javascript:void(0);"> #{{invoice.invoiceId}}</a>
-																	</div>
-																</div>
-															</td>
-															<td class="text-nowrap align-middle"><span class="font-weight-bold">${{invoice.amount}}</span></td>
-															<td class="text-nowrap align-middle"><span>{{invoice.Gendate}}</span></td>
-															<td class="text-nowrap align-middle">
-																{{invoice.Billdate}}
-															</td>
-															<td class="text-nowrap align-middle">
-																{{invoice.Billto}}
-															</td>
-															<td>
-                                                                <div class="btn-group invoice-dropdown" ngbDropdown container="body">
-                                                                    <a href="javascript:void(0)" class="btn btn-light btn-sm"
-                                                                        ngbDropdownToggle>Options
-                                                                        <i class="fa fa-angle-down"></i>
-                                                                    </a>
-                                                                    <div ngbDropdownMenu>
-                                                                        <a ngbDropdownItem href="javascript:void(0)"><i
-                                                                                class="fe fe-eye me-2"></i> View</a>
-                                                                        <a ngbDropdownItem href="javascript:void(0)"><i
-                                                                                class="fe fe-share me-2"></i> Send</a>
-                                                                        <a ngbDropdownItem href="javascript:void(0)"><i
-                                                                                class="fe fe-edit me-2"></i> Edit</a>
-                                                                        <a ngbDropdownItem href="javascript:void(0)"><i
-                                                                                class="fe fe-trash me-2"></i> Delete</a>
-                                                                    </div>
-                                                                </div>
-															</td>
-														</tr>
-														
-													</tbody>
-												</table>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<!-- End Row -->
+<!-- Row-->
+<div class="row my-1">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">Add Questions</div>
+            </div>
+            <div class="card-body" *ngIf="question">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="form-group row">
+                            <div class="col-md-12">
+
+                                <label class="form-label">Add Question</label>
+                                <!-- <input type="" class="form-control" placeholder="Invoice title" value=""> -->
+                                 <!-- <select name="" class="form-control" id="">
+                                    <option value="">FAQ</option>
+                                    <option value="">kodev Fusion</option>
+                                 </select> -->
+                                <input type="text" [(ngModel)]="question.questions" class="form-control"/>
+
+                                 <!-- <select class="form-control" >
+                                    <option value="1" [(ngModel)]="question.questions"></option>
+                                    <option value="1">FAQ</option>
+                                    <option value="2">kodev Fusion</option>
+                                </select>  -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="table-responsive">
+                    <table class="table nowrap text-nowrap border mt-3">
+                        <thead>
+                            <tr>
+                                <th>S NO</th>
+                                <th class="w-100">Keywords</th>
+                                <!-- <th>Questions</th>
+                                <th>Input</th>
+                                <th>Image</th>
+                                <th>PDF</th>
+                                <th>Status</th> -->  
+                                <th>ACTION</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let row of rows; let i = index">   
+                                
+                                <!-- <td><input class="form-control" placeholder="" type="text" value="{{ i + 1 }}" [(ngModel)]="row.title"></td> -->
+                                <td>
+                                    <input class="form-control" type="text" value="{{ i + 1 }}" [readonly]="true">
+                                  </td>
+                                  
+                                <td><input class="form-control" placeholder="" type="text" value="" [(ngModel)]="row.convId"></td>
+                                <td>
+                                    <!-- <input class="form-control" placeholder="" type="text" value=""> -->
+                                     <!-- <button class="btn btn-square btn-secondary"></button> -->
+                                     <button type="button"  class="btn btn-square btn-secondary" (click)="removeRow(i)"><i class="fe fe-minus"></i></button>
+
+                                </td>
+
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td><a class="btn btn-light" href="javascript:void(0)" (click)="addRow()"><i class="fe fe-plus"></i> Add
+                                        </a></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+                <!-- <div class="form-group row">
+                    <div class="col-md-12">
+                        <label class="form-label">Vat Rate</label>
+                        <input class="form-control" placeholder="Vat Rate" type="text" value="">
+                    </div>
+                </div> -->
+            </div>
+            <div class="card-footer">
+                <div class="row">
+                    <div class="col">
+                        <a class="btn btn-primary btn-square me-1" href="javascript:void(0)"><i class="fe fe-plus"></i> Add New
+                            Question</a>
+                        <a class="btn btn-light" href="javascript:void(0)">Cancel</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End row-->

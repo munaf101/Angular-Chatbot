@@ -17,10 +17,7 @@ export const content: Routes = [
         path: 'maps',
         loadChildren: () => import('../../components/maps/maps.module').then(m => m.MapsModule)
     },
-    {
-        path: 'apps/chat',
-        loadChildren: () => import('../../components/apps/chat/chat.module').then(m => m.ChatModule)
-    },
+  
     {
         path: 'apps/contact',
         loadChildren: () => import('../../components/apps/contact/contact.module').then(m => m.ContactModule)
@@ -67,7 +64,7 @@ export const content: Routes = [
 
     },
     {
-        path: 'add_questions',
+        path: 'questions',
         loadChildren: () => import('../../components/pages/invoice/invoice.module').then(m => m.InvoiceModule)
     },
     {
@@ -76,7 +73,7 @@ export const content: Routes = [
 
     },
     {
-        path: 'add_key',
+        path: 'key',
         // loadChildren: () => import('../../components/tables/tables.module').then(m => m.TablesModule)
         loadChildren: () => import('../../components/pages/invoice/invoice.module').then(m => m.InvoiceModule)
 
@@ -86,6 +83,10 @@ export const content: Routes = [
         path: 'view',
         loadChildren: () => import('../../components/tables/tables.module').then(m => m.TablesModule)
 
+    },
+    {
+        path: 'operator',
+        loadChildren: () => import('../../components/apps/chat/chat.module').then(m => m.ChatModule)
     },
     {
         path: 'pages/blog',

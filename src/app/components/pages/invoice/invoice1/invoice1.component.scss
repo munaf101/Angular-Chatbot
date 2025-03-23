@@ -642,4 +642,15 @@ ngx-intl-tel-input {
     align-items: center;
 
 }
+
+.form-control
+{
+    border: 1px solid #D0D4E6 !important ;
+}
+.border {
+    border-color: #D0D4E6 !important;
+}
   
+.table> :not(:last-child)> :last-child>* {
+    border-block-end: 1px solid #D0D4E6 !important;
+}

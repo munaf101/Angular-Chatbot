@@ -23,6 +23,8 @@ import { RegisterComponent } from './authentication/register/register.component'
 import { GalleryModule } from '@ks89/angular-modal-gallery';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
+import { ApiauthService } from './Service/apiauth.service';
+import { authguardGuard } from './authguard/authguard.guard';
 @NgModule({
   declarations: [
     AppComponent,
@@ -53,7 +55,8 @@ import { CommonModule } from '@angular/common';
   ],
   providers: [
     {
-      provide: HIGHLIGHT_OPTIONS,
+      provide: 
+        [ApiauthService, authguardGuard, HIGHLIGHT_OPTIONS],
       useValue: {
         fullLibraryLoader: () => import('highlight.js'),
       }

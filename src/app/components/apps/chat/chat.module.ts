@@ -6,12 +6,14 @@ import { ChatRoutingModule } from './chat-routing.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgScrollbarModule  } from 'ngx-scrollbar';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
   declarations: [Chat1Component, Chat3Component],
   imports: [
     CommonModule,
+    FormsModule,
     ChatRoutingModule,
     NgbModule,
     NgScrollbarModule,

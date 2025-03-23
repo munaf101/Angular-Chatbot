@@ -1,35 +1,46 @@
 <!--Page header-->
-<app-page-header [title]="'Invoice Edit'"  [icon]="'layers'"  [title1]="'Pages'" [activeitem]="'Invoice Edit'"></app-page-header>
+<!-- <app-page-header [title]="'Add Invoice'"  [icon]="'layers'"  [title1]="'Pages'" [activeitem]="'Add Invoice'"></app-page-header> -->
 
 <!--End Page header-->
 
 <!-- Row-->
-<div class="row">
+<div class="row my-1">
     <div class="col-md-12">
         <div class="card">
             <div class="card-header">
-                <div class="card-title">Edit Invoice</div>
+                <div class="card-title">Edit Questions</div>
             </div>
-            <div class="card-body">
+            <div class="card-body" *ngIf="question">
                 <div class="row">
-                    <div class="col-12">
+                    <div class="col-6">
                         <div class="form-group row">
                             <div class="col-md-12">
-                                <label class="form-label">Invoice Title</label>
-                                <input class="form-control" placeholder="Invoice title" value="Invoice">
+                                <label class="form-label">Title</label>
+                                <!-- <input type="" class="form-control" placeholder="Invoice title" value=""> -->
+                                 <!-- <select name="" class="form-control" id="">
+                                    <option value="">FAQ</option>
+                                    <option value="">kodev Fusion</option>
+                                 </select> -->
+                                 <!-- <select class="form-control" [(ngModel)]="question.questions">
+                                    <option value="1"></option>
+                                    <option value="1">FAQ</option>
+                                    <option value="2">kodev Fusion</option>
+                                </select>  -->
+                                <input type="text" [(ngModel)]="question.title" class="form-control"/>
+
                             </div>
+                            
                         </div>
                         <div class="form-group row">
                             <div class="col-md-12">
-                                <label class="form-label">Subject</label>
-                                <textarea class="form-control" rows="4" placeholder="Subject of Invoice">Hi Jessica Allen,This is the receipt for a payment of $450.00 (USD) for your works
-                                </textarea>
+                                <label class="form-label">Intro Message  </label>
+                                <textarea rows="2" class="form-control" placeholder="Intro Message" [(ngModel)]="question.intro_message"></textarea>
                             </div>
                         </div>
-                        <div class="form-group row">
+                        <!-- <div class="form-group row">
                             <div class="col-md-12">
                                 <label class="form-label">Payment Number</label>
-                                <input class="form-control" type="number" placeholder="Payment Number" value="23543">
+                                <input class="form-control" type="number" placeholder="Payment Number" value="">
                             </div>
                         </div>
                         <div class="form-group row">
@@ -41,37 +52,113 @@
                         <div class="form-group row">
                             <div class="col-md-12">
                                 <label class="form-label">Bill To</label>
-                                <textarea class="form-control" rows="4" placeholder="Bill To">Street Address, State, City, Region, Postal Code, ctr@example.com
-                                </textarea>
+                                <textarea class="form-control" rows="4" placeholder="Bill To"></textarea>
+                            </div>
+                        </div> -->
+                    </div>
+                    <div class="col-6">
+                        <div class="form-group row">
+                            <div class="col-md-12">
+                                <label class="form-label">Parent</label>
+                                <!-- <input type="" class="form-control" placeholder="Invoice title" value=""> -->
+                                 <!-- <select name="" class="form-control" id="">
+                                    <option value="">FAQ</option>
+                                    <option value="">kodev Fusion</option>
+                                 </select> -->
+                                 <!-- <select class="form-control" >
+                                    <option value="1"></option>
+                                    <option value="1">FAQ</option>
+                                    <option value="2">kodev Fusion</option>
+                                </select>  -->  
+                                <!-- <input type="text" class="form-control" [(ngModel)]="question.parent_hierarchy"></input> -->
+                                <input class="form-control" placeholder="" type="text" value="" [(ngModel)]="question.parent_hierarchy">
+
+                                 
+                            </div>
+                            
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-md-12">
+                                <label class="form-label">Change Parent</label>
+                                <!-- <textarea rows="2" class="form-control" placeholder="Intro Message"></textarea> -->
+                                <select class="form-control" [(ngModel)]="question.parent">
+                                    <option value="">-- Select Parent --</option>
+                                    <option *ngFor="let parent of parentOptions" [value]="parent.parent_id">
+                                         {{ parent.hierarchy }}
+                                    </option>
+                                </select>
                             </div>
                         </div>
+                        <!-- <div class="form-group row">
+                            <div class="col-md-12">
+                                <label class="form-label">Payment Number</label>
+                                <input class="form-control" type="number" placeholder="Payment Number" value="">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-md-12">
+                                <label class="form-label">Payment Date</label>
+                                <input class="form-control" value="" placeholder="dd-mm-yy">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-md-12">
+                                <label class="form-label">Bill To</label>
+                                <textarea class="form-control" rows="4" placeholder="Bill To"></textarea>
+                            </div>
+                        </div> -->
                     </div>
                 </div>
                 <div class="table-responsive">
                     <table class="table nowrap text-nowrap border mt-3">
                         <thead>
                             <tr>
-                                <th>PRODUCT</th>
-                                <th class="w-40">DESCRIPTION</th>
-                                <th>QNTY</th>
-                                <th>UNIT PRICE</th>
-                                <th>AMOUNT</th>
+                                <th style="width: 0px;">S NO</th>
+                                <th>Title</th>
+                                <th class="w-40">Conv_id</th>
+                                <th>Questions</th>
+                                <th>Input</th>
+                                <th>Image</th>
+                                <th>PDF</th>
+                                <th>Status</th>
+                                <th>ACTION</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td><input class="form-control" placeholder="" type="text" value="Logo Creation"></td>
-                                <td><textarea rows="1" class="form-control">Logo and business cards design</textarea>
+                            <tr *ngFor="let row of rows; let i = index">
+                                <td class="w-1">
+                                    <input class="form-control" placeholder="" type="text" value="{{ i + 1 }}" [readonly]="true">
+                                  </td>
+                                
+                                <td><input class="form-control" placeholder="" type="text" value="" [(ngModel)]="row.title"></td>
+                                <td><input class="form-control" placeholder="" type="text" value="" [(ngModel)]="row.conv_id"></td>
+                                <td><textarea rows="1" class="form-control" [(ngModel)]="row.questions"></textarea></td>
+                                <td>
+                                    <input class="form-control" placeholder="" type="text" value="" [(ngModel)]="row.input_type">
                                 </td>
-                                <td><input class="form-control" placeholder="" type="text" value="2"></td>
-                                <td><input class="form-control" placeholder="" type="text" value="$60.00"></td>
-                                <td><input class="form-control" placeholder="" type="text" value="$120.00"></td>
+                                <td>
+                                    <input  #fileInput type="file" (change)="onFileSelected($event)" type="file" style="display: none;" value="" [(ngModel)]="row.image">
+                                     <i class="fe fe-camera mt-1 ml-4" style="font-size: 16px;" (click)="fileInput.click()"></i>
+                                </td>
+                                <td>
+                                    <input  #fileInput1 type="file" (change)="onFileSelected1($event)" [(ngModel)]="row.pdf" type="file" style="display: none;" value="">
+                                     <i class="fe fe-file-plus mt-1 ml-2" style="font-size: 16px;" (click)="fileInput1.click()"></i>
+                                </td>
+                                <!-- <td><input class="form-control" placeholder="" type="text" value=""></td> -->
+                                <td><input class="form-control" placeholder="" type="text" value="" [(ngModel)]="row.status"></td>
+                                <td>
+                                    <!-- <input class="form-control" placeholder="" type="text" value=""> -->
+                                     <!-- <button class="btn btn-square btn-secondary"></button> -->
+                                     <button type="button" class="btn btn-square btn-secondary" (click)="removeRow(i)"><i class="fe fe-minus"></i></button>
+
+                                </td>
+
                             </tr>
                         </tbody>
                         <tfoot>
                             <tr>
-                                <td><a class="btn btn-light" href="javascript:void(0)"><i class="fe fe-plus"></i> Add
-                                        Product</a></td>
+                                <td><a class="btn btn-light" href="javascript:void(0)" (click)="addRow()"><i class="fe fe-plus"></i> Add
+                                        </a></td>
                                 <td></td>
                                 <td></td>
                                 <td></td>
@@ -80,17 +167,18 @@
                         </tfoot>
                     </table>
                 </div>
-                <div class="form-group row">
+                <!-- <div class="form-group row">
                     <div class="col-md-12">
                         <label class="form-label">Vat Rate</label>
-                        <input class="form-control" placeholder="Vat Rate" type="text" value="20%">
+                        <input class="form-control" placeholder="Vat Rate" type="text" value="">
                     </div>
-                </div>
+                </div> -->
             </div>
             <div class="card-footer">
                 <div class="row">
                     <div class="col">
-                        <a class="btn btn-success me-1" href="javascript:void(0)">Save</a>
+                        <a class="btn btn-primary btn-square me-1" href="javascript:void(0)"><i class="fe fe-plus"></i> Add New
+                            Question</a>
                         <a class="btn btn-light" href="javascript:void(0)">Cancel</a>
                     </div>
                 </div>

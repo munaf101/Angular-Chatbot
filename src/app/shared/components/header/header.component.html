@@ -293,7 +293,7 @@
                 <a class="dropdown-item" ngbDropdownItem routerLink="/pages/editprofile"><i class="bx bx-cog"></i> Edit Profile</a>
                 <a class="dropdown-item" ngbDropdownItem routerLink="/apps/chat/chat-1" ><i class="bx bx-envelope"></i>Messages</a>
                 <a class="dropdown-item" ngbDropdownItem routerLink="/pages/editprofile"><i class="bx bx-slider-alt"></i> Account Settings</a>
-                <a class="dropdown-item" ngbDropdownItem routerLink="auth/login"><i class="bx bx-log-out"></i> Sign Out</a>
+                <a class="dropdown-item" ngbDropdownItem routerLink="auth/login" (click)="logout()" ><i class="bx bx-log-out"></i> Sign Out</a>
               </div>
             </li>
           </ul>

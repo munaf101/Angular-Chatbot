@@ -120,9 +120,10 @@ truncateText(text: string, wordLimit: number): string {
         // conv_id: item.conv_id,
         title: item.title,
         no_key: item.no_key,
+        q_id: item.q_id,
 
         // parent: item.parent_hierarchy ? `hi -> ${item.parent_hierarchy}` : 'hi',
-        action: 'Action Button'  // Ye sirf example ke liye, aap apna logic laga sakte hain
+        action: item.q_id  // Ye sirf example ke liye, aap apna logic laga sakte hain
       }));
       this.dataSource.data = this.searchquestionData;  // ✅ Corrected
 

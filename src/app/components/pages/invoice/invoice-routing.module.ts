@@ -10,10 +10,10 @@ const routes : Routes = [
     {
         path:'',
         children: [
-            { path: 'invoice-list', component: InvoiceListComponent},
-            { path: 'search', component: Invoice1Component},
-            { path: '', component: AddInvoiceComponent},
-            { path: 'invoice-edit', component: EditInvoiceComponent},
+            { path: 'search_edit/:id', component: InvoiceListComponent},
+            { path: 'search_add', component: Invoice1Component},
+            { path: 'add', component: AddInvoiceComponent},
+            { path: 'edit/:id', component: EditInvoiceComponent},
         ]
     }
 ]

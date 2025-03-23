@@ -3,7 +3,12 @@
   <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
 </mat-form-field> -->
 
+
+
 <div class="table-responsive">
+<!-- <button type="button" class="btn btn-primary mb-1" (click)="LargeSizeOpen(largesizemodal)">large Modal</button> -->
+
+
   <table mat-table [dataSource]="dataSource" matSort  class="table text-nowrap table-bordered">
 
     <ng-container matColumnDef="id">
@@ -39,7 +44,10 @@
     <ng-container matColumnDef="action">
       <th mat-header-cell *matHeaderCellDef> Action </th>
       <td mat-cell *matCellDef="let element">
-        <button class="btn btn-sm btn-primary">Edit</button>   
+        <button class="btn btn-sm btn-primary" 
+        [routerLink]="['/questions/edit', element.q_id]"
+
+         >Edit</button>   
       </td>
     </ng-container> 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

@@ -5,6 +5,8 @@ import { DatatableComponent } from './data-table/data-table.component';
 import { ExpandableRowsComponent } from './data-table/expandable-rows/expandable-rows.component';
 import { BasicDataTableComponent } from './data-table/basic-data-table/basic-data-table.component';
 import { TableSelectComponent } from './data-table/table-select/table-select.component';
+import { EditInvoiceComponent } from '../pages/invoice/edit-invoice/edit-invoice.component';
+import { AgentTableComponent } from './data-table/agent-table/agent-table.component';
 
 
 const routes : Routes = [
@@ -28,15 +30,19 @@ const routes : Routes = [
                 component: BasicDataTableComponent
             },
             {
-                path:'report/bot_messages',
-                component: TableSelectComponent
-            }
+                path:'report/bot_messages/:sender',
+                component: AgentTableComponent
+            },
+            // { path: 'user/:id', component: EditInvoiceComponent },
         ]
     }
 ];
 
 @NgModule({
-    imports:[RouterModule.forChild(routes)],
+    imports:[
+        RouterModule.forChild(routes),
+        // RouterModule.forRoot(routes)
+    ],
     exports: [RouterModule]
 })
 export class TablesRoutingModule { }

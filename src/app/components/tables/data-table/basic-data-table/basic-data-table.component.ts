@@ -122,8 +122,8 @@ truncateText(text: string, wordLimit: number): string {
         created: item.created,
         // parent: item.parent_hierarchy ? `hi -> ${item.parent_hierarchy}` : 'hi',
         phone_no: item.sender,   
-        view_link: item.view_link,
-        agent_link: item.agent_link,
+        view_link: item.sender,
+        agent_link: item.sender,
         action: 'Action Button'  // Ye sirf example ke liye, aap apna logic laga sakte hain
       }));
       this.dataSource.data = this.viewreportData;  // ✅ Corrected

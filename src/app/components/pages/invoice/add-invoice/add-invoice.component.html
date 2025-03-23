@@ -21,17 +21,17 @@
                                     <option value="">FAQ</option>
                                     <option value="">kodev Fusion</option>
                                  </select> -->
-                                 <select class="form-control" >
-                                    <option value="1"></option>
-                                    <option value="1">FAQ</option>
-                                    <option value="2">kodev Fusion</option>
+                                 <select class="form-control" [(ngModel)]="selectedQuestion">
+                                    <option>Select Question</option>
+                                    <option *ngFor="let question of questions" [value]="question.id">{{ question.title }}</option>
+                                    <!-- <option value="2">kodev Fusion</option> -->
                                 </select> 
                             </div>
                         </div>
                         <div class="form-group row">
                             <div class="col-md-12">
                                 <label class="form-label">Intro Message  </label>
-                                <textarea rows="2" class="form-control" placeholder="Intro Message"></textarea>
+                                <textarea rows="2" class="form-control" [(ngModel)]="introMessage"   placeholder="Intro Message"></textarea>
                             </div>
                         </div>
                         <!-- <div class="form-group row">
@@ -70,27 +70,34 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr *ngFor="let row of rows; let i = index">
+                            <tr *ngFor="let keyword of keywords; let i = index">
                                 <td class="w-1">
                                     <input class="form-control" placeholder="" type="text" value="{{ i + 1 }}" [readonly]="true">
                                   </td>
                                 
-                                <td><input class="form-control" placeholder="" type="text" value="" [(ngModel)]="row.title"></td>
-                                <td><input class="form-control" placeholder="" type="text" value="" [(ngModel)]="row.convId"></td>
-                                <td><textarea rows="1" class="form-control" [(ngModel)]="row.question"></textarea></td>
+                                <td><input class="form-control" placeholder="" type="text" value="" [(ngModel)]="keyword.title"></td>
+                                <td><input class="form-control" placeholder="" type="text" value="" [(ngModel)]="keyword.conv_id"></td>
+                                <td><textarea rows="1" class="form-control" [(ngModel)]="keyword.questions"></textarea></td>
                                 <td>
-                                    <input class="form-control" placeholder="" type="text" value="" [(ngModel)]="row.input">
+                                    <input class="form-control" placeholder="" type="text" value="" [(ngModel)]="keyword.input_type">
                                 </td>
                                 <td>
-                                    <input  #fileInput type="file" (change)="onFileSelected($event)" type="file" style="display: none;" value="" [(ngModel)]="row.image">
+                                    <input  #fileInput type="file" (change)="onFileSelected($event)" type="file" style="display: none;" value="" [(ngModel)]="keyword.image">
                                      <i class="fe fe-camera mt-1 ml-4" style="font-size: 16px;" (click)="fileInput.click()"></i>
                                 </td>
                                 <td>
-                                    <input  #fileInput1 type="file" (change)="onFileSelected1($event)" [(ngModel)]="row.pdf" type="file" style="display: none;" value="">
+                                    <input  #fileInput1 type="file" (change)="onFileSelected1($event)"
+                                                                           type="file" style="display: none;" value="">
                                      <i class="fe fe-file-plus mt-1 ml-2" style="font-size: 16px;" (click)="fileInput1.click()"></i>
                                 </td>
                                 <!-- <td><input class="form-control" placeholder="" type="text" value=""></td> -->
-                                <td><input class="form-control" placeholder="" type="text" value="" [(ngModel)]="row.status"></td>
+                                <!-- <td><input class="form-control" placeholder="" type="text" value="" [(ngModel)]="keyword.status"></td> -->
+                                  <td>
+        <select [(ngModel)]="keyword.status" class="form-control">
+          <option value="A">Active</option>
+          <option value="D">Inactive</option>
+        </select>
+      </td>
                                 <td>
                                     <!-- <input class="form-control" placeholder="" type="text" value=""> -->
                                      <!-- <button class="btn btn-square btn-secondary"></button> -->
@@ -122,13 +129,22 @@
             <div class="card-footer">
                 <div class="row">
                     <div class="col">
-                        <a class="btn btn-primary btn-square me-1" href="javascript:void(0)"><i class="fe fe-plus"></i> Add New
+                        <a class="btn btn-primary btn-square me-1" href="javascript:void(0)" (click)="submitQuestion()"><i class="fe fe-plus"></i> Add New
                             Question</a>
                         <a class="btn btn-light" href="javascript:void(0)">Cancel</a>
                     </div>
+                    <p *ngIf="message" class="mt-2">{{ message }}</p>
+
+
                 </div>
             </div>
         </div>
     </div>
 </div>
 <!-- End row-->
+
+
+
+
+
+<!-- <app-edit-invoice></app-edit-invoice> -->

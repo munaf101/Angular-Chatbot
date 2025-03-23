@@ -21,11 +21,18 @@
                                     <option value="">FAQ</option>
                                     <option value="">kodev Fusion</option>
                                  </select> -->
-                                 <select class="form-control" >
+                                 <!-- <select class="form-control" >
                                     <option value="1"></option>
                                     <option value="1">FAQ</option>
                                     <option value="2">kodev Fusion</option>
-                                </select> 
+                                </select>  -->
+                                <select [(ngModel)]="selectedQuestion" class="form-control">
+                                    <option value="">Select Question</option>
+                                    <option *ngFor="let question of questions" [value]="question.id">
+                                      {{ question.title }}
+                                    </option>
+                                  </select>
+                                  
                             </div>
                         </div>
                     </div>
@@ -45,14 +52,14 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr *ngFor="let row of rows; let i = index">   
+                            <tr *ngFor="let keyword of keywords; let i = index">   
                                 
                                 <!-- <td><input class="form-control" placeholder="" type="text" value="{{ i + 1 }}" [(ngModel)]="row.title"></td> -->
                                 <td>
                                     <input class="form-control" type="text" value="{{ i + 1 }}" [readonly]="true">
-                                  </td>
+                                  </td>    
                                   
-                                <td><input class="form-control" placeholder="" type="text" value="" [(ngModel)]="row.convId"></td>
+                                <td><input class="form-control" placeholder="" type="text" value="" [(ngModel)]="keywords[i].title"  ></td>
                                 <td>
                                     <!-- <input class="form-control" placeholder="" type="text" value=""> -->
                                      <!-- <button class="btn btn-square btn-secondary"></button> -->
@@ -84,10 +91,12 @@
             <div class="card-footer">
                 <div class="row">
                     <div class="col">
-                        <a class="btn btn-primary btn-square me-1" href="javascript:void(0)"><i class="fe fe-plus"></i> Add New
+                        <a class="btn btn-primary btn-square me-1" href="javascript:void(0)" (click)="submitKeywords()"><i class="fe fe-plus"></i> Add New
                             Question</a>
                         <a class="btn btn-light" href="javascript:void(0)">Cancel</a>
                     </div>
+                    <p *ngIf="message" class="mt-2">{{ message }}</p>
+
                 </div>
             </div>
         </div>

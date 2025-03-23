@@ -3,6 +3,8 @@ import { Component, Inject, OnInit, AfterViewInit, ViewChild, ElementRef } from 
 // import PerfectScrollbar from 'perfect-scrollbar';
 import { Menu, NavService } from '../../services/nav.service';
 import { SwitcherService } from '../../services/switcher.service';
+import { ApiauthService } from 'src/app/Service/apiauth.service';
+import { Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -35,6 +37,8 @@ export class HeaderComponent implements OnInit , AfterViewInit{
   constructor(
     public navServices: NavService,
     public SwitcherService : SwitcherService,
+    private authservice : ApiauthService,
+    private router : Router,
     @Inject(DOCUMENT) private document: any,
   ) { }
 
@@ -164,6 +168,11 @@ export class HeaderComponent implements OnInit , AfterViewInit{
     this.text = '';
     this.menuItems = [];
     this.SearchResultEmpty = false;
-    return this.text, this.menuItems;
+    return this.text, this.menuItems; 
   }
+  logout() {
+    this.authservice.logout();
+    this.router.navigate(['/login']);
+  }
+  
 }

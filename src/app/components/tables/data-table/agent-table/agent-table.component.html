@@ -1,0 +1,90 @@
+<!-- <mat-form-field>
+  <mat-label>Filter</mat-label>
+  <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+</mat-form-field> -->
+<!-- <div> -->
+    <div class="row row-sm my-1">
+
+        <div class="col-lg-12">
+          <div class="card custom-card">
+              <div class="card-header border-bottom">
+                  <h3 class="card-title">Messages</h3>
+              </div>
+              <div class="card-body ">
+                  <div class="table-responsive">
+        <div class="table-responsive">
+          <table mat-table [dataSource]="dataSource" matSort  class="table text-nowrap table-bordered">
+        
+            <ng-container matColumnDef="id">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+              <td mat-cell *matCellDef="let element"> {{ element.id }} </td>
+            </ng-container>
+          
+            <!-- Conversation ID Column -->
+            <ng-container matColumnDef="message">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Last Message </th>
+              <td mat-cell *matCellDef="let element"> {{ element.message }} </td>
+            </ng-container>
+          
+            <!-- Question Column -->
+            <ng-container matColumnDef="bot">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header>  Bots Chat</th>
+                <td mat-cell *matCellDef="let element" class="limited-text  ml-2" [title]="element.questions">
+                   <!-- {{ truncateText(element.questions, 9) }} -->
+                <!-- <button class="btn btn-sm btn-primary" >Message</button>     -->
+                <a [href]="element.view_link" target="_blank">
+                  <button class="btn btn-sm btn-primary">Message</button>
+                </a>
+        
+                     </td>
+               
+              </ng-container>
+          
+            <!-- Title Column -->
+            <ng-container matColumnDef="time">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Time </th>
+              <td mat-cell *matCellDef="let element"> {{ element.created }} </td>
+            </ng-container>
+          
+            <!-- Parent Column -->
+            <ng-container matColumnDef="phone">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Phone Number </th>
+              <td mat-cell *matCellDef="let element"> {{ element.phone_no }} </td>
+            </ng-container>
+             
+            <!-- Action Column -->
+            <ng-container matColumnDef="agent">
+              <th mat-header-cell *matHeaderCellDef> Agent Chat </th>
+              <td mat-cell *matCellDef="let element">
+                <!-- <button class="btn btn-sm btn-primary" [href]="element.view_link" target="_blank"   >Message</button> 
+                    -->
+                    <!-- <a [href]="'view_question/' + element.agent_link" target="_blank">
+                      <button class="btn btn-sm btn-primary">Message</button>  
+                    </a> -->   
+                    <!-- <a [href]="'view_question/' + element.agent_link" target="_blank">Message</a> -->
+                    <a class="btn btn-primary btn-sm"
+                [routerLink]="['/view/bot_messages', element.agent_link]"
+                    
+                    target="_blank">Message</a>   
+        
+        
+                    
+              </td>
+            </ng-container> 
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        
+            <!-- Row shown when there is no matching data. -->
+            <tr class="mat-row" *matNoDataRow>
+              <!-- <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td> -->
+            </tr>
+          </table>
+        
+          <mat-paginator [pageSizeOptions]="[10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>  
+        </div>
+        

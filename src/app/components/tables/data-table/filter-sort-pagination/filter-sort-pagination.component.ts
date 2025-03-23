@@ -2,6 +2,7 @@ import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
+import { NgbModal, NgbModalOptions } from '@ng-bootstrap/ng-bootstrap';
 import { ApiauthService } from 'src/app/Service/apiauth.service';
 
 export interface UserData {
@@ -70,9 +71,12 @@ export class FilterSortPaginationComponent implements OnInit {
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
+  // modalOptions: NgbModalOptions;
 
-  constructor(private authService: ApiauthService) {
-    // Create 100 users
+
+  constructor(private authService: ApiauthService
+  ){
+
     // const users = Array.from({length: 100}, (_, k) => createNewUser(k + 1));
 
     // Assign the data to the data source for the table to render
@@ -107,13 +111,14 @@ truncateText(text: string, wordLimit: number): string {
     this.authService.getViewquestionData().subscribe(data => {
       console.log("API REsponse"+data);
       this.viewquestionData = data.map((item: any, index: number) => ({
-        id: (index + 1).toString(),  // 1, 2, 3, ... jitna record ho
+        id: (index + 1).toString(),  
         conv_id: item.conv_id,
         questions: item.questions,
         title: item.title,
+        q_id: item.q_id,
         parent: item.parent_hierarchy ? `hi -> ${item.parent_hierarchy}` : 'hi',
-        action: 'Action Button'  // Ye sirf example ke liye, aap apna logic laga sakte hain
-      }));
+        action: item.q_id  
+      }));   
       this.dataSource.data = this.viewquestionData;  // ✅ Corrected
 
 
@@ -126,8 +131,12 @@ truncateText(text: string, wordLimit: number): string {
       });
     });
 
+    
+
 
   }
+  
+
  
 }
 
